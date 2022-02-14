@@ -232,7 +232,7 @@
     function move_to_north() {
         if ((place_counter_x === 5) && (place_counter_y === 1)) {
             console.log("ab ins Haus");
-            window.location.href = "kreischcraft.html";
+            window.location.href = "index.html";
         }
 
         // check if cat is there
