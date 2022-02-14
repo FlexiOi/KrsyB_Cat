@@ -1,0 +1,142 @@
+:root
+{
+  --move_x:15px;
+  --move_y:10px;
+}
+.figur
+{
+height: 62px;
+width: 62px;
+position:absolute;   
+left:var(--move_x);
+top:var(--move_y);
+}
+
+.border_radius_15
+{
+  border-radius: 15px;
+}
+
+.background {
+	background-color: rgba(249, 71, 255, 0.514);
+	background-attachment: fixed;
+	border-radius: 25px;
+	height: 640px;
+	width: 1050px;
+	border-color: black;
+	border: 1px solid black;
+	margin-left:auto;
+	margin-right:auto;
+
+	}
+
+.box_column {
+	background-attachment: fixed;
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-shrink: 0 ;
+	}
+.box_row
+{
+    position: relative;
+	display: flex;
+	flex-direction: row;
+
+	}
+.one_row
+{
+	padding-left: 15px;
+	padding-top: 10px;
+}
+
+.two_row
+{
+	padding-left: 10px;
+}
+.text_items
+{
+	font-size: 30px;
+	font-family: 'Ink Free', serif;
+	font-weight: bold;
+}
+.by_felix
+{
+	margin-top: 15px;
+	font-size: 13px;
+	font-family: 'Lato', serif;
+}
+
+
+/* Popup container - can be anything you want */
+.popup {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  }
+  
+  /* The actual popup */
+  .popup .popuptext {
+	visibility: hidden;
+	width: 200px;
+	background-color: #555;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 8px 0;
+	position: absolute;
+	z-index: 1;
+	bottom: 125%;
+	left: 50%;
+	margin-left: -100px;
+  }
+  
+  /* Popup arrow */
+  .popup .popuptext::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
+  }
+  
+  /* Toggle this class - hide and show the popup */
+  .popup .show {
+	visibility: visible;
+	-webkit-animation: fadeIn 1s;
+	animation: fadeIn 1s;
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+	from {opacity: 0;} 
+	to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+	from {opacity: 0;}
+	to {opacity:1 ;}
+  }
+
+  .help_text
+  {
+	  color: rgba(255, 0, 13, 0.74);
+	  font-weight: bold;
+  }
+
+  .schlafkatze
+  {
+	position: absolute;
+	height: 62px;
+	width: 62px;
+	left:700px;
+	top:350px;
+  }
