@@ -259,42 +259,6 @@
         }
     }
 
-    // cat sleeps and trigger popup
-    let meow_timeout = false;
-    async function meow() {
-        if (meow_timeout === false) {
-            set_meow_timeout();
-            console.log("popup!!");
-            var popup = document.getElementById("popup_cat");
-            popup.classList.toggle("fadeIn");
-            await delay(2000);
-            popup.classList.toggle("fadeOut");
-
-        }
-
-    }
-
-    async function set_meow_timeout() {
-        meow_timeout = true;
-        await delay(4000);
-        meow_timeout = false;
-    }
-    function cat_sleep_up() {
-        if (((place_counter_x === 7) && (place_counter_y === 3)) && (is_cat_there = 1)) {
-            meow();
-        }
-    }
-    function cat_sleep_down() {
-        if (((place_counter_x === 7) && (place_counter_y === 1)) && (is_cat_there = 1)) {
-            meow();
-        }
-    }
-    function cat_sleep_right() {
-        if (((place_counter_x === 6) && (place_counter_y === 2)) && (is_cat_there = 1)) {
-            meow();
-        }
-    }
-
     // place character depending on zone entry
 
     var origin = localStorage.getItem('player_origin');
