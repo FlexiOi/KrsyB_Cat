@@ -169,7 +169,7 @@
         if ((place_counter_x === 3) && (place_counter_y === 8)) {
             console.log("ab ins Haus");
 
-            window.location.href = "index.html";
+            window.location.href = "kreischcraft1.html";
         }
 
         // check if cat is there
