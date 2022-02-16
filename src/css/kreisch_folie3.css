@@ -3,6 +3,10 @@
   --move_x:15px;
   --move_y:10px;
 }
+.precachingPictures
+{
+	visibility: hidden;
+}
 .figur
 {
 height: 62px;
