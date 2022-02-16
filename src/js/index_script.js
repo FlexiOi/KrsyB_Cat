@@ -1,10 +1,13 @@
-// get button
+// start game by pressing Enter
+
 document.onkeydown = checkKey;
 function checkKey(e) {
     e = e || window.event;
 
     if (e.keyCode == '13') { // up arrow
 
-alert("gogo");
+        window.location.href = "kreischcraft1.html";
+
     }
 }
+
