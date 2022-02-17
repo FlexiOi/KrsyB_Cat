@@ -263,10 +263,10 @@
     switch (origin) {
         case "5": // from the north
             console.log("Player origin is page 3");
-            place_counter_x = 2;
+            place_counter_x = 1;
             move_x = 15 + (62 * (place_counter_x - 1));
             r.style.setProperty('--move_x', move_x + "px");
-            place_counter_y = 1;
+            place_counter_y = 3;
             move_y = 10 + (62 * (place_counter_y - 1));
             r.style.setProperty('--move_y', move_y + "px");
             run_y = place_counter_y - 1;
