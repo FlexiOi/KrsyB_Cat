@@ -98,14 +98,11 @@
 
     // move out of the house
 
-    function move_to_north() {
-        if ((place_counter_x === 5) && (place_counter_y === 1)) {
-            console.log("ab ins Haus");
-            window.location.href = "index.html";
+    function move_to_west() {
+        if ((place_counter_x === 1) && (place_counter_y === 3)) {
+            console.log("raus aus dem Süden");
+            window.location.href = "kreischcraft3.html";
         }
-
-        // check if cat is there
-        let is_cat_there = 1;
     }
 
     // move out of the house
@@ -271,6 +268,7 @@
         }
         else if ((e.keyCode == '37') && (can_char_move === true)) { // left arrow
             prevent_move();
+            move_to_west();
             document.getElementById('player_img').src = "src/images/cat_left_standing_black.png";
             if ((place_counter_x > 1) && (place_counter_x <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_left.length; i++) {
