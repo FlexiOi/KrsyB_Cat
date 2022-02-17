@@ -12,168 +12,37 @@
 
     let banned_squares_right = [
         {
-            x: 5, y: 1
-        },
-        {
-            x: 5, y: 2
-        },
-        {
-            x: 7, y: 2
-        },
-        {
-            x: 2, y: 4
-        },
-        {
-            x: 1, y: 5
-        }
-        ,
-        {
-            x: 5, y: 6
-        },
-        {
-            x: 5, y: 9
-        },
-        {
-            x: 2, y: 10
-        },
-        {
-            x: 4, y: 8
-        },
-        {
-            x: 2, y: 7
-        },
-        {
-            x: 2, y: 8
+            x: 3, y: 3
         }
     ];
     let banned_squares_left = [
         {
-            x: 5, y: 1
-        },
-        {
-            x: 5, y: 2
-        },
-        {
-            x: 2, y: 7
-        },
-        {
-            x: 2, y: 9
-        },
-        {
-            x: 2, y: 10
-        },
-        {
-            x: 10, y: 2
+            x: 4, y: 3
         }
     ];
     let banned_squares_down = [
         {
+            x: 1, y: 3
+        },
+        {
+            x: 2, y: 3
+        }
+        ,
+        {
             x: 3, y: 3
-        },
-        {
-            x: 4, y: 3
-        }
-        ,
-        {
-            x: 5, y: 3
-        },
-        {
-            x: 6, y: 3
-        }
-        ,
-        {
-            x: 7, y: 3
-        },
-        {
-            x: 8, y: 3
-        },
-        {
-            x: 9, y: 3
-        },
-        {
-            x: 10, y: 3
-        },
-        {
-            x: 1, y: 6
-        },
-        {
-            x: 1, y: 8
-        },
-        {
-            x: 3, y: 9
-        },
-        {
-            x: 4, y: 9
-        },
-        {
-            x: 5, y: 9
-        }
-        ,
-        {
-            x: 3, y: 6
-        },
-        {
-            x: 4, y: 6
-        },
-        {
-            x: 5, y: 6
-        },
-        {
-            x: 2, y: 4
         }
 
     ];
     let banned_squares_up = [
         {
-            x: 6, y: 2
-        },
-        {
-            x: 7, y: 2
-        },
-        {
-            x: 8, y: 3
-        },
-        {
-            x: 9, y: 3
-        },
-        {
-            x: 10, y: 2
-        },
-        {
-            x: 4, y: 3
-        },
-        {
-            x: 3, y: 3
-        },
-        {
-            x: 2, y: 3
-        },
-        {
             x: 1, y: 3
         },
         {
-            x: 2, y: 6
-        },
+            x: 2, y: 3
+        }
+        ,
         {
-            x: 3, y: 6
-        },
-        {
-            x: 4, y: 6
-        },
-        {
-            x: 5, y: 6
-        },
-        {
-            x: 1, y: 8
-        },
-        {
-            x: 3, y: 8
-        },
-        {
-            x: 4, y: 8
-        },
-        {
-            x: 5, y: 9
+            x: 3, y: 3
         }
     ];
 
@@ -271,7 +140,7 @@
             r.style.setProperty('--move_y', move_y + "px");
             run_y = place_counter_y - 1;
             run_x = place_counter_x - 1;
-            document.getElementById("player_img").src = "src/images/cat_front_standing_black.png";
+            document.getElementById("player_img").src = "src/images/cat_right_standing_black.png";
             console.log("x:" + move_x + " y: " + move_y);
             console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
             break;
