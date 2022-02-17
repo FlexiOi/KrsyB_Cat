@@ -156,13 +156,11 @@
 
     function move_out_of_house() {
         if ((place_counter_x === 3) && (place_counter_y === 8)) {
-            console.log("ab ins Haus");
+            console.log("raus aus de ins Haus");
 
             window.location.href = "kreischcraft3.html";
         }
 
-        // check if cat is there
-        let is_cat_there = 1;
     }
 
 

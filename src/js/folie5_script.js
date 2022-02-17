@@ -247,8 +247,6 @@
             window.location.href = "kreischcraft5.html";
         }
 
-        // check if cat is there
-        let is_cat_there = 1;
     }
 
     function move_to_house() {
@@ -263,9 +261,9 @@
 
     var origin = localStorage.getItem('player_origin');
     switch (origin) {
-        case "2": // from the north
-            console.log("Player origin is the north");
-            place_counter_x = 5;
+        case "5": // from the north
+            console.log("Player origin is page 3");
+            place_counter_x = 2;
             move_x = 15 + (62 * (place_counter_x - 1));
             r.style.setProperty('--move_x', move_x + "px");
             place_counter_y = 1;
@@ -276,26 +274,6 @@
             document.getElementById("player_img").src = "src/images/cat_front_standing_black.png";
             console.log("x:" + move_x + " y: " + move_y);
             console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
-            break;
-        case "3": // out of the house
-            console.log("Player origin is the house at the sea");
-            place_counter_x = 3;
-            move_x = 15 + (62 * (place_counter_x - 1));
-            r.style.setProperty('--move_x', move_x + "px");
-            place_counter_y = 6;
-            move_y = 10 + (62 * (place_counter_y - 1));
-            r.style.setProperty('--move_y', move_y + "px");
-            run_y = place_counter_y - 1;
-            run_x = place_counter_x - 1;
-            document.getElementById("player_img").src = "src/images/cat_front_standing_black.png";
-            move_x_int = 15;
-            move_y_int = 10;
-            console.log("x:" + move_x + " y: " + move_y);
-            console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
-            break;
-        case "5": // 2 = out of the south
-            console.log("Player origin is the south");
-
             break;
     }
 
@@ -380,8 +358,6 @@
         e = e || window.event;
 
         if ((e.keyCode == '38') && (can_char_move === true)) { // up arrow
-            move_to_house();
-            move_to_north();
             prevent_move();
             document.getElementById('player_img').src = "src/images/cat_back_standing_black.png";
             if ((place_counter_y > 1) && (place_counter_y <= number_of_squares)) {
@@ -403,7 +379,6 @@
             }
         }
         else if ((e.keyCode == '40') && (can_char_move === true)) { // down arrow
-            cat_sleep_down();
             prevent_move();
             document.getElementById('player_img').src = "src/images/cat_front_standing_black.png";
             if ((place_counter_y >= 1) && (place_counter_y < number_of_squares)) {
@@ -447,7 +422,6 @@
             }
         }
         else if ((e.keyCode == '39') && (can_char_move === true)) { // right arrow
-            cat_sleep_right();
             prevent_move();
             document.getElementById('player_img').src = "src/images/cat_right_standing_black.png";
             if ((place_counter_x >= 1) && (place_counter_x < number_of_squares)) {
