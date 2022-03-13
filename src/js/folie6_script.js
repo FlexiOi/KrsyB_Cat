@@ -25,9 +25,6 @@
         }
         ,
         {
-            x: 9, y: 5
-        },
-        {
             x: 5, y: 5
         },
         {
@@ -79,6 +76,12 @@
         },
         {
             x: 7, y: 2
+        },
+        {
+            x: 5, y: 3
+        },
+        {
+            x: 8, y: 6
         }
     ];
     let banned_squares_down = [
@@ -179,6 +182,9 @@
         },
         {
             x: 8, y: 9
+        },
+        {
+            x: 10, y: 6
         }
     ];
 
@@ -243,10 +249,10 @@
 
     // move out of the house
 
-    function move_to_east() {
-        if ((place_counter_x === 15) && (place_counter_y === 15)) {
+    function move_to_page3() {
+        if ((place_counter_x === 2) && (place_counter_y === 1)) {
             console.log("ab an die Küste");
-            window.location.href = "kreischcraft5.html";
+            window.location.href = "kreischcraft3.html";
         }
 
     }
@@ -361,6 +367,7 @@
 
         if ((e.keyCode == '38') && (can_char_move === true)) { // up arrow
             prevent_move();
+            move_to_page3();
             document.getElementById('player_img').src = "src/images/cat_back_standing_black.png";
             if ((place_counter_y > 1) && (place_counter_y <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_up.length; i++) {
@@ -404,7 +411,6 @@
         }
         else if ((e.keyCode == '37') && (can_char_move === true)) { // left arrow
             prevent_move();
-            move_to_west();
             document.getElementById('player_img').src = "src/images/cat_left_standing_black.png";
             if ((place_counter_x > 1) && (place_counter_x <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_left.length; i++) {
