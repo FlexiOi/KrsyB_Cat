@@ -12,37 +12,28 @@
 
     let banned_squares_right = [
         {
-            x: 3, y: 3
-        }
+            x: 2, y: 1
+        },
+        {
+            x: 2, y: 2
+        },
+        {
+            x: 2, y: 3
+        },
     ];
     let banned_squares_left = [
         {
-            x: 4, y: 3
+            x: 15, y: 15
         }
     ];
     let banned_squares_down = [
         {
-            x: 1, y: 3
-        },
-        {
-            x: 2, y: 3
+            x: 15, y: 13
         }
-        ,
-        {
-            x: 3, y: 3
-        }
-
     ];
     let banned_squares_up = [
         {
-            x: 1, y: 3
-        },
-        {
-            x: 2, y: 3
-        }
-        ,
-        {
-            x: 3, y: 3
+            x: 15, y: 53
         }
     ];
 
@@ -137,7 +128,7 @@
             r.style.setProperty('--move_y', move_y + "px");
             run_y = place_counter_y - 1;
             run_x = place_counter_x - 1;
-            document.getElementById("player_img").src = "src/images/cat_right_standing_black.png";
+            document.getElementById("player_img").src = "src/images/cat_front_standing_black.png";
             console.log("x:" + move_x + " y: " + move_y);
             console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
             break;
