@@ -319,10 +319,10 @@
             break;
         case "6": //  out of the south
             console.log("Player origin is the south");
-            place_counter_x = 10;
+            place_counter_x = 2;
             move_x = 15 + (62 * (place_counter_x - 1));
             r.style.setProperty('--move_x', move_x + "px");
-            place_counter_y = 2;
+            place_counter_y = 10;
             move_y = 10 + (62 * (place_counter_y - 1));
             r.style.setProperty('--move_y', move_y + "px");
             run_y = place_counter_y - 1;
