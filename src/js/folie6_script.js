@@ -12,168 +12,37 @@
 
     let banned_squares_right = [
         {
-            x: 5, y: 1
-        },
-        {
-            x: 5, y: 2
-        },
-        {
-            x: 7, y: 2
-        },
-        {
-            x: 2, y: 4
-        },
-        {
-            x: 1, y: 5
-        }
-        ,
-        {
-            x: 5, y: 6
-        },
-        {
-            x: 5, y: 9
-        },
-        {
-            x: 2, y: 10
-        },
-        {
-            x: 4, y: 8
-        },
-        {
-            x: 2, y: 7
-        },
-        {
-            x: 2, y: 8
+            x: 3, y: 3
         }
     ];
     let banned_squares_left = [
         {
-            x: 5, y: 1
-        },
-        {
-            x: 5, y: 2
-        },
-        {
-            x: 2, y: 7
-        },
-        {
-            x: 2, y: 9
-        },
-        {
-            x: 2, y: 10
-        },
-        {
-            x: 10, y: 2
+            x: 4, y: 3
         }
     ];
     let banned_squares_down = [
         {
+            x: 1, y: 3
+        },
+        {
+            x: 2, y: 3
+        }
+        ,
+        {
             x: 3, y: 3
-        },
-        {
-            x: 4, y: 3
-        }
-        ,
-        {
-            x: 5, y: 3
-        },
-        {
-            x: 6, y: 3
-        }
-        ,
-        {
-            x: 7, y: 3
-        },
-        {
-            x: 8, y: 3
-        },
-        {
-            x: 9, y: 3
-        },
-        {
-            x: 10, y: 3
-        },
-        {
-            x: 1, y: 6
-        },
-        {
-            x: 1, y: 8
-        },
-        {
-            x: 3, y: 9
-        },
-        {
-            x: 4, y: 9
-        },
-        {
-            x: 5, y: 9
-        }
-        ,
-        {
-            x: 3, y: 6
-        },
-        {
-            x: 4, y: 6
-        },
-        {
-            x: 5, y: 6
-        },
-        {
-            x: 2, y: 4
         }
 
     ];
     let banned_squares_up = [
         {
-            x: 6, y: 2
-        },
-        {
-            x: 7, y: 2
-        },
-        {
-            x: 8, y: 3
-        },
-        {
-            x: 9, y: 3
-        },
-        {
-            x: 10, y: 2
-        },
-        {
-            x: 4, y: 3
-        },
-        {
-            x: 3, y: 3
-        },
-        {
-            x: 2, y: 3
-        },
-        {
             x: 1, y: 3
         },
         {
-            x: 2, y: 6
-        },
+            x: 2, y: 3
+        }
+        ,
         {
-            x: 3, y: 6
-        },
-        {
-            x: 4, y: 6
-        },
-        {
-            x: 5, y: 6
-        },
-        {
-            x: 1, y: 8
-        },
-        {
-            x: 3, y: 8
-        },
-        {
-            x: 4, y: 8
-        },
-        {
-            x: 5, y: 9
+            x: 3, y: 3
         }
     ];
 
@@ -229,51 +98,38 @@
 
     // move out of the house
 
-    function move_to_north() {
-        if ((place_counter_x === 5) && (place_counter_y === 1)) {
-            console.log("ab ins Haus");
-            window.location.href = "kreischcraft1.html";
+    function move_to_west() {
+        if ((place_counter_x === 15) && (place_counter_y === 15)) {
+            console.log("raus aus dem Süden");
+            window.location.href = "kreischcraft3.html";
         }
-
-        // check if cat is there
-        let is_cat_there = 1;
     }
 
-    // move to east
+    // move out of the house
 
     function move_to_east() {
-        if ((place_counter_x === 10) && (place_counter_y === 3)) {
+        if ((place_counter_x === 15) && (place_counter_y === 15)) {
             console.log("ab an die Küste");
             window.location.href = "kreischcraft5.html";
-            localStorage.setItem('player_origin', 5);
         }
 
-        // check if cat is there
-        let is_cat_there = 1;
     }
 
     function move_to_house() {
-        if ((place_counter_x === 3) && (place_counter_y === 6)) {
+        if ((place_counter_x === 15) && (place_counter_y === 15)) {
             console.log("ab ins Haus");
-            window.location.href = "kreischcraft4.html";
+            window.location.href = "kreischcraft4";
             localStorage.setItem('player_origin', 3);
         }
     }
 
-    function move_to_south() {
-        if ((place_counter_x === 2) && (place_counter_y === 10)) {
-            console.log("ab in den Süden");
-            window.location.href = "kreischcraft6.html";
-            localStorage.setItem('player_origin', 6);
-        }
-    }
     // place character depending on zone entry
 
     var origin = localStorage.getItem('player_origin');
     switch (origin) {
-        case "2": // from the north
-            console.log("Player origin is the north");
-            place_counter_x = 5;
+        case "6": // from the north
+            console.log("Player origin is page 3");
+            place_counter_x = 2;
             move_x = 15 + (62 * (place_counter_x - 1));
             r.style.setProperty('--move_x', move_x + "px");
             place_counter_y = 1;
@@ -281,55 +137,7 @@
             r.style.setProperty('--move_y', move_y + "px");
             run_y = place_counter_y - 1;
             run_x = place_counter_x - 1;
-            document.getElementById("player_img").src = "src/images/cat_front_standing_black.png";
-            console.log("x:" + move_x + " y: " + move_y);
-            console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
-            break;
-        case "3": // out of the house
-            console.log("Player origin is the house at the sea");
-            place_counter_x = 3;
-            move_x = 15 + (62 * (place_counter_x - 1));
-            r.style.setProperty('--move_x', move_x + "px");
-            place_counter_y = 6;
-            move_y = 10 + (62 * (place_counter_y - 1));
-            r.style.setProperty('--move_y', move_y + "px");
-            run_y = place_counter_y - 1;
-            run_x = place_counter_x - 1;
-            document.getElementById("player_img").src = "src/images/cat_front_standing_black.png";
-            move_x_int = 15;
-            move_y_int = 10;
-            console.log("x:" + move_x + " y: " + move_y);
-            console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
-            break;
-        case "5": //  out of the east
-            console.log("Player origin is the east");
-            place_counter_x = 10;
-            move_x = 15 + (62 * (place_counter_x - 1));
-            r.style.setProperty('--move_x', move_x + "px");
-            place_counter_y = 3;
-            move_y = 10 + (62 * (place_counter_y - 1));
-            r.style.setProperty('--move_y', move_y + "px");
-            run_y = place_counter_y - 1;
-            run_x = place_counter_x - 1;
-            document.getElementById("player_img").src = "src/images/cat_left_standing_black.png";
-            move_x_int = 15;
-            move_y_int = 10;
-            console.log("x:" + move_x + " y: " + move_y);
-            console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
-            break;
-        case "6": //  out of the south
-            console.log("Player origin is the south");
-            place_counter_x = 10;
-            move_x = 15 + (62 * (place_counter_x - 1));
-            r.style.setProperty('--move_x', move_x + "px");
-            place_counter_y = 2;
-            move_y = 10 + (62 * (place_counter_y - 1));
-            r.style.setProperty('--move_y', move_y + "px");
-            run_y = place_counter_y - 1;
-            run_x = place_counter_x - 1;
-            document.getElementById("player_img").src = "src/images/cat_left_standing_black.png";
-            move_x_int = 15;
-            move_y_int = 10;
+            document.getElementById("player_img").src = "src/images/cat_right_standing_black.png";
             console.log("x:" + move_x + " y: " + move_y);
             console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
             break;
@@ -416,8 +224,6 @@
         e = e || window.event;
 
         if ((e.keyCode == '38') && (can_char_move === true)) { // up arrow
-            move_to_house();
-            move_to_north();
             prevent_move();
             document.getElementById('player_img').src = "src/images/cat_back_standing_black.png";
             if ((place_counter_y > 1) && (place_counter_y <= number_of_squares)) {
@@ -440,7 +246,6 @@
         }
         else if ((e.keyCode == '40') && (can_char_move === true)) { // down arrow
             prevent_move();
-            move_to_south();
             document.getElementById('player_img').src = "src/images/cat_front_standing_black.png";
             if ((place_counter_y >= 1) && (place_counter_y < number_of_squares)) {
                 for (var i = 0; i < banned_squares_down.length; i++) {
@@ -463,6 +268,7 @@
         }
         else if ((e.keyCode == '37') && (can_char_move === true)) { // left arrow
             prevent_move();
+            move_to_west();
             document.getElementById('player_img').src = "src/images/cat_left_standing_black.png";
             if ((place_counter_x > 1) && (place_counter_x <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_left.length; i++) {
@@ -483,7 +289,6 @@
             }
         }
         else if ((e.keyCode == '39') && (can_char_move === true)) { // right arrow
-            move_to_east();
             prevent_move();
             document.getElementById('player_img').src = "src/images/cat_right_standing_black.png";
             if ((place_counter_x >= 1) && (place_counter_x < number_of_squares)) {
