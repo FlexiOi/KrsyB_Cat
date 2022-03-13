@@ -11,177 +11,24 @@
     // set banned squares
 
     let banned_squares_right = [
+        
         {
-            x: 2, y: 1
-        },
-        {
-            x: 2, y: 2
-        },
-        {
-            x: 2, y: 3
-        },
-        {
-            x: 9, y: 4
-        }
-        ,
-        {
-            x: 5, y: 5
-        },
-        {
-            x: 6, y: 6
-        },
-        {
-            x: 6, y: 7
-        },
-        {
-            x: 6, y: 8
-        },
-        {
-            x: 8, y: 9
-        },
-        {
-            x: 8, y: 10
+            x: 11, y: 10
         }
     ];
     let banned_squares_left = [
         {
-            x: 2, y: 2
-        },
-        {
-            x: 2, y: 3
-        },
-        {
-            x: 2, y: 4
-        },
-        {
-            x: 4, y: 5
-        },
-        {
-            x: 4, y: 6
-        },
-        {
-            x: 3, y: 7
-        },
-        {
-            x: 3, y: 8
-        },
-        {
-            x: 3, y: 9
-        },
-        {
-            x: 5, y: 10
-        },
-        {
-            x: 7, y: 5
-        },
-        {
-            x: 7, y: 2
-        },
-        {
-            x: 5, y: 3
-        },
-        {
-            x: 8, y: 6
+            x: 21, y: 2
         }
     ];
     let banned_squares_down = [
         {
-            x: 1, y: 1
-        },
-        {
-            x: 2, y: 4
-        },
-        {
-            x: 3, y: 4
-        },
-        {
-            x: 3, y: 9
-        },
-        {
-            x: 4, y: 9
-        },
-        {
-            x: 5, y: 4
-        },
-        {
-            x: 6, y: 4
-        },
-        {
-            x: 7, y: 5
-        },
-        {
-            x: 8, y: 6
-        },
-        {
-            x: 9, y: 6
-        },
-        {
-            x: 10, y: 6
-        },
-        {
-            x: 10, y: 3
-        },
-        {
-            x: 7, y: 2
-        },
-        {
-            x: 9, y: 2
-        },
-        {
-            x: 10, y: 2
+            x: 21, y: 1
         }
     ];
     let banned_squares_up = [
         {
-            x: 3, y: 4
-        },
-        {
-            x: 4, y: 4
-        },
-        {
-            x: 5, y: 3
-        },
-        {
-            x: 6, y: 3
-        },
-        {
-            x: 7, y: 3
-        },
-        {
-            x: 9, y: 3
-        },
-        {
-            x: 10, y: 3
-        },
-        {
-            x: 7, y: 2
-        },
-        {
-            x: 8, y: 2
-        },
-        {
-            x: 9, y: 2
-        },
-        {
-            x: 10, y: 2
-        },
-        {
-            x: 5, y: 5
-        },
-        {
-            x: 6, y: 6
-        },
-        {
-            x: 3, y: 7
-        },
-        {
-            x: 7, y: 9
-        },
-        {
-            x: 8, y: 9
-        },
-        {
-            x: 10, y: 6
+            x: 73, y: 4
         }
     ];
 
@@ -237,19 +84,10 @@
 
     // move out of the house
 
-    function move_to_eastTop() {
-        if ((place_counter_x === 10) && (place_counter_y === 2)) {
+    function move_to_west() {
+        if ((place_counter_x === 15) && (place_counter_y === 15)) {
             console.log("raus aus dem Süden");
-            window.location.href = "kreischcraft7.html";
-            localStorage.setItem('player_origin', 7);
-        }
-    }
-
-    function move_to_eastBottom() {
-        if ((place_counter_x === 10) && (place_counter_y === 6)) {
-            console.log("raus aus dem Süden");
-            window.location.href = "kreischcraft7.html";
-            localStorage.setItem('player_origin', 8);
+            window.location.href = "kreischcraft3.html";
         }
     }
 
@@ -263,21 +101,43 @@
 
     }
 
+    function move_to_house() {
+        if ((place_counter_x === 15) && (place_counter_y === 15)) {
+            console.log("ab ins Haus");
+            window.location.href = "kreischcraft4";
+            localStorage.setItem('player_origin', 3);
+        }
+    }
+
     // place character depending on zone entry
 
     var origin = localStorage.getItem('player_origin');
     switch (origin) {
-        case "6": // from the north
-            console.log("Player origin is page 3");
-            place_counter_x = 2;
+        case "7": // from  page 6(top)
+            console.log("Player origin is page 6(top)");
+            place_counter_x = 1;
             move_x = 15 + (62 * (place_counter_x - 1));
             r.style.setProperty('--move_x', move_x + "px");
-            place_counter_y = 1;
+            place_counter_y = 2;
             move_y = 10 + (62 * (place_counter_y - 1));
             r.style.setProperty('--move_y', move_y + "px");
             run_y = place_counter_y - 1;
             run_x = place_counter_x - 1;
-            document.getElementById("player_img").src = "src/images/cat_front_standing_black.png";
+            document.getElementById("player_img").src = "src/images/cat_right_standing_black.png";
+            console.log("x:" + move_x + " y: " + move_y);
+            console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
+            break;
+        case "8": // from  page 6(bottom)
+            console.log("Player origin is page 6(bottom)");
+            place_counter_x = 1;
+            move_x = 15 + (62 * (place_counter_x - 1));
+            r.style.setProperty('--move_x', move_x + "px");
+            place_counter_y = 6;
+            move_y = 10 + (62 * (place_counter_y - 1));
+            r.style.setProperty('--move_y', move_y + "px");
+            run_y = place_counter_y - 1;
+            run_x = place_counter_x - 1;
+            document.getElementById("player_img").src = "src/images/cat_right_standing_black.png";
             console.log("x:" + move_x + " y: " + move_y);
             console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
             break;
@@ -430,8 +290,6 @@
         }
         else if ((e.keyCode == '39') && (can_char_move === true)) { // right arrow
             prevent_move();
-            move_to_eastTop();
-            move_to_eastBottom();
             document.getElementById('player_img').src = "src/images/cat_right_standing_black.png";
             if ((place_counter_x >= 1) && (place_counter_x < number_of_squares)) {
                 for (var i = 0; i < banned_squares_right.length; i++) {
