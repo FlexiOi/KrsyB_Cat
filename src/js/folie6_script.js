@@ -281,6 +281,34 @@
             console.log("x:" + move_x + " y: " + move_y);
             console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
             break;
+        case "7": // from the east(top)
+            console.log("Player origin is the east(top)");
+            place_counter_x = 10;
+            move_x = 15 + (62 * (place_counter_x - 1));
+            r.style.setProperty('--move_x', move_x + "px");
+            place_counter_y = 2;
+            move_y = 10 + (62 * (place_counter_y - 1));
+            r.style.setProperty('--move_y', move_y + "px");
+            run_y = place_counter_y - 1;
+            run_x = place_counter_x - 1;
+            document.getElementById("player_img").src = "src/images/cat_left_standing_black.png";
+            console.log("x:" + move_x + " y: " + move_y);
+            console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
+            break;
+        case "8": // from the east(bottom)
+            console.log("Player origin is the east(bottom)");
+            place_counter_x = 10;
+            move_x = 15 + (62 * (place_counter_x - 1));
+            r.style.setProperty('--move_x', move_x + "px");
+            place_counter_y = 6;
+            move_y = 10 + (62 * (place_counter_y - 1));
+            r.style.setProperty('--move_y', move_y + "px");
+            run_y = place_counter_y - 1;
+            run_x = place_counter_x - 1;
+            document.getElementById("player_img").src = "src/images/cat_left_standing_black.png";
+            console.log("x:" + move_x + " y: " + move_y);
+            console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
+            break;
     }
 
     // move up
