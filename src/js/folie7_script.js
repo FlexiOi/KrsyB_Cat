@@ -244,6 +244,7 @@
         if ((place_counter_x === 9) && (place_counter_y === 2)) {
             console.log("ab in die Höhle");
             window.location.href = "kreischcraft8.html";
+            localStorage.setItem('player_origin', 9);
         }
     }
 
