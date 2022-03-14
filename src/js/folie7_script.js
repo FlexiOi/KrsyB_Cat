@@ -240,7 +240,7 @@
 
     // move out into the cave
 
-    function move_to_west() {
+    function move_to_north() {
         if ((place_counter_x === 9) && (place_counter_y === 2)) {
             console.log("ab in die Höhle");
             window.location.href = "kreischcraft8.html";
@@ -381,6 +381,7 @@
 
         if ((e.keyCode == '38') && (can_char_move === true)) { // up arrow
             prevent_move();
+            move_to_north();
             document.getElementById('player_img').src = "src/images/cat_back_standing_black.png";
             if ((place_counter_y > 1) && (place_counter_y <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_up.length; i++) {
