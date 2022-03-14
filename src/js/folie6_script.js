@@ -235,7 +235,7 @@
         can_char_move = true;
     }
 
-    // move out of the house
+    // move to the east
 
     function move_to_eastTop() {
         if ((place_counter_x === 10) && (place_counter_y === 2)) {
@@ -253,11 +253,11 @@
         }
     }
 
-    // move out of the house
+    // move back to page 3
 
     function move_to_page3() {
         if ((place_counter_x === 2) && (place_counter_y === 1)) {
-            console.log("ab an die Küste");
+            console.log("zurück zu page3");
             window.location.href = "kreischcraft3.html";
         }
 

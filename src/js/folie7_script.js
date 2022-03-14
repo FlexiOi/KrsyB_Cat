@@ -129,6 +129,9 @@
         },
         {
             x: 8, y: 3
+        },
+        {
+            x: 6, y: 3
         }
     ];
     let banned_squares_up = [
@@ -176,6 +179,12 @@
         },
         {
             x: 8, y: 2
+        },
+        {
+            x: 1, y: 6
+        },
+        {
+            x: 10, y: 5
         }
     ];
 
@@ -229,16 +238,16 @@
         can_char_move = true;
     }
 
-    // move out of the house
+    // move out into the cave
 
     function move_to_west() {
-        if ((place_counter_x === 15) && (place_counter_y === 15)) {
-            console.log("raus aus dem Süden");
-            window.location.href = "kreischcraft3.html";
+        if ((place_counter_x === 9) && (place_counter_y === 2)) {
+            console.log("ab in die Höhle");
+            window.location.href = "kreischcraft8.html";
         }
     }
 
-    // move out of the house
+    // move out back to west
 
     function move_to_westTop() {
         if ((place_counter_x === 1) && (place_counter_y === 2)) {
