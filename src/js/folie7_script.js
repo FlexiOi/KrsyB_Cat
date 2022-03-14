@@ -243,7 +243,7 @@
     function move_to_westTop() {
         if ((place_counter_x === 1) && (place_counter_y === 2)) {
             console.log("raus aus dem Süden");
-            window.location.href = "kreischcraft7.html";
+            window.location.href = "kreischcraft6.html";
             localStorage.setItem('player_origin', 7);
         }
     }
@@ -251,7 +251,7 @@
     function move_to_westBottom() {
         if ((place_counter_x === 1) && (place_counter_y === 6)) {
             console.log("raus aus dem Süden");
-            window.location.href = "kreischcraft7.html";
+            window.location.href = "kreischcraft6.html";
             localStorage.setItem('player_origin', 8);
         }
     }
