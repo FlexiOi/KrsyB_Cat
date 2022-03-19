@@ -88,7 +88,7 @@
     // Popup Shell game
     let meow_timeout = false;
     var popup = document.getElementById("popup_cat");
-    async function ShellGame() {
+    function ShellGame() {
         if ((place_counter_x === 7) && (place_counter_y === 6)) {
             if (meow_timeout === false) {
                 console.log("popup einschalten");
@@ -105,11 +105,12 @@
         }
     }
        
-    function resetShellgame()
+    async function resetShellgame()
     {
         await delay(2000);
         popup.classList.toggle("fadeIn");
         popup.classList.toggle("fadeOut");
+        console.log("reset");
     }
     let clickbutton = document.querySelector("#ShellGame");
     clickbutton
