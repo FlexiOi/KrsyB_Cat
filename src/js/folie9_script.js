@@ -82,9 +82,9 @@
         can_char_move = true;
     }
 
-    // move out of the cave
+    // move back to page 3
 
-    function move_out_of_cave() {
+    function move_to_page3() {
         if ((place_counter_x === 9) && (place_counter_y === 2)) {
             console.log("ab in die Höhle");
             window.location.href = "kreischcraft8.html";
@@ -97,17 +97,17 @@
 
     var origin = localStorage.getItem('player_origin');
     switch (origin) {
-        case "9": // from  page 7
-            console.log("Player origin is page 7");
-            place_counter_x = 5;
+        case "10": // from  page 6(top)
+            console.log("Player origin is page 6(top)");
+            place_counter_x = 10;
             move_x = 15 + (62 * (place_counter_x - 1));
             r.style.setProperty('--move_x', move_x + "px");
-            place_counter_y = 10;
+            place_counter_y = 6;
             move_y = 10 + (62 * (place_counter_y - 1));
             r.style.setProperty('--move_y', move_y + "px");
             run_y = place_counter_y - 1;
             run_x = place_counter_x - 1;
-            document.getElementById("player_img").src = "src/images/cat_back_standing_black.png";
+            document.getElementById("player_img").src = "src/images/cat_left_standing_black.png";
             console.log("x:" + move_x + " y: " + move_y);
             console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
             break;
