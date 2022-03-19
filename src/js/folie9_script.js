@@ -98,6 +98,8 @@
             else{
                 console.log("popup ausschalten");
                 popup.classList.toggle("fadeOut");
+                popup.classList.toggle("fadeIn");
+                popup.classList.toggle("fadeOut");
                 meow_timeout = false;
             }
            
