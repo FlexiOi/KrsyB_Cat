@@ -1,13 +1,6 @@
   // local storage of player origin
     myStorage = localStorage;
 
-    //popup-test
-
-    async function myFunction() {
-        var popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");
-    }
-
     // set banned squares
 
     let banned_squares_right = [
@@ -231,7 +224,6 @@
         }
         else if ((e.keyCode == '40') && (can_char_move === true)) { // down arrow
             prevent_move();
-            move_out_of_cave();
             document.getElementById('player_img').src = "src/images/cat_front_standing_black.png";
             if ((place_counter_y >= 1) && (place_counter_y < number_of_squares)) {
                 for (var i = 0; i < banned_squares_down.length; i++) {

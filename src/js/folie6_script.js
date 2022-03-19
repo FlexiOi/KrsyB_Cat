@@ -1,12 +1,6 @@
   // local storage of player origin
     myStorage = localStorage;
 
-    //popup-test
-
-    async function myFunction() {
-        var popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");
-    }
 
     // set banned squares
 
