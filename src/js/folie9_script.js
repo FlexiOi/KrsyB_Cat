@@ -98,15 +98,19 @@
             else{
                 console.log("popup ausschalten");
                 popup.classList.toggle("fadeOut");
-                popup.classList.toggle("fadeIn");
-                popup.classList.toggle("fadeOut");
                 meow_timeout = false;
+                resetShellgame;
             }
            
         }
     }
        
-    
+    function resetShellgame()
+    {
+        await delay(2000);
+        popup.classList.toggle("fadeIn");
+        popup.classList.toggle("fadeOut");
+    }
     let clickbutton = document.querySelector("#ShellGame");
     clickbutton
     // place character depending on zone entry
