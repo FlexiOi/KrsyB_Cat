@@ -87,18 +87,24 @@
 
     // Popup Shell game
     let meow_timeout = false;
-    async function shellGame() {
-        if ((meow_timeout === false) && ((place_counter_x === 7) && (place_counter_y === 6))) {
-            console.log("popup!!");
-            var popup = document.getElementById("popup_cat");
+    var popup = document.getElementById("popup_cat");
+    async function ShellGame() {
+        if ((meow_timeout === false) && ((place_counter_x === 8) && (place_counter_y === 6))) {
+            console.log("popup einschalten");
             popup.classList.toggle("fadeIn");
+            meow_timeout = true;
         }
         else{
+            console.log("popup ausschalten");
             popup.classList.toggle("fadeOut");
+            meow_timeout = false;
         }
 
     }
-        
+       
+    
+    let clickbutton = document.querySelector("#ShellGame");
+    clickbutton
     // place character depending on zone entry
 
     var origin = localStorage.getItem('player_origin');
@@ -201,7 +207,7 @@
 
         if ((e.keyCode == '38') && (can_char_move === true)) { // up arrow
             prevent_move();
-            shellGame();
+            ShellGame();
             document.getElementById('player_img').src = "src/images/cat_back_standing_black.png";
             if ((place_counter_y > 1) && (place_counter_y <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_up.length; i++) {
