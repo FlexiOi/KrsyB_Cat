@@ -92,7 +92,21 @@
         }
     }
 
+    // Popup Shell game
+    let meow_timeout = false;
+    async function shellGame() {
+        if ((meow_timeout === false) && ((place_counter_x === 7) && (place_counter_y === 6))) {
+            set_meow_timeout();
+            console.log("popup!!");
+            var popup = document.getElementById("popup_cat");
+            popup.classList.toggle("fadeIn");
+        }
+        else{
+            popup.classList.toggle("fadeOut");
+        }
 
+    }
+        
     // place character depending on zone entry
 
     var origin = localStorage.getItem('player_origin');
@@ -195,6 +209,7 @@
 
         if ((e.keyCode == '38') && (can_char_move === true)) { // up arrow
             prevent_move();
+            shellGame();
             document.getElementById('player_img').src = "src/images/cat_back_standing_black.png";
             if ((place_counter_y > 1) && (place_counter_y <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_up.length; i++) {
