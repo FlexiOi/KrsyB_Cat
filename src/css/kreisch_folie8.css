@@ -1,0 +1,95 @@
+:root
+{
+  --move_x:15px;
+  --move_y:10px;
+}
+.precachingPictures
+{
+	visibility: hidden;
+}
+.figur
+{
+height: 62px;
+width: 62px;
+position:absolute;   
+left:var(--move_x);
+top:var(--move_y);
+}
+.sleeping_cat_position
+{
+	height: 30px;
+	width: 45px;
+	left:508px;
+	top:220px;
+	position:absolute;   
+}
+.border_radius_15
+{
+  border-radius: 15px;
+}
+
+.background {
+	background-color: rgba(249, 71, 255, 0.514);
+	background-attachment: fixed;
+	border-radius: 25px;
+	height: 640px;
+	width: 1050px;
+	border-color: black;
+	border: 1px solid black;
+	margin-left:auto;
+	margin-right:auto;
+
+	}
+
+.box_column {
+	background-attachment: fixed;
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-shrink: 0 ;
+	}
+.box_row
+{
+    position: relative;
+	display: flex;
+	flex-direction: row;
+
+	}
+.one_row
+{
+	padding-left: 15px;
+	padding-top: 10px;
+}
+
+.two_row
+{
+	padding-left: 10px;
+}
+.text_items
+{
+	font-size: 30px;
+	font-family: 'Ink Free', serif;
+	font-weight: bold;
+}
+.by_felix
+{
+	margin-top: 15px;
+	font-size: 13px;
+	font-family: 'Lato', serif;
+}
+
+  .help_text
+  {
+	  color: rgba(255, 0, 13, 0.74);
+	  font-weight: bold;
+  }
+
+  .schlafkatze
+  {
+	position: absolute;
+	height: 62px;
+	width: 62px;
+	left:700px;
+	top:350px;
+  }

@@ -14,177 +14,21 @@
         
         {
             x: 5, y: 2
-        },
-        {
-            x: 6, y: 3
-        },
-        {
-            x: 5, y: 4
-        },
-        {
-            x: 7, y: 3
-        },
-        {
-            x: 7, y: 4
-        },
-        {
-            x: 7, y: 5
-        },
-        {
-            x: 7, y: 6
-        },
-        {
-            x: 9, y: 7
-        },
-        {
-            x: 9, y: 4
-        },
-        {
-            x: 10, y: 2
-        },
-        {
-            x: 6, y: 6
-        },
-        {
-            x: 6, y: 7
         }
     ];
     let banned_squares_left = [
         {
             x: 2, y: 5
-        },
-        {
-            x: 5, y: 7
-        },
-        {
-            x: 7, y: 3
-        },
-        {
-            x: 7, y: 4
-        },
-        {
-            x: 7, y: 6
-        },
-        {
-            x: 7, y: 7
-        },
-        {
-            x: 9, y: 6
-        },
-        {
-            x: 9, y: 5
-        },
-        {
-            x: 9, y: 4
         }
     ];
     let banned_squares_down = [
         {
             x: 1, y: 2
-        },
-        {
-            x: 2, y: 2
-        },
-        {
-            x: 3, y: 2
-        },
-        {
-            x: 4, y: 2
-        },
-        {
-            x: 1, y: 4
-        },
-        {
-            x: 1, y: 6
-        },
-        {
-            x: 2, y: 6
-        },
-        {
-            x: 3, y: 6
-        },
-        {
-            x: 4, y: 6
-        },
-        {
-            x: 5, y: 7
-        },
-        {
-            x: 6, y: 7
-        },
-        {
-            x: 7, y: 7
-        },
-        {
-            x: 8, y: 7
-        },
-        {
-            x: 9, y: 7
-        },
-        {
-            x: 10, y: 6
-        },
-        {
-            x: 10, y: 3
-        },
-        {
-            x: 8, y: 3
-        },
-        {
-            x: 6, y: 3
         }
     ];
     let banned_squares_up = [
         {
             x: 1, y: 2
-        },
-        {
-            x: 2, y: 2
-        },
-        {
-            x: 3, y: 2
-        },
-        {
-            x: 4, y: 2
-        },
-        {
-            x: 5, y: 2
-        },
-        {
-            x: 1, y: 3
-        },
-        {
-            x: 2, y: 3
-        },
-        {
-            x: 3, y: 3
-        },
-        {
-            x: 4, y: 3
-        },
-        {
-            x: 6, y: 3
-        },
-        {
-            x: 6, y: 5
-        },
-        {
-            x: 7, y: 3
-        },
-        {
-            x: 8, y: 7
-        },
-        {
-            x: 10, y: 3
-        },
-        {
-            x: 8, y: 2
-        },
-        {
-            x: 1, y: 6
-        },
-        {
-            x: 10, y: 5
         }
     ];
 
@@ -238,9 +82,9 @@
         can_char_move = true;
     }
 
-    // move  into the cave
+    // move out of the cave
 
-    function move_to_north() {
+    function move_out_of_cave() {
         if ((place_counter_x === 9) && (place_counter_y === 2)) {
             console.log("ab in die Höhle");
             window.location.href = "kreischcraft8.html";
@@ -248,53 +92,22 @@
         }
     }
 
-    // move out back to west
-
-    function move_to_westTop() {
-        if ((place_counter_x === 1) && (place_counter_y === 2)) {
-            console.log("raus aus dem Süden");
-            window.location.href = "kreischcraft6.html";
-            localStorage.setItem('player_origin', 7);
-        }
-    }
-
-    function move_to_westBottom() {
-        if ((place_counter_x === 1) && (place_counter_y === 6)) {
-            console.log("raus aus dem Süden");
-            window.location.href = "kreischcraft6.html";
-            localStorage.setItem('player_origin', 8);
-        }
-    }
 
     // place character depending on zone entry
 
     var origin = localStorage.getItem('player_origin');
     switch (origin) {
-        case "7": // from  page 6(top)
+        case "9": // from  page 6(top)
             console.log("Player origin is page 6(top)");
-            place_counter_x = 1;
+            place_counter_x = 10;
             move_x = 15 + (62 * (place_counter_x - 1));
             r.style.setProperty('--move_x', move_x + "px");
-            place_counter_y = 2;
+            place_counter_y = 5;
             move_y = 10 + (62 * (place_counter_y - 1));
             r.style.setProperty('--move_y', move_y + "px");
             run_y = place_counter_y - 1;
             run_x = place_counter_x - 1;
-            document.getElementById("player_img").src = "src/images/cat_right_standing_black.png";
-            console.log("x:" + move_x + " y: " + move_y);
-            console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
-            break;
-        case "8": // from  page 6(bottom)
-            console.log("Player origin is page 6(bottom)");
-            place_counter_x = 1;
-            move_x = 15 + (62 * (place_counter_x - 1));
-            r.style.setProperty('--move_x', move_x + "px");
-            place_counter_y = 6;
-            move_y = 10 + (62 * (place_counter_y - 1));
-            r.style.setProperty('--move_y', move_y + "px");
-            run_y = place_counter_y - 1;
-            run_x = place_counter_x - 1;
-            document.getElementById("player_img").src = "src/images/cat_right_standing_black.png";
+            document.getElementById("player_img").src = "src/images/cat_back_standing_black.png";
             console.log("x:" + move_x + " y: " + move_y);
             console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
             break;
@@ -382,7 +195,6 @@
 
         if ((e.keyCode == '38') && (can_char_move === true)) { // up arrow
             prevent_move();
-            move_to_north();
             document.getElementById('player_img').src = "src/images/cat_back_standing_black.png";
             if ((place_counter_y > 1) && (place_counter_y <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_up.length; i++) {
@@ -404,6 +216,7 @@
         }
         else if ((e.keyCode == '40') && (can_char_move === true)) { // down arrow
             prevent_move();
+            move_out_of_cave();
             document.getElementById('player_img').src = "src/images/cat_front_standing_black.png";
             if ((place_counter_y >= 1) && (place_counter_y < number_of_squares)) {
                 for (var i = 0; i < banned_squares_down.length; i++) {
@@ -426,8 +239,6 @@
         }
         else if ((e.keyCode == '37') && (can_char_move === true)) { // left arrow
             prevent_move();
-            move_to_westTop();
-            move_to_westBottom();
             document.getElementById('player_img').src = "src/images/cat_left_standing_black.png";
             if ((place_counter_x > 1) && (place_counter_x <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_left.length; i++) {
