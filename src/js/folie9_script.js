@@ -107,7 +107,7 @@
        
     async function resetShellgame()
     {
-        await delay(2000);
+        await delay(1000);
         popup.classList.toggle("fadeIn");
         popup.classList.toggle("fadeOut");
         console.log("reset");
