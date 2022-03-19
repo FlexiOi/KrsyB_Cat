@@ -99,7 +99,7 @@
                 console.log("popup ausschalten");
                 popup.classList.toggle("fadeOut");
                 meow_timeout = false;
-                resetShellgame;
+                resetShellgame();
             }
            
         }
