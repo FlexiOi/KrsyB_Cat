@@ -89,7 +89,6 @@
     let meow_timeout = false;
     async function shellGame() {
         if ((meow_timeout === false) && ((place_counter_x === 7) && (place_counter_y === 6))) {
-            set_meow_timeout();
             console.log("popup!!");
             var popup = document.getElementById("popup_cat");
             popup.classList.toggle("fadeIn");
