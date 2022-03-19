@@ -89,17 +89,19 @@
     let meow_timeout = false;
     var popup = document.getElementById("popup_cat");
     async function ShellGame() {
-        if ((meow_timeout === false) && ((place_counter_x === 8) && (place_counter_y === 6))) {
-            console.log("popup einschalten");
-            popup.classList.toggle("fadeIn");
-            meow_timeout = true;
+        if ((place_counter_x === 8) && (place_counter_y === 6)) {
+            if (meow_timeout === false) {
+                console.log("popup einschalten");
+                popup.classList.toggle("fadeIn");
+                meow_timeout = true;
+            }
+            else{
+                console.log("popup ausschalten");
+                popup.classList.toggle("fadeOut");
+                meow_timeout = false;
+            }
+           
         }
-        else{
-            console.log("popup ausschalten");
-            popup.classList.toggle("fadeOut");
-            meow_timeout = false;
-        }
-
     }
        
     
