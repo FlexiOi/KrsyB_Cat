@@ -2,6 +2,14 @@
 {
   --move_x:15px;
   --move_y:10px;
+  --cup1_x: 150px;
+  --cup2_x: 282px;
+  --cup3_x: 415px;
+  --cup1_y: 250px;
+  --cup2_y: 250px;
+  --cup3_y: 250px;
+
+
 }
 .precachingPictures
 {
@@ -100,7 +108,50 @@ top:var(--move_y);
 	border-radius: 15px;
   }
 
+  .becher1
+  {
+	position: absolute;
+	left:var(--cup1_x);
+	top:var(--cup1_y);
 
+  }
+  .becher2
+  {
+	position: absolute;
+	left:var(--cup2_x);
+	top:var(--cup2_y);
+
+  }
+  .becher3
+  {
+	position: absolute;
+	left:var(--cup3_x);
+	top:var(--cup3_y);
+
+  }
+
+  .backArrow
+  {
+	position: absolute;
+	height: 70px;
+	width: 150px;
+	left: 420px;
+	top: 550px;
+  }
+
+  .mixButton
+  {
+	  position: absolute;
+	  left: 280px;
+	  top:210px;
+	  padding: 10px 20px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  border-radius: 15px;
+	  border: none;
+	  background: rgba(161, 229, 134, 0.575);
+  }
 
 
 /* sleeping cat popups */

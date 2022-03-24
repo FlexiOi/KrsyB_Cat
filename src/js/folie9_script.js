@@ -33,7 +33,7 @@
     let move_x = rs.getPropertyValue('--move_x');
     let run_x = 0;
     move_x = move_x.replace("px", "");
-    move_x_int = parseInt(move_x);
+    let move_x_int = parseInt(move_x);
 
     // set map values
     size_map = 620;
@@ -85,7 +85,9 @@
         }
     }
 
-    // Popup Shell game
+    //  Shell game
+
+    // pop up
     let meow_timeout = false;
     var popup = document.getElementById("popup_cat");
     function ShellGame() {
@@ -94,12 +96,10 @@
                 console.log("popup einschalten");
                 popup.classList.toggle("fadeIn");
                 meow_timeout = true;
+                click_arrow.addEventListener("click", cancelShellGame);
             }
             else{
-                console.log("popup ausschalten");
-                popup.classList.toggle("fadeOut");
-                meow_timeout = false;
-                resetShellgame();
+;
             }
            
         }
@@ -107,13 +107,287 @@
        
     async function resetShellgame()
     {
-        await delay(1000);
+        await delay(500);
         popup.classList.toggle("fadeIn");
         popup.classList.toggle("fadeOut");
         console.log("reset");
     }
-    let clickbutton = document.querySelector("#ShellGame");
-    clickbutton
+function cancelShellGame()
+{
+    console.log("popup ausschalten");
+    popup.classList.toggle("fadeOut");
+    meow_timeout = false;
+    resetShellgame();
+    click_arrow.removeEventListener("click", cancelShellGame);
+
+}
+    // get coords of cups
+    
+    let distance_between_cups = 133;
+
+        //cup1
+    let cup1_x = rs.getPropertyValue('--cup1_x');
+    cup1_x = cup1_x.replace("px", "");
+    let cup1_x_int = parseInt(cup1_x);
+
+    let cup1_y = rs.getPropertyValue('--cup1_y');
+    cup1_y = cup1_y.replace("px", "");
+    let cup1_y_int = parseInt(cup1_y);
+
+        //cup2
+    let cup2_x = rs.getPropertyValue('--cup2_x');
+    cup2_x = cup2_x.replace("px", "");
+    let cup2_x_int = parseInt(cup2_x);
+
+    let cup2_y = rs.getPropertyValue('--cup2_y');
+    cup2_y = cup2_y.replace("px", "");
+    let cup2_y_int = parseInt(cup2_y);
+    
+        //cup3
+    let cup3_x = rs.getPropertyValue('--cup3_x');
+    cup3_x = cup3_x.replace("px", "");
+    let cup3_x_int = parseInt(cup3_x);
+
+    let cup3_y = rs.getPropertyValue('--cup3_y');
+    cup3_y = cup3_y.replace("px", "");
+    let cup3_y_int = parseInt(cup3_y);
+    
+    let nut_counter = 0;
+    let alternate_nut_counter1 = 0;
+    let alternate_nut_counter2 = 1;
+
+    // shuffle
+
+    async function shuffle()
+{
+    set_cup_click();
+        
+        for (let i = 0; i < 11; i++) {
+        let randomShuffle = Math.random();
+        if (randomShuffle >= 0.5) {
+            shuffle1_2();
+            
+            if (alternate_nut_counter2 == 0) {
+                console.log("Nuss hat sich nicht bewegt."); 
+            }
+            else
+            {
+            if (alternate_nut_counter1 == 0) {
+                alternate_nut_counter1 = 1;
+                nut_counter = 2;
+                console.log("Nuss auf: "+ nut_counter);
+            }
+            else
+            {
+                alternate_nut_counter1 = 0;
+                nut_counter = 1;
+                console.log("Nuss auf: "+ nut_counter);
+                        }
+                    }
+                    await delay(300);
+        }
+        else{
+            shuffle2_3();
+            if (alternate_nut_counter1 == 0) {
+             console.log("Nuss hat sich nicht bewegt.");   
+            }
+            else
+            {
+            if (alternate_nut_counter2 == 0) {
+                alternate_nut_counter2 = 1;
+                nut_counter = 2;
+                console.log("Nuss auf: "+ nut_counter);
+                        }
+            else
+            {
+                alternate_nut_counter2 = 0;
+                nut_counter = 3;
+                console.log("Nuss auf: "+ nut_counter);
+                        } 
+                    }
+                    await delay(300);
+        }
+        
+    }
+    }
+
+    async function shuffle1_2()
+    {
+
+        r.style.setProperty('--cup2_x', cup2_x_int + "px");
+        r.style.setProperty('--cup3_x', cup3_x_int + "px");
+
+        r.style.setProperty('--cup2_y', cup2_y_int + "px");
+        r.style.setProperty('--cup3_y', cup3_y_int + "px"); 
+        
+
+        cup1_x = (cup1_x_int+((distance_between_cups/4)*1));
+        cup2_x = (cup2_x_int-((distance_between_cups/4)*1));
+
+        cup1_y = cup1_y_int+50;
+        cup2_y = cup2_y_int-50;
+
+        r.style.setProperty('--cup1_x', cup1_x + "px");
+        r.style.setProperty('--cup2_x', cup2_x + "px");
+
+        r.style.setProperty('--cup2_y', cup2_y + "px");
+        r.style.setProperty('--cup1_y', cup1_y + "px");
+        
+        await delay(50);
+
+
+        cup1_x = (cup1_x_int+((distance_between_cups/4)*2));
+        cup2_x = (cup2_x_int-((distance_between_cups/4)*2));
+        
+        r.style.setProperty('--cup1_x', cup1_x + "px");
+        r.style.setProperty('--cup2_x', cup2_x + "px");
+    
+        await delay(50);
+
+        cup1_x = (cup1_x_int+((distance_between_cups/4)*3));
+        cup2_x = (cup2_x_int-((distance_between_cups/4)*3));
+        
+        r.style.setProperty('--cup1_x', cup1_x + "px");
+        r.style.setProperty('--cup2_x', cup2_x + "px");
+    
+        await delay(50);
+
+        cup1_x = (cup1_x_int+((distance_between_cups/4)*4));
+        cup2_x = (cup2_x_int-((distance_between_cups/4)*4));
+
+        cup1_y = cup1_y_int;
+        cup2_y = cup2_y_int;
+
+        r.style.setProperty('--cup1_x', cup1_x_int + "px");
+        r.style.setProperty('--cup2_x', cup2_x_int + "px");
+
+        r.style.setProperty('--cup2_y', cup2_y_int + "px");
+        r.style.setProperty('--cup1_y', cup1_y_int + "px");  
+
+        
+        
+    }
+
+    async function shuffle2_3()
+    {
+
+        r.style.setProperty('--cup1_x', cup1_x_int + "px");
+        r.style.setProperty('--cup2_x', cup2_x_int + "px");
+
+        r.style.setProperty('--cup2_y', cup2_y_int + "px");
+        r.style.setProperty('--cup1_y', cup1_y_int + "px"); 
+
+        cup2_x = (cup2_x_int+((distance_between_cups/4)*1));
+        cup3_x = (cup3_x_int-((distance_between_cups/4)*1));
+
+        cup2_y = cup2_y_int+50;
+        cup3_y = cup3_y_int-50;
+
+        r.style.setProperty('--cup2_x', cup2_x + "px");
+        r.style.setProperty('--cup3_x', cup3_x + "px");
+
+        r.style.setProperty('--cup2_y', cup2_y + "px");
+        r.style.setProperty('--cup3_y', cup3_y + "px");
+        
+        await delay(50);
+
+
+        cup2_x = (cup2_x_int+((distance_between_cups/4)*2));
+        cup3_x = (cup3_x_int-((distance_between_cups/4)*2));
+        
+        r.style.setProperty('--cup2_x', cup2_x + "px");
+        r.style.setProperty('--cup3_x', cup3_x + "px");
+    
+        await delay(50);
+
+        cup2_x = (cup2_x_int+((distance_between_cups/4)*3));
+        cup3_x = (cup3_x_int-((distance_between_cups/4)*3));
+        
+        r.style.setProperty('--cup2_x', cup2_x + "px");
+        r.style.setProperty('--cup3_x', cup3_x + "px");
+    
+        await delay(50);
+
+        cup2_x = (cup2_x_int+((distance_between_cups/4)*4));
+        cup3_x = (cup3_x_int-((distance_between_cups/4)*4));
+
+        cup2_y = cup2_y_int;
+        cup3_y = cup3_y_int;
+
+        r.style.setProperty('--cup2_x', cup2_x_int + "px");
+        r.style.setProperty('--cup3_x', cup3_x_int + "px");
+
+        r.style.setProperty('--cup2_y', cup2_y_int + "px");
+        r.style.setProperty('--cup3_y', cup3_y_int + "px"); 
+        
+    }
+
+    // click the right cup
+
+    let click_cup1 = document.querySelector("#cup1");
+    let click_cup2 = document.querySelector("#cup2");
+    let click_cup3 = document.querySelector("#cup3");
+    let click_arrow = document.querySelector("#backArrow");
+
+    async function set_cup_click()
+    {
+        await delay(3500);
+        click_cup1.addEventListener("click", checkCup1);
+        click_cup2.addEventListener("click", checkCup2);
+        click_cup3.addEventListener("click", checkCup3);
+        
+        
+    } 
+
+    function checkCup1()
+    {
+        if (nut_counter == 1) {
+            alert("Richtig!(cup 1)");
+            click_cup1.removeEventListener("click", checkCup1);
+            click_cup2.removeEventListener("click", checkCup2);
+            click_cup3.removeEventListener("click", checkCup3);
+        }
+        else
+        {
+            alert("Falsch!(cup 1)");
+            click_cup1.removeEventListener("click", checkCup1);
+            click_cup2.removeEventListener("click", checkCup2);
+            click_cup3.removeEventListener("click", checkCup3);
+        }
+    }
+    function checkCup2()
+    {
+        if (nut_counter == 2) {
+            alert("Richtig!(cup 2)");
+            click_cup1.removeEventListener("click", checkCup1);
+            click_cup2.removeEventListener("click", checkCup2);
+            click_cup3.removeEventListener("click", checkCup3);
+        }
+        else
+        {
+            alert("Falsch!(cup 2)");
+            click_cup1.removeEventListener("click", checkCup1);
+            click_cup2.removeEventListener("click", checkCup2);
+            click_cup3.removeEventListener("click", checkCup3);
+        }
+    }
+    function checkCup3()
+    {
+        if (nut_counter == 3) {
+            alert("Richtig!(cup 3)");
+            click_cup1.removeEventListener("click", checkCup1);
+            click_cup2.removeEventListener("click", checkCup2);
+            click_cup3.removeEventListener("click", checkCup3);
+        }
+        else
+        {
+            alert("Falsch!(cup 3)");
+            click_cup1.removeEventListener("click", checkCup1);
+            click_cup2.removeEventListener("click", checkCup2);
+            click_cup3.removeEventListener("click", checkCup3);
+        }
+    }
+
     // place character depending on zone entry
 
     var origin = localStorage.getItem('player_origin');
