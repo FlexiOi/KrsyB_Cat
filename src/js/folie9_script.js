@@ -388,6 +388,15 @@ function cancelShellGame()
     let cup3_y = rs.getPropertyValue('--cup3_y');
     cup3_y = cup3_y.replace("px", "");
     let cup3_y_int = parseInt(cup3_y);
+
+        //nuss
+    let nuss_x = rs.getPropertyValue('--nuss_x');
+    nuss_x = nuss_x.replace("px", "");
+    let nuss_x_int = parseInt(nuss_x);
+
+    let nuss_y = rs.getPropertyValue('--nuss_y');
+    nuss_y = nuss_y.replace("px", "");
+    let nuss_y_int = parseInt(nuss_y);
     
     let nut_counter = 0;
     let alternate_nut_counter1 = 0;
@@ -398,8 +407,25 @@ function cancelShellGame()
     async function shuffle()
 {
     set_cup_click();
+
     r.style.setProperty('--opacity_sprechblase2', 0);    
     r.style.setProperty('--opacity_sprechblase1', 0);
+
+    r.style.setProperty('--nuss_opacity', 1);
+    await delay(200);
+    nuss_y = nuss_y_int+((100/4)*1);
+    r.style.setProperty('--nuss_y', nuss_y + "px");
+    await delay(100);
+    nuss_y = nuss_y_int+((100/4)*2);
+    r.style.setProperty('--nuss_y', nuss_y + "px");
+    await delay(100);
+    nuss_y = nuss_y_int+((100/4)*3);
+    r.style.setProperty('--nuss_y', nuss_y + "px");
+    await delay(100);
+    r.style.setProperty('--nuss_opacity', 0);
+    nuss_y = nuss_y_int;
+    r.style.setProperty('--nuss_y', nuss_y + "px");
+    await delay(500);
 
         for (let i = 0; i < 11; i++) {
         let randomShuffle = Math.random();
@@ -571,7 +597,7 @@ function cancelShellGame()
     async function set_cup_click()
     {
         r.style.setProperty('--opacity_sprechblase3', 0);
-        await delay(3500);
+        await delay(4300);
         click_cup1.addEventListener("click", checkCup1);
         click_cup2.addEventListener("click", checkCup2);
         click_cup3.addEventListener("click", checkCup3);

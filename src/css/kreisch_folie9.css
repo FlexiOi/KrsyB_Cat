@@ -8,11 +8,18 @@
   --cup1_y: 250px;
   --cup2_y: 250px;
   --cup3_y: 250px;
+
   --opacity_sprechblase1:1;
   --opacity_sprechblase2:0;
   --opacity_sprechblase3:0;
   --opacity_sprechblase4:0;
   --opacity_sprechblase5:0;
+
+  --nuss_opacity: 0;
+  --nuss_x:175px;
+  --nuss_y:175px;
+
+
 
 
   --geld:0;
@@ -161,14 +168,7 @@ top:var(--move_y);
 	  font-weight: bold;
   }
 
-.schlafkatze
-  {
-	position: absolute;
-	height: 62px;
-	width: 62px;
-	left:700px;
-	top:350px;
-  }
+
 .shellGamePic
   {
 	height: 620px;
@@ -181,22 +181,29 @@ top:var(--move_y);
 	position: absolute;
 	left:var(--cup1_x);
 	top:var(--cup1_y);
-
   }
 .becher2
   {
 	position: absolute;
 	left:var(--cup2_x);
 	top:var(--cup2_y);
-
   }
 .becher3
   {
 	position: absolute;
 	left:var(--cup3_x);
 	top:var(--cup3_y);
-
   }
+
+.nuss
+{
+	opacity: var(--nuss_opacity);
+	position: absolute;
+	height: 40px;
+	width: auto;
+	left: var(--nuss_x);
+	top:var(--nuss_y);
+}
 .sprechblase
   {
 	position: absolute;
