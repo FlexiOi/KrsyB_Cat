@@ -291,16 +291,14 @@ checkInventory();
         can_char_move = true;
     }
 
-    // move out of the house
+    // move to page 1
 
     function move_to_north() {
         if ((place_counter_x === 5) && (place_counter_y === 1)) {
             console.log("ab ins Haus");
             window.location.href = "kreischcraft1.html";
+            localStorage.setItem('player_origin', 2);
         }
-
-        // check if cat is there
-        let is_cat_there = 1;
     }
 
     // move to east
@@ -311,9 +309,6 @@ checkInventory();
             window.location.href = "kreischcraft5.html";
             localStorage.setItem('player_origin', 5);
         }
-
-        // check if cat is there
-        let is_cat_there = 1;
     }
 
     function move_to_house() {

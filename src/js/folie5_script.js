@@ -157,28 +157,11 @@ checkInventory();
 
     function move_to_west() {
         if ((place_counter_x === 1) && (place_counter_y === 3)) {
-            console.log("raus aus dem Süden");
+            console.log("back to page 3");
             window.location.href = "kreischcraft3.html";
         }
     }
 
-    // move out of the house
-
-    function move_to_east() {
-        if ((place_counter_x === 5) && (place_counter_y === 1)) {
-            console.log("ab an die Küste");
-            window.location.href = "kreischcraft5.html";
-        }
-
-    }
-
-    function move_to_house() {
-        if ((place_counter_x === 3) && (place_counter_y === 6)) {
-            console.log("ab ins Haus");
-            window.location.href = "kreischcraft4";
-            localStorage.setItem('player_origin', 3);
-        }
-    }
 
     // place character depending on zone entry
 
