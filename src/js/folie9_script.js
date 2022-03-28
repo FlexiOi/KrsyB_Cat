@@ -589,7 +589,8 @@ function cancelShellGame()
             r.style.setProperty('--geld', 1);
             checkInventory();
             shell_game_done = true;
-            await delay(500);
+            await delay(1000);
+            show_bubble5();
             cancelShellGame();
         }
         else
@@ -612,7 +613,8 @@ function cancelShellGame()
             r.style.setProperty('--geld', 1);
             checkInventory();
             shell_game_done = true;
-            await delay(500);
+            await delay(1000);
+            show_bubble5();
             cancelShellGame();
         }
         else
@@ -632,10 +634,12 @@ function cancelShellGame()
             click_cup1.removeEventListener("click", checkCup1);
             click_cup2.removeEventListener("click", checkCup2);
             click_cup3.removeEventListener("click", checkCup3);
+            r.style.setProperty('--opacity_sprechblase4', 1);
             r.style.setProperty('--geld', 1);
             checkInventory();
             shell_game_done = true;
-            await delay(500);
+            await delay(1000);
+            show_bubble5();
             cancelShellGame();
         }
         else
