@@ -587,6 +587,7 @@ function cancelShellGame()
             click_cup3.removeEventListener("click", checkCup3);
             r.style.setProperty('--opacity_sprechblase4', 1);
             r.style.setProperty('--geld', 1);
+            localStorage.setItem('coin', 1);
             checkInventory();
             shell_game_done = true;
             await delay(1000);
@@ -611,6 +612,7 @@ function cancelShellGame()
             click_cup3.removeEventListener("click", checkCup3);
             r.style.setProperty('--opacity_sprechblase4', 1);
             r.style.setProperty('--geld', 1);
+            localStorage.setItem('coin', 1);
             checkInventory();
             shell_game_done = true;
             await delay(1000);
@@ -636,6 +638,7 @@ function cancelShellGame()
             click_cup3.removeEventListener("click", checkCup3);
             r.style.setProperty('--opacity_sprechblase4', 1);
             r.style.setProperty('--geld', 1);
+            localStorage.setItem('coin', 1);
             checkInventory();
             shell_game_done = true;
             await delay(1000);
