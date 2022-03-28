@@ -324,7 +324,7 @@ checkInventory();
     let meow_timeout = false;
     let shell_game_done = false;
     var popup = document.getElementById("popup_cat");
-    function ShellGame() {
+function ShellGame() {
         if (((place_counter_x === 7) && (place_counter_y === 6)) && (shell_game_done == false)) {
             if (meow_timeout === false) {
                 console.log("popup einschalten");
@@ -339,7 +339,7 @@ checkInventory();
         }
     }
        
-    async function resetShellgame()
+async function resetShellgame()
     {
         await delay(500);
         popup.classList.toggle("fadeIn");
