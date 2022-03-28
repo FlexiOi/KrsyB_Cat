@@ -203,6 +203,8 @@
     var inventory_ticket = localStorage.getItem('ticket');
     var inventory_note = localStorage.getItem('note');
 
+
+
  function checkInventory()
  { 
     switch (inventory_fish) {
@@ -318,14 +320,15 @@ checkInventory();
 
     //  Shell game
 
-
+    var shell_game_status = localStorage.getItem('shell_game_status');
 
     // pop up
+
     let meow_timeout = false;
-    let shell_game_done = false;
+    let shell_game_done = localStorage.getItem('shell_game_status');
     var popup = document.getElementById("popup_cat");
 function ShellGame() {
-        if (((place_counter_x === 7) && (place_counter_y === 6)) && (shell_game_done == false)) {
+        if (((place_counter_x === 7) && (place_counter_y === 6)) && (shell_game_done != 1)) {
             if (meow_timeout === false) {
                 console.log("popup einschalten");
                 popup.classList.toggle("fadeIn");
@@ -588,6 +591,7 @@ function cancelShellGame()
             r.style.setProperty('--opacity_sprechblase4', 1);
             r.style.setProperty('--geld', 1);
             localStorage.setItem('coin', 1);
+            localStorage.setItem('shell_game_status', 1);
             checkInventory();
             shell_game_done = true;
             await delay(1000);
@@ -613,6 +617,7 @@ function cancelShellGame()
             r.style.setProperty('--opacity_sprechblase4', 1);
             r.style.setProperty('--geld', 1);
             localStorage.setItem('coin', 1);
+            localStorage.setItem('shell_game_status', 1);
             checkInventory();
             shell_game_done = true;
             await delay(1000);
@@ -639,6 +644,7 @@ function cancelShellGame()
             r.style.setProperty('--opacity_sprechblase4', 1);
             r.style.setProperty('--geld', 1);
             localStorage.setItem('coin', 1);
+            localStorage.setItem('shell_game_status', 1);
             checkInventory();
             shell_game_done = true;
             await delay(1000);
