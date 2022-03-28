@@ -34,6 +34,9 @@
         },
         {
             x: 3, y: 8
+        },
+        {
+            x: 6, y: 4
         }
     ];
     let banned_squares_left = [
@@ -175,6 +178,15 @@
         },
         {
             x: 9, y: 2
+        },
+        {
+            x: 7, y: 8
+        },
+        {
+            x: 6, y: 9
+        },
+        {
+            x: 5, y: 9
         }
     ];
 
@@ -231,10 +243,9 @@
     // move back to page 3
 
     function move_to_page3() {
-        if ((place_counter_x === 9) && (place_counter_y === 2)) {
-            console.log("ab in die Höhle");
-            window.location.href = "kreischcraft8.html";
-            localStorage.setItem('player_origin', 9);
+        if ((place_counter_x === 10) && (place_counter_y === 6)) {
+            window.location.href = "kreischcraft3.html";
+            localStorage.setItem('player_origin', 11);
         }
     }
 
@@ -708,6 +719,7 @@ function cancelShellGame()
         }
         else if ((e.keyCode == '39') && (can_char_move === true)) { // right arrow
             prevent_move();
+            move_to_page3();
             document.getElementById('player_img').src = "src/images/cat_right_standing_black.png";
             if ((place_counter_x >= 1) && (place_counter_x < number_of_squares)) {
                 for (var i = 0; i < banned_squares_right.length; i++) {
