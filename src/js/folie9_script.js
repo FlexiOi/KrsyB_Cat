@@ -580,6 +580,7 @@ function cancelShellGame()
             click_cup3.removeEventListener("click", checkCup3);
             r.style.setProperty('--opacity_sprechblase4', 1);
             localStorage.setItem('coin', 1);
+            checkInventory();
             await delay(500);
             cancelShellGame();
         }
@@ -601,6 +602,7 @@ function cancelShellGame()
             click_cup3.removeEventListener("click", checkCup3);
             r.style.setProperty('--opacity_sprechblase4', 1);
             localStorage.setItem('coin', 1);
+            checkInventory();
             await delay(500);
             cancelShellGame();
         }
@@ -623,6 +625,7 @@ function cancelShellGame()
             click_cup3.removeEventListener("click", checkCup3);
             r.style.setProperty('--opacity_sprechblase4', 1);
             localStorage.setItem('coin', 1);
+            checkInventory();
             await delay(500);
             cancelShellGame();
         }
