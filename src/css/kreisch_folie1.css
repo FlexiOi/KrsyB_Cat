@@ -2,6 +2,15 @@
 {
   --move_x:15px;
   --move_y:10px;
+
+  --geld:0;
+  --fisch:0;
+  --karotte:0;
+  --maus:0;
+  --notiz:0;
+  --ticket:0;
+
+
 }
 .precachingPictures
 {
@@ -15,6 +24,63 @@ position:absolute;
 left:var(--move_x);
 top:var(--move_y);
 }
+
+.geld
+{
+	height: 140px;
+	width: auto;
+	position: absolute;
+	left:640px;
+	top:330px;
+	opacity: var(--geld);
+}
+.fisch
+{
+	height: 140px;
+	width: auto;
+	position: absolute;
+	left:765px;
+	top:330px;
+	opacity: var(--fisch);
+}
+.karotte
+{
+	height: 140px;
+	width: auto;
+	position: absolute;
+	left:885px;
+	top:330px;
+	opacity: var(--karotte);
+}
+.maus
+{
+	height: 140px;
+	width: auto;
+	position: absolute;
+	left:640px;
+	top:440px;
+	opacity: var(--maus);
+}
+.notiz
+{
+	height: 140px;
+	width: auto;
+	position: absolute;
+	left:765px;
+	top:440px;
+	opacity: var(--notiz);
+}
+.ticket
+{
+	height: 140px;
+	width: auto;
+	position: absolute;
+	left:885px;
+	top:440px;
+	opacity: var(--ticket);
+}
+
+
 
 .border_radius_15
 {

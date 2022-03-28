@@ -194,6 +194,67 @@
     var r = document.querySelector(':root');
     var rs = getComputedStyle(r);
 
+    // inventory
+
+    var inventory_fish = localStorage.getItem('fish');
+    var inventory_carrot = localStorage.getItem('carrot');
+    var inventory_coin = localStorage.getItem('coin');
+    var inventory_mouse = localStorage.getItem('mouse');
+    var inventory_ticket = localStorage.getItem('ticket');
+    var inventory_note = localStorage.getItem('note');
+
+ function checkInventory()
+ { 
+    switch (inventory_fish) {
+        case "0":
+            console.log("Kein Fisch!");
+            break;
+        case "1": 
+            r.style.setProperty('--fisch', inventory_fish);
+    }
+
+    switch (inventory_carrot) {
+        case "0":
+            console.log("Keine Karotte!");
+            break;
+        case "1": 
+            r.style.setProperty('--karotte', inventory_carrot);
+    }
+
+    switch (inventory_coin) {
+        case "0":
+            console.log("Keine Geld!");
+            break;
+        case "1": 
+        r.style.setProperty('--geld', inventory_coin);
+    }
+
+    switch (inventory_note) {
+        case "0":
+            console.log("Keine Notiz!");
+            break;
+        case "1": 
+        r.style.setProperty('--geld', inventory_note);
+    }
+
+    switch (inventory_mouse) {
+        case "0":
+            console.log("Keine Maus!");
+            break;
+        case "1": 
+        r.style.setProperty('--geld', inventory_mouse);
+    }
+
+    switch (inventory_ticket) {
+        case "0":
+            console.log("Kein Ticket!");
+            break;
+        case "1": 
+        r.style.setProperty('--geld', inventory_ticket);
+    }
+}
+checkInventory();
+
     // get move_x
     let move_x = rs.getPropertyValue('--move_x');
     let run_x = 0;
@@ -518,6 +579,7 @@ function cancelShellGame()
             click_cup2.removeEventListener("click", checkCup2);
             click_cup3.removeEventListener("click", checkCup3);
             r.style.setProperty('--opacity_sprechblase4', 1);
+            localStorage.setItem('coin', 1);
             await delay(500);
             cancelShellGame();
         }
@@ -538,6 +600,7 @@ function cancelShellGame()
             click_cup2.removeEventListener("click", checkCup2);
             click_cup3.removeEventListener("click", checkCup3);
             r.style.setProperty('--opacity_sprechblase4', 1);
+            localStorage.setItem('coin', 1);
             await delay(500);
             cancelShellGame();
         }
@@ -559,6 +622,7 @@ function cancelShellGame()
             click_cup2.removeEventListener("click", checkCup2);
             click_cup3.removeEventListener("click", checkCup3);
             r.style.setProperty('--opacity_sprechblase4', 1);
+            localStorage.setItem('coin', 1);
             await delay(500);
             cancelShellGame();
         }

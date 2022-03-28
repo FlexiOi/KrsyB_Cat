@@ -1,3 +1,12 @@
+:root
+{
+  --geld:0;
+  --fisch:0;
+  --karotte:0;
+  --maus:0;
+  --notiz:0;
+  --ticket:0;
+}
 
 .background {
 	background-color: rgba(249, 71, 255, 0.514);
