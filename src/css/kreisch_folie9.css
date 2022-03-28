@@ -12,8 +12,10 @@
   --opacity_sprechblase2:0;
   --opacity_sprechblase3:0;
   --opacity_sprechblase4:0;
+  --opacity_sprechblase5:0;
 
-  --geld:hidden;
+
+  --geld:0;
   --fisch:0;
   --karotte:0;
   --maus:0;
@@ -42,7 +44,7 @@ top:var(--move_y);
 	position: absolute;
 	left:640px;
 	top:330px;
-	visibility: var(--geld);
+	opacity: var(--geld);
 }
 .fisch
 {
@@ -203,6 +205,14 @@ top:var(--move_y);
 	height: 100px;
 	width: auto;
   }
+  .sprechblase_new_item
+  {
+	position: absolute;
+	left:570px;
+	top:100px;
+	height: 150px;
+	width: auto;
+  }
 .visibility_sprechblase1
 {
 	opacity: var(--opacity_sprechblase1);
@@ -216,6 +226,10 @@ top:var(--move_y);
 }.visibility_sprechblase4
 {
 	opacity: var(--opacity_sprechblase4);
+}
+.visibility_sprechblase5
+{
+	opacity: var(--opacity_sprechblase5);
 }
 
 

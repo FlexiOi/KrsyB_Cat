@@ -322,9 +322,10 @@ checkInventory();
 
     // pop up
     let meow_timeout = false;
+    let shell_game_done = false;
     var popup = document.getElementById("popup_cat");
     function ShellGame() {
-        if ((place_counter_x === 7) && (place_counter_y === 6)) {
+        if (((place_counter_x === 7) && (place_counter_y === 6)) && (shell_game_done == false)) {
             if (meow_timeout === false) {
                 console.log("popup einschalten");
                 popup.classList.toggle("fadeIn");
@@ -585,8 +586,9 @@ function cancelShellGame()
             click_cup2.removeEventListener("click", checkCup2);
             click_cup3.removeEventListener("click", checkCup3);
             r.style.setProperty('--opacity_sprechblase4', 1);
-            localStorage.setItem('coin',"visible");
-            r.style.setProperty('--geld', inventory_coin);
+            r.style.setProperty('--geld', 1);
+            checkInventory();
+            shell_game_done = true;
             await delay(500);
             cancelShellGame();
         }
@@ -607,8 +609,9 @@ function cancelShellGame()
             click_cup2.removeEventListener("click", checkCup2);
             click_cup3.removeEventListener("click", checkCup3);
             r.style.setProperty('--opacity_sprechblase4', 1);
-            localStorage.setItem('coin', "visible");
-            r.style.setProperty('--geld', inventory_coin);
+            r.style.setProperty('--geld', 1);
+            checkInventory();
+            shell_game_done = true;
             await delay(500);
             cancelShellGame();
         }
@@ -629,9 +632,9 @@ function cancelShellGame()
             click_cup1.removeEventListener("click", checkCup1);
             click_cup2.removeEventListener("click", checkCup2);
             click_cup3.removeEventListener("click", checkCup3);
-            r.style.setProperty('--opacity_sprechblase4', 1);
-            localStorage.setItem('coin', "visible");
-            r.style.setProperty('--geld', inventory_coin);
+            r.style.setProperty('--geld', 1);
+            checkInventory();
+            shell_game_done = true;
             await delay(500);
             cancelShellGame();
         }
@@ -643,6 +646,15 @@ function cancelShellGame()
             click_cup3.removeEventListener("click", checkCup3);
             r.style.setProperty('--opacity_sprechblase3', 1);
         }
+    }
+
+    // show info for coins
+
+    async function show_bubble5()
+    {
+        r.style.setProperty('--opacity_sprechblase5', 1);
+        await delay(2000);
+        r.style.setProperty('--opacity_sprechblase5', 0);
     }
 
     // place character depending on zone entry
