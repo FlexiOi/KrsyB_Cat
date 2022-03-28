@@ -251,6 +251,8 @@
 
     //  Shell game
 
+
+
     // pop up
     let meow_timeout = false;
     var popup = document.getElementById("popup_cat");
@@ -325,7 +327,9 @@ function cancelShellGame()
     async function shuffle()
 {
     set_cup_click();
-        
+    r.style.setProperty('--opacity_sprechblase2', 0);    
+    r.style.setProperty('--opacity_sprechblase1', 0);
+
         for (let i = 0; i < 11; i++) {
         let randomShuffle = Math.random();
         if (randomShuffle >= 0.5) {
@@ -495,60 +499,76 @@ function cancelShellGame()
 
     async function set_cup_click()
     {
+        r.style.setProperty('--opacity_sprechblase3', 0);
         await delay(3500);
         click_cup1.addEventListener("click", checkCup1);
         click_cup2.addEventListener("click", checkCup2);
         click_cup3.addEventListener("click", checkCup3);
         
+        r.style.setProperty('--opacity_sprechblase2', 1);
         
     } 
 
-    function checkCup1()
+    async function checkCup1()
     {
+        r.style.setProperty('--opacity_sprechblase2', 0);
         if (nut_counter == 1) {
-            alert("Richtig!(cup 1)");
+ 
             click_cup1.removeEventListener("click", checkCup1);
             click_cup2.removeEventListener("click", checkCup2);
             click_cup3.removeEventListener("click", checkCup3);
+            r.style.setProperty('--opacity_sprechblase4', 1);
+            await delay(500);
+            cancelShellGame();
         }
         else
         {
-            alert("Falsch!(cup 1)");
+
             click_cup1.removeEventListener("click", checkCup1);
             click_cup2.removeEventListener("click", checkCup2);
             click_cup3.removeEventListener("click", checkCup3);
+            r.style.setProperty('--opacity_sprechblase3', 1);
         }
     }
-    function checkCup2()
+    async function checkCup2()
     {
         if (nut_counter == 2) {
-            alert("Richtig!(cup 2)");
+
             click_cup1.removeEventListener("click", checkCup1);
             click_cup2.removeEventListener("click", checkCup2);
             click_cup3.removeEventListener("click", checkCup3);
+            r.style.setProperty('--opacity_sprechblase4', 1);
+            await delay(500);
+            cancelShellGame();
         }
         else
         {
-            alert("Falsch!(cup 2)");
+
             click_cup1.removeEventListener("click", checkCup1);
             click_cup2.removeEventListener("click", checkCup2);
             click_cup3.removeEventListener("click", checkCup3);
+            r.style.setProperty('--opacity_sprechblase3', 1);
+            
         }
     }
-    function checkCup3()
+    async function checkCup3()
     {
         if (nut_counter == 3) {
-            alert("Richtig!(cup 3)");
+
             click_cup1.removeEventListener("click", checkCup1);
             click_cup2.removeEventListener("click", checkCup2);
             click_cup3.removeEventListener("click", checkCup3);
+            r.style.setProperty('--opacity_sprechblase4', 1);
+            await delay(500);
+            cancelShellGame();
         }
         else
         {
-            alert("Falsch!(cup 3)");
+
             click_cup1.removeEventListener("click", checkCup1);
             click_cup2.removeEventListener("click", checkCup2);
             click_cup3.removeEventListener("click", checkCup3);
+            r.style.setProperty('--opacity_sprechblase3', 1);
         }
     }
 

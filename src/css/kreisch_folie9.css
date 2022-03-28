@@ -8,6 +8,10 @@
   --cup1_y: 250px;
   --cup2_y: 250px;
   --cup3_y: 250px;
+  --opacity_sprechblase1:1;
+  --opacity_sprechblase2:0;
+  --opacity_sprechblase3:0;
+  --opacity_sprechblase4:0;
 
 
 }
@@ -87,13 +91,13 @@ top:var(--move_y);
 	font-family: 'Lato', serif;
 }
 
-  .help_text
+.help_text
   {
 	  color: rgba(255, 0, 13, 0.74);
 	  font-weight: bold;
   }
 
-  .schlafkatze
+.schlafkatze
   {
 	position: absolute;
 	height: 62px;
@@ -101,34 +105,57 @@ top:var(--move_y);
 	left:700px;
 	top:350px;
   }
-  .shellGamePic
+.shellGamePic
   {
 	height: 620px;
 	width: 620px;
 	border-radius: 15px;
   }
 
-  .becher1
+.becher1
   {
 	position: absolute;
 	left:var(--cup1_x);
 	top:var(--cup1_y);
 
   }
-  .becher2
+.becher2
   {
 	position: absolute;
 	left:var(--cup2_x);
 	top:var(--cup2_y);
 
   }
-  .becher3
+.becher3
   {
 	position: absolute;
 	left:var(--cup3_x);
 	top:var(--cup3_y);
 
   }
+.sprechblase
+  {
+	position: absolute;
+	left:350px;
+	top:100px;
+	height: 100px;
+	width: auto;
+  }
+.visibility_sprechblase1
+{
+	opacity: var(--opacity_sprechblase1);
+}
+.visibility_sprechblase2
+{
+	opacity: var(--opacity_sprechblase2);
+}.visibility_sprechblase3
+{
+	opacity: var(--opacity_sprechblase3);
+}.visibility_sprechblase4
+{
+	opacity: var(--opacity_sprechblase4);
+}
+
 
   .backArrow
   {
