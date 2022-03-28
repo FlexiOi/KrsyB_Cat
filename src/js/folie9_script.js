@@ -252,6 +252,7 @@
         case "1": 
         r.style.setProperty('--geld', inventory_ticket);
     }
+    console.log("Inventar neugeladen.");
 }
 checkInventory();
 
