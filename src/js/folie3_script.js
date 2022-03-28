@@ -192,6 +192,7 @@
             break;
         case "1": 
             r.style.setProperty('--fisch', inventory_fish);
+            break;
     }
 
     switch (inventory_carrot) {
@@ -200,6 +201,7 @@
             break;
         case "1": 
             r.style.setProperty('--karotte', inventory_carrot);
+            break;
     }
 
     switch (inventory_coin) {
@@ -208,6 +210,7 @@
             break;
         case "1": 
         r.style.setProperty('--geld', inventory_coin);
+        break;
     }
 
     switch (inventory_note) {
@@ -216,6 +219,7 @@
             break;
         case "1": 
         r.style.setProperty('--geld', inventory_note);
+        break;
     }
 
     switch (inventory_mouse) {
@@ -224,6 +228,7 @@
             break;
         case "1": 
         r.style.setProperty('--geld', inventory_mouse);
+        break;
     }
 
     switch (inventory_ticket) {
@@ -232,6 +237,7 @@
             break;
         case "1": 
         r.style.setProperty('--geld', inventory_ticket);
+        break;
     }
     console.log("Inventar neugeladen.");
 }
