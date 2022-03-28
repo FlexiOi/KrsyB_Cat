@@ -13,7 +13,7 @@
   --opacity_sprechblase3:0;
   --opacity_sprechblase4:0;
 
-  --geld:0;
+  --geld:hidden;
   --fisch:0;
   --karotte:0;
   --maus:0;
@@ -42,7 +42,7 @@ top:var(--move_y);
 	position: absolute;
 	left:640px;
 	top:330px;
-	opacity: var(--geld);
+	visibility: var(--geld);
 }
 .fisch
 {

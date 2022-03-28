@@ -585,7 +585,7 @@ function cancelShellGame()
             click_cup2.removeEventListener("click", checkCup2);
             click_cup3.removeEventListener("click", checkCup3);
             r.style.setProperty('--opacity_sprechblase4', 1);
-            localStorage.setItem('coin', 1);
+            localStorage.setItem('coin',"visible");
             r.style.setProperty('--geld', inventory_coin);
             await delay(500);
             cancelShellGame();
@@ -607,7 +607,7 @@ function cancelShellGame()
             click_cup2.removeEventListener("click", checkCup2);
             click_cup3.removeEventListener("click", checkCup3);
             r.style.setProperty('--opacity_sprechblase4', 1);
-            localStorage.setItem('coin', 1);
+            localStorage.setItem('coin', "visible");
             r.style.setProperty('--geld', inventory_coin);
             await delay(500);
             cancelShellGame();
@@ -630,7 +630,7 @@ function cancelShellGame()
             click_cup2.removeEventListener("click", checkCup2);
             click_cup3.removeEventListener("click", checkCup3);
             r.style.setProperty('--opacity_sprechblase4', 1);
-            localStorage.setItem('coin', 1);
+            localStorage.setItem('coin', "visible");
             r.style.setProperty('--geld', inventory_coin);
             await delay(500);
             cancelShellGame();
