@@ -125,6 +125,11 @@
 
     // inventory
 
+    function reset_player_origin() {
+        localStorage.clear();
+        location.reload();
+    }
+
     var inventory_fish = localStorage.getItem('fish');
     var inventory_carrot = localStorage.getItem('carrot');
     var inventory_coin = localStorage.getItem('coin');
@@ -259,7 +264,7 @@ checkInventory();
     var popup = document.getElementById("popup_vendor");
 
 function vendor_interface() {
-        if (((place_counter_x === 5) && (place_counter_y === 1)) && (vendor_done != 1)) {
+        if (((place_counter_x === 6) && (place_counter_y === 3)) && (vendor_done != 1)) {
             if (vendor_timeout === false) {
                 console.log("popup einschalten");
                 popup.classList.toggle("fadeIn");
