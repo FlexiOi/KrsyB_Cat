@@ -301,7 +301,7 @@ function cancelVendor()
 {
     r.style.setProperty('--opacity_sprechblase6', 0);    
     r.style.setProperty('--opacity_sprechblase7', 1);
-    r.style.setProperty('--Fisch', 1);
+    r.style.setProperty('--fisch', 1);
     localStorage.setItem('fish', 1);
     localStorage.setItem('vendor_status', 1);
     checkInventory();
