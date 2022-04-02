@@ -51,7 +51,7 @@
             x: 5, y: 4
         },
         {
-            x: 6 y: 3
+            x: 6, y: 3
         }
     ];
     let banned_squares_down = [
