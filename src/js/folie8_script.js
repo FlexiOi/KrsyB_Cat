@@ -7,22 +7,91 @@
     let banned_squares_right = [
         
         {
-            x: 5, y: 2
+            x: 8, y: 9
+        },
+        {
+            x: 8, y: 8
+        },
+        {
+            x: 7, y: 7
+        },
+        {
+            x: 6, y: 6
+        },
+        {
+            x: 6, y: 5
+        },
+        {
+            x: 7, y: 4
+        },
+        {
+            x: 5, y: 10
+        },
+        {
+            x: 6, y: 3
         }
     ];
     let banned_squares_left = [
         {
-            x: 2, y: 5
+            x: 3, y: 9
+        },
+        {
+            x: 1, y: 8
+        },
+        {
+            x: 4, y: 7
+        },
+        {
+            x: 6, y: 6
+        },
+        {
+            x: 6, y: 5
+        },
+        {
+            x: 5, y: 4
+        },
+        {
+            x: 6 y: 3
         }
     ];
     let banned_squares_down = [
         {
-            x: 1, y: 2
+            x: 5, y: 4
+        },
+        {
+            x: 7, y: 4
         }
     ];
     let banned_squares_up = [
         {
-            x: 1, y: 2
+            x: 8, y: 8
+        },
+        {
+            x: 7, y: 7
+        },
+        {
+            x: 5, y: 7
+        },
+        {
+            x: 4, y: 7
+        },
+        {
+            x: 3, y: 8
+        },
+        {
+            x: 2, y: 8
+        },
+        {
+            x: 1, y: 8
+        },
+        {
+            x: 5, y: 4
+        },
+        {
+            x: 7, y: 4
+        },
+        {
+            x: 6, y: 3
         }
     ];
 
@@ -142,9 +211,9 @@ checkInventory();
     // move out of the cave
 
     function move_out_of_cave() {
-        if ((place_counter_x === 9) && (place_counter_y === 2)) {
-            console.log("ab in die Höhle");
-            window.location.href = "kreischcraft8.html";
+        if ((place_counter_x === 5) && (place_counter_y === 10)) {
+            console.log("raus aus der Höhle");
+            window.location.href = "kreischcraft7.html";
             localStorage.setItem('player_origin', 9);
         }
     }
