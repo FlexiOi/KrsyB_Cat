@@ -318,6 +318,7 @@ function cancelVendor()
         r.style.setProperty('--opacity_sprechblase8', 0);
     }
 
+
    // place character depending on zone entry
 
    var origin = localStorage.getItem('player_origin');
@@ -442,6 +443,7 @@ function cancelVendor()
         }
         else if ((e.keyCode == '40') && (can_char_move === true)) { // down arrow
             prevent_move();
+            move_out_of_cave();
             document.getElementById('player_img').src = "src/images/cat_front_standing_black.png";
             if ((place_counter_y >= 1) && (place_counter_y < number_of_squares)) {
                 for (var i = 0; i < banned_squares_down.length; i++) {
