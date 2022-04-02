@@ -310,7 +310,7 @@ function cancelVendor()
     r.style.setProperty('--fisch', 1);
     localStorage.setItem('fish', 1);
     localStorage.setItem('vendor_status', 1);
-    r.style.setProperty('--grayscale_geld', 1);
+    localStorage.setItem('grayscale_geld', 1);
     localStorage.setItem('coin', 2);
     vendor_done = localStorage.getItem('vendor_status');
     checkInventory();
@@ -326,7 +326,7 @@ async function buyCarrot()
     r.style.setProperty('--karotte', 1);
     localStorage.setItem('carrot', 1);
     localStorage.setItem('vendor_status', 1);
-    r.style.setProperty('--grayscale_geld', 1);
+    localStorage.setItem('grayscale_geld', 1);
     localStorage.setItem('coin', 2);
     vendor_done = localStorage.getItem('vendor_status');
     checkInventory();
