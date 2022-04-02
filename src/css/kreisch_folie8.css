@@ -6,6 +6,8 @@
 
   --opacity_sprechblase6:1;
   --opacity_sprechblase7:0;
+  --opacity_sprechblase8:0;
+  --opacity_sprechblase9:0;
 
 
   --geld:0;
@@ -214,6 +216,14 @@ top:var(--move_y);
 {
 	opacity: var(--opacity_sprechblase7);
 }
+.visibility_sprechblase8
+{
+	opacity: var(--opacity_sprechblase7);
+}
+.visibility_sprechblase9
+{
+	opacity: var(--opacity_sprechblase7);
+}
 
   .backArrow
   {
@@ -326,3 +336,7 @@ top:var(--move_y);
 	from {opacity: 0;}
 	to {opacity:0.75 ;}
   }
+
+  .ausgrauen {
+	filter: grayscale(1);
+	}
