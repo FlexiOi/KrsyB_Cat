@@ -304,6 +304,7 @@ function cancelVendor()
     r.style.setProperty('--fisch', 1);
     localStorage.setItem('fish', 1);
     localStorage.setItem('vendor_status', 1);
+    vendor_done = localStorage.getItem('vendor_status');
     checkInventory();
     await delay(750);
     show_bubble8();
@@ -317,6 +318,7 @@ async function buyCarrot()
     r.style.setProperty('--karotte', 1);
     localStorage.setItem('carrot', 1);
     localStorage.setItem('vendor_status', 1);
+    vendor_done = localStorage.getItem('vendor_status');
     checkInventory();
     await delay(750);
     show_bubble9();
