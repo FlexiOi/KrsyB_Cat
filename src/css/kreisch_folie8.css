@@ -8,7 +8,7 @@
   --opacity_sprechblase7:0;
   --opacity_sprechblase8:0;
   --opacity_sprechblase9:0;
-
+  --opacity_sprechblase10:0;
 
   --geld:0;
   --fisch:0;
@@ -86,14 +86,7 @@ top:var(--move_y);
 	top:440px;
 	opacity: var(--ticket);
 }
-.sleeping_cat_position
-{
-	height: 30px;
-	width: 45px;
-	left:508px;
-	top:220px;
-	position:absolute;   
-}
+
 .border_radius_15
 {
   border-radius: 15px;
@@ -200,6 +193,15 @@ top:var(--move_y);
 	height: 100px;
 	width: auto;
   }
+
+  .sprechblase_dragon
+  {
+	position: absolute;
+	left:330px;
+	top:100px;
+	height: 100px;
+	width: auto;
+  }
   .sprechblase_new_item
   {
 	position: absolute;
@@ -223,6 +225,10 @@ top:var(--move_y);
 .visibility_sprechblase9
 {
 	opacity: var(--opacity_sprechblase7);
+}
+.visibility_sprechblase10
+{
+	opacity: var(--opacity_sprechblase10);
 }
 
   .backArrow

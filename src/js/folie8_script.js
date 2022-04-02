@@ -265,14 +265,14 @@ checkInventory();
 
 function vendor_interface() {
         if (((place_counter_x === 6) && (place_counter_y === 4)) && (vendor_done != 1)) {
-            if (vendor_timeout === false) {
+            if (vendor_timeout === false && inventory_coin == 1) {
                 console.log("popup einschalten");
                 popup.classList.toggle("fadeIn");
                 vendor_timeout = true;
                 click_arrow.addEventListener("click", cancelVendor);
             }
             else{
-;
+                show_bubble10();
             }
            
         }
@@ -336,6 +336,13 @@ async function buyCarrot()
         r.style.setProperty('--opacity_sprechblase9', 1);
         await delay(2000);
         r.style.setProperty('--opacity_sprechblase9', 0);
+    }
+
+    async function show_bubble10()
+    {
+        r.style.setProperty('--opacity_sprechblase10', 1);
+        await delay(2000);
+        r.style.setProperty('--opacity_sprechblase10', 0);
     }
 
 
