@@ -315,6 +315,7 @@ checkInventory();
         if ((place_counter_x === 2) && (place_counter_y === 1)) {
             console.log("zurück zu page3");
             window.location.href = "kreischcraft3.html";
+            localStorage.setItem('player_origin', 6);
         }
 
     }
