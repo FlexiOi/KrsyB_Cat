@@ -248,23 +248,23 @@ checkInventory();
         }
     }
 
-    //  Shell game
+    //  vendor interface
 
-    var shell_game_status = localStorage.getItem('vendor_status');
+    let click_arrow = document.querySelector("#backArrow");
 
     // pop up
 
-    let meow_timeout = false;
-    let vendor_status = localStorage.getItem('vendor_status');
+    let vendor_timeout = false;
+    let vendor_done = localStorage.getItem('vendor_status');
     var popup = document.getElementById("popup_vendor");
 
-function ShellGame() {
-        if (((place_counter_x === 6) && (place_counter_y === 3)) && (vendor_status != 1)) {
-            if (meow_timeout === false) {
+function vendor_interface() {
+        if (((place_counter_x === 5) && (place_counter_y === 1)) && (vendor_done != 1)) {
+            if (vendor_timeout === false) {
                 console.log("popup einschalten");
                 popup.classList.toggle("fadeIn");
-                meow_timeout = true;
-                click_arrow.addEventListener("click", cancelShellGame);
+                vendor_timeout = true;
+                click_arrow.addEventListener("click", cancelVendor);
             }
             else{
 ;
@@ -273,185 +273,44 @@ function ShellGame() {
         }
     }
        
-async function resetShellgame()
+async function resetVendor()
     {
         await delay(500);
         popup.classList.toggle("fadeIn");
         popup.classList.toggle("fadeOut");
         console.log("reset");
     }
-function cancelShellGame()
+function cancelVendor()
 {
     console.log("popup ausschalten");
     popup.classList.toggle("fadeOut");
-    meow_timeout = false;
-    resetShellgame();
-    click_arrow.removeEventListener("click", cancelShellGame);
+    vendor_timeout = false;
+    resetVendor();
+    click_arrow.removeEventListener("click", cancelVendor);
 
 }
-    // get coords of cups
 
-        //cup1
-    let cup1_x = rs.getPropertyValue('--cup1_x');
-    cup1_x = cup1_x.replace("px", "");
-    let cup1_x_int = parseInt(cup1_x);
+    // buy items
 
-    let cup1_y = rs.getPropertyValue('--cup1_y');
-    cup1_y = cup1_y.replace("px", "");
-    let cup1_y_int = parseInt(cup1_y);
-
-        //cup2
-    let cup2_x = rs.getPropertyValue('--cup2_x');
-    cup2_x = cup2_x.replace("px", "");
-    let cup2_x_int = parseInt(cup2_x);
-
-    let cup2_y = rs.getPropertyValue('--cup2_y');
-    cup2_y = cup2_y.replace("px", "");
-    let cup2_y_int = parseInt(cup2_y);
-    
-        //cup3
-    let cup3_x = rs.getPropertyValue('--cup3_x');
-    cup3_x = cup3_x.replace("px", "");
-    let cup3_x_int = parseInt(cup3_x);
-
-    let cup3_y = rs.getPropertyValue('--cup3_y');
-    cup3_y = cup3_y.replace("px", "");
-    let cup3_y_int = parseInt(cup3_y);
-
-        //nuss
-    let nuss_x = rs.getPropertyValue('--nuss_x');
-    nuss_x = nuss_x.replace("px", "");
-    let nuss_x_int = parseInt(nuss_x);
-
-    let nuss_y = rs.getPropertyValue('--nuss_y');
-    nuss_y = nuss_y.replace("px", "");
-    let nuss_y_int = parseInt(nuss_y);
-    
-    let nut_counter = 0;
-    let alternate_nut_counter1 = 0;
-    let alternate_nut_counter2 = 1;
-
-    // shuffle
-
-    async function shuffle()
+    async function buyFish()
 {
-    set_cup_click();
-
-    r.style.setProperty('--opacity_sprechblase2', 0);    
-    r.style.setProperty('--opacity_sprechblase1', 0);
+    r.style.setProperty('--opacity_sprechblase6', 0);    
+    r.style.setProperty('--opacity_sprechblase7', 1);
+    r.style.setProperty('--Fisch', 1);
+    localStorage.setItem('fish', 1);
+    localStorage.setItem('vendor_status', 1);
+    checkInventory();
+    await delay(750);
+    cancelVendor();
 }
-
-
-
-    
-
-    // click the right cup
-
-    let click_cup1 = document.querySelector("#cup1");
-    let click_cup2 = document.querySelector("#cup2");
-    let click_cup3 = document.querySelector("#cup3");
-    let click_arrow = document.querySelector("#backArrow");
-
-    async function set_cup_click()
-    {
-        r.style.setProperty('--opacity_sprechblase3', 0);
-        await delay(4300);
-        click_cup1.addEventListener("click", checkCup1);
-        click_cup2.addEventListener("click", checkCup2);
-        click_cup3.addEventListener("click", checkCup3);
-        
-        r.style.setProperty('--opacity_sprechblase2', 1);
-        
-    } 
-
-    async function checkCup1()
-    {
-        r.style.setProperty('--opacity_sprechblase2', 0);
-        if (nut_counter == 1) {
- 
-            click_cup1.removeEventListener("click", checkCup1);
-            click_cup2.removeEventListener("click", checkCup2);
-            click_cup3.removeEventListener("click", checkCup3);
-            r.style.setProperty('--opacity_sprechblase4', 1);
-            r.style.setProperty('--geld', 1);
-            localStorage.setItem('coin', 1);
-            localStorage.setItem('shell_game_status', 1);
-            checkInventory();
-            shell_game_done = true;
-            await delay(1000);
-            show_bubble5();
-            cancelShellGame();
-        }
-        else
-        {
-
-            click_cup1.removeEventListener("click", checkCup1);
-            click_cup2.removeEventListener("click", checkCup2);
-            click_cup3.removeEventListener("click", checkCup3);
-            r.style.setProperty('--opacity_sprechblase3', 1);
-        }
-    }
-    async function checkCup2()
-    {
-        if (nut_counter == 2) {
-
-            click_cup1.removeEventListener("click", checkCup1);
-            click_cup2.removeEventListener("click", checkCup2);
-            click_cup3.removeEventListener("click", checkCup3);
-            r.style.setProperty('--opacity_sprechblase4', 1);
-            r.style.setProperty('--geld', 1);
-            localStorage.setItem('coin', 1);
-            localStorage.setItem('shell_game_status', 1);
-            checkInventory();
-            shell_game_done = true;
-            await delay(1000);
-            show_bubble5();
-            cancelShellGame();
-        }
-        else
-        {
-
-            click_cup1.removeEventListener("click", checkCup1);
-            click_cup2.removeEventListener("click", checkCup2);
-            click_cup3.removeEventListener("click", checkCup3);
-            r.style.setProperty('--opacity_sprechblase3', 1);
-            
-        }
-    }
-    async function checkCup3()
-    {
-        if (nut_counter == 3) {
-
-            click_cup1.removeEventListener("click", checkCup1);
-            click_cup2.removeEventListener("click", checkCup2);
-            click_cup3.removeEventListener("click", checkCup3);
-            r.style.setProperty('--opacity_sprechblase4', 1);
-            r.style.setProperty('--geld', 1);
-            localStorage.setItem('coin', 1);
-            localStorage.setItem('shell_game_status', 1);
-            checkInventory();
-            shell_game_done = true;
-            await delay(1000);
-            show_bubble5();
-            cancelShellGame();
-        }
-        else
-        {
-
-            click_cup1.removeEventListener("click", checkCup1);
-            click_cup2.removeEventListener("click", checkCup2);
-            click_cup3.removeEventListener("click", checkCup3);
-            r.style.setProperty('--opacity_sprechblase3', 1);
-        }
-    }
 
     // show info for coins
 
-    async function show_bubble5()
+    async function show_bubble8()
     {
-        r.style.setProperty('--opacity_sprechblase5', 1);
+        r.style.setProperty('--opacity_sprechblase8', 1);
         await delay(2000);
-        r.style.setProperty('--opacity_sprechblase5', 0);
+        r.style.setProperty('--opacity_sprechblase8', 0);
     }
 
    // place character depending on zone entry
@@ -556,7 +415,7 @@ function cancelShellGame()
 
         if ((e.keyCode == '38') && (can_char_move === true)) { // up arrow
             prevent_move();
-            ShellGame();
+            vendor_interface();
             document.getElementById('player_img').src = "src/images/cat_back_standing_black.png";
             if ((place_counter_y > 1) && (place_counter_y <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_up.length; i++) {
@@ -621,7 +480,6 @@ function cancelShellGame()
         }
         else if ((e.keyCode == '39') && (can_char_move === true)) { // right arrow
             prevent_move();
-            move_to_page3();
             document.getElementById('player_img').src = "src/images/cat_right_standing_black.png";
             if ((place_counter_x >= 1) && (place_counter_x < number_of_squares)) {
                 for (var i = 0; i < banned_squares_right.length; i++) {

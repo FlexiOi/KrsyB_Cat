@@ -2,24 +2,10 @@
 {
   --move_x:15px;
   --move_y:10px;
-  --cup1_x: 150px;
-  --cup2_x: 282px;
-  --cup3_x: 415px;
-  --cup1_y: 250px;
-  --cup2_y: 250px;
-  --cup3_y: 250px;
-
-  --opacity_sprechblase1:1;
-  --opacity_sprechblase2:0;
-  --opacity_sprechblase3:0;
-  --opacity_sprechblase4:0;
-  --opacity_sprechblase5:0;
-
-  --nuss_opacity: 0;
-  --nuss_x:175px;
-  --nuss_y:175px;
 
 
+  --opacity_sprechblase6:1;
+  --opacity_sprechblase7:0;
 
 
   --geld:0;
@@ -169,7 +155,7 @@ top:var(--move_y);
   }
 
 
-.shellGamePic
+.vendorPic
   {
 	height: 620px;
 	width: 620px;
@@ -207,8 +193,8 @@ top:var(--move_y);
 .sprechblase
   {
 	position: absolute;
-	left:350px;
-	top:100px;
+	left:300px;
+	top:220px;
 	height: 100px;
 	width: auto;
   }
@@ -220,25 +206,14 @@ top:var(--move_y);
 	height: 150px;
 	width: auto;
   }
-.visibility_sprechblase1
+.visibility_sprechblase6
 {
-	opacity: var(--opacity_sprechblase1);
+	opacity: var(--opacity_sprechblase6);
 }
-.visibility_sprechblase2
+.visibility_sprechblase7
 {
-	opacity: var(--opacity_sprechblase2);
-}.visibility_sprechblase3
-{
-	opacity: var(--opacity_sprechblase3);
-}.visibility_sprechblase4
-{
-	opacity: var(--opacity_sprechblase4);
+	opacity: var(--opacity_sprechblase7);
 }
-.visibility_sprechblase5
-{
-	opacity: var(--opacity_sprechblase5);
-}
-
 
   .backArrow
   {
@@ -249,11 +224,11 @@ top:var(--move_y);
 	top: 550px;
   }
 
-  .mixButton
+  .buyFish
   {
 	  position: absolute;
-	  left: 280px;
-	  top:210px;
+	  left: 170px;
+	  top:420px;
 	  padding: 10px 20px;
 	  text-align: center;
 	  text-decoration: none;
@@ -262,7 +237,19 @@ top:var(--move_y);
 	  border: none;
 	  background: rgba(161, 229, 134, 0.575);
   }
-
+  .buyCarrot
+  {
+	  position: absolute;
+	  left: 340px;
+	  top:420px;
+	  padding: 10px 20px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  border-radius: 15px;
+	  border: none;
+	  background: rgba(161, 229, 134, 0.575);
+  }
 
 /* sleeping cat popups */
 .popup_cat {
