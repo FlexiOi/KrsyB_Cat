@@ -52,6 +52,20 @@
         },
         {
             x: 6, y: 3
+        }
+    ];
+    let banned_squares_down = [
+        {
+            x: 5, y: 4
+        },
+        {
+            x: 7, y: 4
+        },
+        {
+            x: 1, y: 8
+        },
+        {
+            x: 2, y: 8
         },
         {
             x: 3, y: 9
@@ -67,20 +81,6 @@
         },
         {
             x: 8, y: 9
-        }
-    ];
-    let banned_squares_down = [
-        {
-            x: 5, y: 4
-        },
-        {
-            x: 7, y: 4
-        },
-        {
-            x: 1, y: 8
-        },
-        {
-            x: 2, y: 8
         }
     ];
     let banned_squares_up = [
