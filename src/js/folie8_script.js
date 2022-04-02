@@ -137,6 +137,8 @@
     var inventory_ticket = localStorage.getItem('ticket');
     var inventory_note = localStorage.getItem('note');
 
+    var grayscale_geld = localStorage.getItem('grayscale_geld');
+
 
 
  function checkInventory()
@@ -164,6 +166,10 @@
             break;
         case "1": 
         r.style.setProperty('--geld', inventory_coin);
+        break;
+        case "2": 
+        r.style.setProperty('--geld', inventory_coin);
+        r.style.setProperty('--grayscale_geld', grayscale_geld);
         break;
     }
 
@@ -304,6 +310,8 @@ function cancelVendor()
     r.style.setProperty('--fisch', 1);
     localStorage.setItem('fish', 1);
     localStorage.setItem('vendor_status', 1);
+    r.style.setProperty('--grayscale_geld', 1);
+    localStorage.setItem('coin', 2);
     vendor_done = localStorage.getItem('vendor_status');
     checkInventory();
     await delay(750);
@@ -318,6 +326,8 @@ async function buyCarrot()
     r.style.setProperty('--karotte', 1);
     localStorage.setItem('carrot', 1);
     localStorage.setItem('vendor_status', 1);
+    r.style.setProperty('--grayscale_geld', 1);
+    localStorage.setItem('coin', 2);
     vendor_done = localStorage.getItem('vendor_status');
     checkInventory();
     await delay(750);

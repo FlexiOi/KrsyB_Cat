@@ -644,6 +644,7 @@ function cancelShellGame()
             r.style.setProperty('--geld', 1);
             localStorage.setItem('coin', 1);
             localStorage.setItem('shell_game_status', 1);
+            r.style.setProperty('--grayscale_geld', 1);
             checkInventory();
             shell_game_done = true;
             await delay(1000);
