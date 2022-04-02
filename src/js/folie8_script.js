@@ -114,7 +114,7 @@
             x: 7, y: 4
         },
         {
-            x: 6, y: 3
+            x: 6, y: 4
         }
     ];
 
@@ -264,7 +264,7 @@ checkInventory();
     var popup = document.getElementById("popup_vendor");
 
 function vendor_interface() {
-        if (((place_counter_x === 6) && (place_counter_y === 3)) && (vendor_done != 1)) {
+        if (((place_counter_x === 6) && (place_counter_y === 4)) && (vendor_done != 1)) {
             if (vendor_timeout === false) {
                 console.log("popup einschalten");
                 popup.classList.toggle("fadeIn");
