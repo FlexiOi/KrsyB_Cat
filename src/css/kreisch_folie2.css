@@ -9,7 +9,14 @@
   --maus:0;
   --notiz:0;
   --ticket:0;
-
+  
+  --grayscale_coin:0;
+  --grayscale_fish:0;
+  --grayscale_carrot:0;
+  --grayscale_mouse:0;
+  --grayscale_ticket:0;
+  --grayscale_note:0;
+  
 }
 .precachingPictures
 {
@@ -32,6 +39,7 @@ top:var(--move_y);
 	left:640px;
 	top:330px;
 	opacity: var(--geld);
+	filter: grayscale(var(--grayscale_coin));
 }
 .fisch
 {
@@ -41,6 +49,7 @@ top:var(--move_y);
 	left:765px;
 	top:330px;
 	opacity: var(--fisch);
+	filter: grayscale(var(--grayscale_fish));
 }
 .karotte
 {
@@ -50,6 +59,7 @@ top:var(--move_y);
 	left:885px;
 	top:330px;
 	opacity: var(--karotte);
+	filter: grayscale(var(--grayscale_carrot));
 }
 .maus
 {
@@ -59,6 +69,7 @@ top:var(--move_y);
 	left:640px;
 	top:440px;
 	opacity: var(--maus);
+	filter: grayscale(var(--grayscale_mouse));
 }
 .notiz
 {
@@ -68,6 +79,7 @@ top:var(--move_y);
 	left:765px;
 	top:440px;
 	opacity: var(--notiz);
+	filter: grayscale(var(--grayscale_note));
 }
 .ticket
 {
@@ -77,6 +89,7 @@ top:var(--move_y);
 	left:885px;
 	top:440px;
 	opacity: var(--ticket);
+	filter: grayscale(var(--grayscale_ticket));
 }
 .sleeping_cat_position
 {

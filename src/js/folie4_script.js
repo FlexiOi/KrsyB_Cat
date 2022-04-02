@@ -109,6 +109,16 @@
     var inventory_ticket = localStorage.getItem('ticket');
     var inventory_note = localStorage.getItem('note');
 
+    var grayscale_fish = localStorage.getItem('grayscale_fish');
+    var grayscale_carrot = localStorage.getItem('grayscale_carrot');
+    var grayscale_coin = localStorage.getItem('grayscale_coin');
+    var grayscale_mouse = localStorage.getItem('grayscale_mouse');
+    var grayscale_ticket = localStorage.getItem('grayscale_ticket');
+    var grayscale_note = localStorage.getItem('grayscale_note');
+
+
+
+
  function checkInventory()
  { 
     switch (inventory_fish) {
@@ -117,6 +127,9 @@
             break;
         case "1": 
             r.style.setProperty('--fisch', inventory_fish);
+        case "2": 
+            r.style.setProperty('--fisch', inventory_fish);
+            r.style.setProperty('--grayscale_fish', grayscale_fish);
     }
 
     switch (inventory_carrot) {
@@ -125,6 +138,11 @@
             break;
         case "1": 
             r.style.setProperty('--karotte', inventory_carrot);
+            break;
+        case "2": 
+            r.style.setProperty('--karotte', inventory_carrot);
+            r.style.setProperty('--grayscale_carrot', grayscale_carrot);
+            break;
     }
 
     switch (inventory_coin) {
@@ -132,7 +150,12 @@
             console.log("Keine Geld!");
             break;
         case "1": 
-        r.style.setProperty('--geld', inventory_coin);
+            r.style.setProperty('--geld', inventory_coin);
+           break;
+        case "2": 
+            r.style.setProperty('--geld', inventory_coin);
+            r.style.setProperty('--grayscale_coin', grayscale_coin);
+            break;
     }
 
     switch (inventory_note) {
@@ -140,7 +163,12 @@
             console.log("Keine Notiz!");
             break;
         case "1": 
-        r.style.setProperty('--geld', inventory_note);
+            r.style.setProperty('--notiz', inventory_note);
+            break;
+        case "2": 
+            r.style.setProperty('--notiz', inventory_note);
+            r.style.setProperty('--grayscale_note', grayscale_note);
+            break;
     }
 
     switch (inventory_mouse) {
@@ -148,7 +176,12 @@
             console.log("Keine Maus!");
             break;
         case "1": 
-        r.style.setProperty('--geld', inventory_mouse);
+            r.style.setProperty('--maus', inventory_mouse);
+            break;
+    case "2": 
+            r.style.setProperty('--maus', inventory_mouse);
+            r.style.setProperty('--grayscale_mouse', grayscale_mouse);
+            break;
     }
 
     switch (inventory_ticket) {
@@ -156,8 +189,14 @@
             console.log("Kein Ticket!");
             break;
         case "1": 
-        r.style.setProperty('--geld', inventory_ticket);
+            r.style.setProperty('--ticket', inventory_ticket);
+            break;
+        case "2": 
+            r.style.setProperty('--ticket', inventory_ticket);
+            r.style.setProperty('--grayscale_ticket', grayscale_ticket);
+            break;
     }
+    console.log("Inventar neugeladen.");
 }
 checkInventory();
 
