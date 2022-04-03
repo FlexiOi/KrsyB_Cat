@@ -155,7 +155,7 @@ top:var(--move_y);
 	font-family: 'Lato', serif;
 }
 /* sleeping cat popups */
-.popup_cat {
+.popup_horse {
 	left:530px;
 	top:210px;
 	position: absolute;
@@ -208,13 +208,13 @@ top:var(--move_y);
 
   
   /* Toggle this class - hide and show the popup */
-  .popup, .popup_cat .fadeIn {
+  .popup, .popup_horse .fadeIn {
 	visibility: visible;
 	-webkit-animation: fadeIn 2s;
 	animation: fadeIn 2s;
   }
 
-  .popup, .popup_cat .fadeOut {
+  .popup, .popup_horse .fadeOut {
 	visibility: visible;
 	opacity: 0;
 	-webkit-animation: fadeOut 2s;

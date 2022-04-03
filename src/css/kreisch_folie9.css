@@ -107,14 +107,7 @@ top:var(--move_y);
 	opacity: var(--ticket);
 	filter: grayscale(var(--grayscale_ticket));
 }
-.sleeping_cat_position
-{
-	height: 30px;
-	width: 45px;
-	left:508px;
-	top:220px;
-	position:absolute;   
-}
+
 .border_radius_15
 {
   border-radius: 15px;

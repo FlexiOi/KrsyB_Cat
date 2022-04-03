@@ -30,6 +30,12 @@ position:absolute;
 left:var(--move_x);
 top:var(--move_y);
 }
+.steine
+{
+left:450px;
+top:500px;
+position:absolute;   
+}
 
 .geld
 {
