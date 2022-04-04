@@ -206,7 +206,7 @@
     var grayscale_ticket = localStorage.getItem('grayscale_ticket');
     var grayscale_note = localStorage.getItem('grayscale_note');
 
-    let status_stones = rs.getPropertyValue('--opacity_steine');
+    
 
 
 
@@ -358,6 +358,7 @@ checkInventory();
         }
     }
     function move_into_cave() {
+        var status_stones = rs.getPropertyValue('--opacity_steine');
         if ((place_counter_x === 8) && (place_counter_y === 10) && (status_stones == 0)) {
             console.log("ab in die Höhle");
             window.location.href = "kreischcraft10.html";
