@@ -434,7 +434,7 @@ checkInventory();
             r.style.setProperty('--move_y', move_y + "px");
             run_y = place_counter_y - 1;
             run_x = place_counter_x - 1;
-            document.getElementById("player_img").src = "src/images/cat_left_standing_black.png";
+            document.getElementById("player_img").src = "src/images/cat_back_standing_black.png";
             move_x_int = 15;
             move_y_int = 10;
             console.log("x:" + move_x + " y: " + move_y);

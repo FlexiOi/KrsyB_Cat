@@ -363,6 +363,10 @@ checkInventory();
             window.location.href = "kreischcraft10.html";
             localStorage.setItem('player_origin', 13);
         }
+        else
+        {
+            console.log("Steine:" +status_stones);
+        }
     }
 
     function move_to_page3() {
