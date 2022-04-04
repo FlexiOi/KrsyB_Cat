@@ -482,7 +482,7 @@ checkInventory();
     let horse_done = localStorage.getItem('horse_status');
     var popup = document.getElementById("popup_horse");
 
-function horse_interface() {
+async function horse_interface() {
         if (((place_counter_x === 6) && (place_counter_y === 9)) && (horse_done != 1)) {
             if (horse_timeout === false && inventory_carrot == 1) {
                 horse_timeout = true;
@@ -496,7 +496,7 @@ function horse_interface() {
                 
                 await delay(2000);
                 cancelVendor();
-                
+
                 localStorage.setItem('horse_status', 1);
                 localStorage.setItem('grayscale_carrot', 1);
                 r.style.setProperty('--grayscale_carrot', 1);
