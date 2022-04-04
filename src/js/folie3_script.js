@@ -278,7 +278,8 @@
             break;
     }
     console.log("Inventar neugeladen.");
-    console.log("player origin: "+origin);
+    var cat = localStorage.getItem('player_origin');
+    console.log("player origin: "+cat);
 }
 checkInventory();
 
