@@ -369,7 +369,7 @@ checkInventory();
         if ((place_counter_x === 2) && (place_counter_y === 1)) {
             console.log("zurück zu page3");
             window.location.href = "kreischcraft3.html";
-            localStorage.setItem('player_origin', 12);
+            localStorage.setItem('player_origin', 6);
         }
 
     }
@@ -378,7 +378,7 @@ checkInventory();
 
     var origin = localStorage.getItem('player_origin');
     switch (origin) {
-        case "20": // from the north
+        case "6": // from the north
             console.log("Player origin is page 3");
             place_counter_x = 2;
             move_x = 15 + (62 * (place_counter_x - 1));
