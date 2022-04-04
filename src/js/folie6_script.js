@@ -360,7 +360,7 @@ checkInventory();
         if ((place_counter_x === 8) && (place_counter_y === 10) && (status_stones == 0)) {
             console.log("ab in die Höhle");
             window.location.href = "kreischcraft10.html";
-            localStorage.setItem('player_origin', 8);
+            localStorage.setItem('player_origin', 13);
         }
     }
     // move back to page 3
@@ -420,7 +420,7 @@ checkInventory();
             console.log("x:" + move_x + " y: " + move_y);
             console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
             break;
-        case "12": // from the east(bottom)
+        case "13": // from the east(bottom)
             console.log("Player origin is the cave");
             place_counter_x = 8;
             move_x = 15 + (62 * (place_counter_x - 1));
@@ -518,8 +518,8 @@ checkInventory();
 
         if ((e.keyCode == '38') && (can_char_move === true)) { // up arrow
             prevent_move();
-            move_to_page3();
             move_into_cave();
+            move_to_page3();
             document.getElementById('player_img').src = "src/images/cat_back_standing_black.png";
             if ((place_counter_y > 1) && (place_counter_y <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_up.length; i++) {
