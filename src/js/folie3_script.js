@@ -484,7 +484,7 @@ checkInventory();
 
 async function horse_interface() {
         if (((place_counter_x === 6) && (place_counter_y === 9)) && (horse_done != 1)) {
-            if (horse_timeout === false && inventory_carrot == 1) {
+            if (horse_timeout === false && inventory_carrot != 1) {
                 horse_timeout = true;
 
                 r.style.setProperty('--opacity_sprechblase12', 1);
@@ -502,6 +502,7 @@ async function horse_interface() {
                 r.style.setProperty('--grayscale_carrot', 1);
                 localStorage.setItem('carrot', 2);
                 vendor_done = localStorage.getItem('horse_status');
+                 checkInventory();
             }
             else{
                 show_bubble11();
