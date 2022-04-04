@@ -225,6 +225,7 @@
         case "2": 
             r.style.setProperty('--karotte', inventory_carrot);
             r.style.setProperty('--grayscale_carrot', grayscale_carrot);
+            r.style.setProperty('--opacity_steine', 0);
             break;
     }
 
