@@ -278,6 +278,7 @@
             break;
     }
     console.log("Inventar neugeladen.");
+    console.log("player origin: "+origin);
 }
 checkInventory();
 
