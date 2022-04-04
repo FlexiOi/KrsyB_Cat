@@ -363,7 +363,6 @@ checkInventory();
             localStorage.setItem('player_origin', 13);
         }
     }
-    // move back to page 3
 
     function move_to_page3() {
         if ((place_counter_x === 2) && (place_counter_y === 1)) {
@@ -420,7 +419,7 @@ checkInventory();
             console.log("x:" + move_x + " y: " + move_y);
             console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
             break;
-        case "13": // from the east(bottom)
+        case "13": // from the cave
             console.log("Player origin is the cave");
             place_counter_x = 8;
             move_x = 15 + (62 * (place_counter_x - 1));
