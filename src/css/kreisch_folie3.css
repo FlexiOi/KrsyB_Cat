@@ -154,8 +154,41 @@ top:var(--move_y);
 	font-size: 13px;
 	font-family: 'Lato', serif;
 }
-/* sleeping cat popups */
-.popup_horse {
+
+  .help_text
+  {
+	  color: rgba(255, 0, 13, 0.74);
+	  font-weight: bold;
+  }
+
+  .vendorPic
+  {
+	height: 620px;
+	width: 620px;
+	border-radius: 15px;
+  }
+
+.sprechblase
+  {
+	position: absolute;
+	left:300px;
+	top:220px;
+	height: 100px;
+	width: auto;
+  }
+
+  .backArrow
+  {
+	position: absolute;
+	height: 70px;
+	width: 150px;
+	left: 420px;
+	top: 550px;
+  }
+
+
+  /* sleeping cat popups */
+.popup_cat {
 	left:530px;
 	top:210px;
 	position: absolute;
@@ -179,17 +212,15 @@ top:var(--move_y);
   /* The actual popup */
   .popuptext {
 	visibility: hidden;
-	width: 200px;
-	height: 80px;
 	background-color: rgb(0, 0, 0);
 	color: rgb(255, 255, 255);
-	text-align: center;
+
 	border-radius: 6px;
 	position: absolute;
 	z-index: 1;
-	bottom: 125%;
-	left: 50%;
-	margin-left: -100px;
+	bottom: 25%;
+	left: -515px;
+	top:-200px;
   }
   
 
@@ -208,17 +239,16 @@ top:var(--move_y);
 
   
   /* Toggle this class - hide and show the popup */
-  .popup, .popup_horse .fadeIn {
+  .popup, .popup_cat .fadeIn {
 	visibility: visible;
-	-webkit-animation: fadeIn 2s;
-	animation: fadeIn 2s;
+	-webkit-animation: fadeIn 0.5s;
+	animation: fadeIn 0.5s;
   }
 
-  .popup, .popup_horse .fadeOut {
+  .popup, .popup_cat .fadeOut {
 	visibility: visible;
-	opacity: 0;
-	-webkit-animation: fadeOut 2s;
-	animation: fadeOut 2s;
+    opacity: 0;
+    transition: 750ms all;
   }
 
   
@@ -231,28 +261,4 @@ top:var(--move_y);
   @keyframes fadeIn {
 	from {opacity: 0;}
 	to {opacity:0.75 ;}
-  }
-
-  @-webkit-keyframes fadeOut {
-	from {opacity: 0.75;} 
-	to {opacity: 0;}
-  }
-  
-  @keyframes fadeOut {
-	from {opacity: 0.75;}
-	to {opacity:0 ;}
-  }
-  .help_text
-  {
-	  color: rgba(255, 0, 13, 0.74);
-	  font-weight: bold;
-  }
-
-  .schlafkatze
-  {
-	position: absolute;
-	height: 62px;
-	width: 62px;
-	left:700px;
-	top:350px;
   }

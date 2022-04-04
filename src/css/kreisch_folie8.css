@@ -170,34 +170,6 @@ top:var(--move_y);
 	border-radius: 15px;
   }
 
-.becher1
-  {
-	position: absolute;
-	left:var(--cup1_x);
-	top:var(--cup1_y);
-  }
-.becher2
-  {
-	position: absolute;
-	left:var(--cup2_x);
-	top:var(--cup2_y);
-  }
-.becher3
-  {
-	position: absolute;
-	left:var(--cup3_x);
-	top:var(--cup3_y);
-  }
-
-.nuss
-{
-	opacity: var(--nuss_opacity);
-	position: absolute;
-	height: 40px;
-	width: auto;
-	left: var(--nuss_x);
-	top:var(--nuss_y);
-}
 .sprechblase
   {
 	position: absolute;

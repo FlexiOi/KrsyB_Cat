@@ -472,6 +472,52 @@ checkInventory();
             break;
     }
 
+    //  horse interface
+
+    let click_arrow = document.querySelector("#backArrow");
+
+    // pop up
+
+    let horse_timeout = false;
+    let horse_done = localStorage.getItem('horse_status');
+    var popup = document.getElementById("popup_vendor");
+
+function horse_interface() {
+        if (((place_counter_x === 6) && (place_counter_y === 9)) && (horse_done != 1)) {
+            if (horse_timeout === false && inventory_carrot == 1) {
+                console.log("popup einschalten");
+                popup.classList.toggle("fadeIn");
+                horse_timeout = true;
+                click_arrow.addEventListener("click", cancelVendor);
+            }
+            else{
+                console.log("kleines if nicht erfüllt.");
+            }
+           
+        }
+        else{
+            console.log("großes if nicht erfüllt.");
+        }
+    }
+       
+async function resetVendor()
+    {
+        await delay(500);
+        popup.classList.toggle("fadeIn");
+        popup.classList.toggle("fadeOut");
+        console.log("reset");
+    }
+function cancelVendor()
+{
+    console.log("popup ausschalten");
+    popup.classList.toggle("fadeOut");
+    horse_timeout = false;
+    resetVendor();
+    click_arrow.removeEventListener("click", cancelVendor);
+
+}
+
+    
     // move up
     async function move_up() {
         if (counter_arrow_up === banned_squares_up.length) {
@@ -622,6 +668,7 @@ checkInventory();
         }
         else if ((e.keyCode == '39') && (can_char_move === true)) { // right arrow
             move_to_east();
+            horse_interface();
             prevent_move();
             document.getElementById('player_img').src = "src/images/cat_right_standing_black.png";
             if ((place_counter_x >= 1) && (place_counter_x < number_of_squares)) {
