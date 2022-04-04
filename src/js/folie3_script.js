@@ -502,7 +502,7 @@ async function horse_interface() {
                 r.style.setProperty('--grayscale_carrot', 1);
                 localStorage.setItem('carrot', 2);
                 vendor_done = localStorage.getItem('horse_status');
-                 checkInventory();
+                checkInventory();
             }
             else{
                 show_bubble11();
@@ -532,8 +532,6 @@ function cancelVendor()
     popup.classList.toggle("fadeOut");
     horse_timeout = false;
     resetVendor();
-    click_arrow.removeEventListener("click", cancelVendor);
-
 }
 
     
