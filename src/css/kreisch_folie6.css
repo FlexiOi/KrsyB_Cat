@@ -35,7 +35,8 @@ top:var(--move_y);
 {
 left:450px;
 top:500px;
-position:absolute;   
+position:absolute;  
+opacity:var(--opacity_steine);
 }
 
 .geld
