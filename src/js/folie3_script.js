@@ -480,26 +480,44 @@ checkInventory();
 
     let horse_timeout = false;
     let horse_done = localStorage.getItem('horse_status');
-    var popup = document.getElementById("popup_vendor");
+    var popup = document.getElementById("popup_horse");
 
 function horse_interface() {
         if (((place_counter_x === 6) && (place_counter_y === 9)) && (horse_done != 1)) {
             if (horse_timeout === false && inventory_carrot == 1) {
+                horse_timeout = true;
+
+                r.style.setProperty('--opacity_sprechblase12', 1);
+                await delay(2000);
+                r.style.setProperty('--opacity_sprechblase12', 0);
+
                 console.log("popup einschalten");
                 popup.classList.toggle("fadeIn");
-                horse_timeout = true;
-                click_arrow.addEventListener("click", cancelVendor);
+                
+                await delay(2000);
+                cancelVendor();
+                
+                localStorage.setItem('horse_status', 1);
+                localStorage.setItem('grayscale_carrot', 1);
+                r.style.setProperty('--grayscale_carrot', 1);
+                localStorage.setItem('carrot', 2);
+                vendor_done = localStorage.getItem('horse_status');
             }
             else{
-                console.log("kleines if nicht erfüllt.");
+                show_bubble11();
+                console.log("schnauf");
             }
            
         }
-        else{
-            console.log("großes if nicht erfüllt.");
-        }
     }
-       
+
+    async function show_bubble11()
+    {
+        r.style.setProperty('--opacity_sprechblase11', 1);
+        await delay(2000);
+        r.style.setProperty('--opacity_sprechblase11', 0);
+    }
+    
 async function resetVendor()
     {
         await delay(500);

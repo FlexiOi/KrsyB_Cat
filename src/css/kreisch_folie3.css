@@ -17,6 +17,9 @@
 --grayscale_ticket:0;
 --grayscale_note:0;
 
+--opacity_sprechblase11:0;
+--opacity_sprechblase12:0;
+
 }
 .precachingPictures
 {
@@ -171,8 +174,8 @@ top:var(--move_y);
 .sprechblase
   {
 	position: absolute;
-	left:300px;
-	top:220px;
+	left:280px;
+	top:420px;
 	height: 100px;
 	width: auto;
   }
@@ -186,6 +189,15 @@ top:var(--move_y);
 	top: 550px;
   }
 
+  .visibility_sprechblase11
+{
+	opacity: var(--opacity_sprechblase11);
+}
+
+.visibility_sprechblase12
+{
+	opacity: var(--opacity_sprechblase12);
+}
 
   /* sleeping cat popups */
 .popup_cat {
