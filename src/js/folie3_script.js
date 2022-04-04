@@ -484,7 +484,7 @@ checkInventory();
 
 async function horse_interface() {
         if (((place_counter_x === 6) && (place_counter_y === 9)) && (horse_done != 1)) {
-            if (horse_timeout === false && inventory_carrot != 1) {
+            if (horse_timeout === false && inventory_carrot == 1) {
                 horse_timeout = true;
 
                 r.style.setProperty('--opacity_sprechblase12', 1);
