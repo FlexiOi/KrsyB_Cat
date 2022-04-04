@@ -36,6 +36,10 @@
         {
             x: 8, y: 10
         }
+        ,
+        {
+            x: 6, y: 9
+        }
     ];
     let banned_squares_left = [
         {
@@ -172,10 +176,13 @@
             x: 7, y: 9
         },
         {
-            x: 8, y: 9
+            x: 8, y: 10
         },
         {
             x: 10, y: 6
+        },
+        {
+            x: 7, y: 10
         }
     ];
 
@@ -199,6 +206,7 @@
     var grayscale_ticket = localStorage.getItem('grayscale_ticket');
     var grayscale_note = localStorage.getItem('grayscale_note');
 
+    let status_stones = rs.getPropertyValue('--opacity_steine');
 
 
 
@@ -348,14 +356,20 @@ checkInventory();
             localStorage.setItem('player_origin', 8);
         }
     }
-
+    function move_into_cave() {
+        if ((place_counter_x === 8) && (place_counter_y === 10) && (status_stones == 0)) {
+            console.log("ab in die Höhle");
+            window.location.href = "kreischcraft10.html";
+            localStorage.setItem('player_origin', 8);
+        }
+    }
     // move back to page 3
 
     function move_to_page3() {
         if ((place_counter_x === 2) && (place_counter_y === 1)) {
             console.log("zurück zu page3");
             window.location.href = "kreischcraft3.html";
-            localStorage.setItem('player_origin', 6);
+            localStorage.setItem('player_origin', 12);
         }
 
     }
@@ -403,6 +417,20 @@ checkInventory();
             run_y = place_counter_y - 1;
             run_x = place_counter_x - 1;
             document.getElementById("player_img").src = "src/images/cat_left_standing_black.png";
+            console.log("x:" + move_x + " y: " + move_y);
+            console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
+            break;
+        case "11": // from the east(bottom)
+            console.log("Player origin is the cave");
+            place_counter_x = 8;
+            move_x = 15 + (62 * (place_counter_x - 1));
+            r.style.setProperty('--move_x', move_x + "px");
+            place_counter_y = 10;
+            move_y = 10 + (62 * (place_counter_y - 1));
+            r.style.setProperty('--move_y', move_y + "px");
+            run_y = place_counter_y - 1;
+            run_x = place_counter_x - 1;
+            document.getElementById("player_img").src = "src/images/cat_back_standing_black.png";
             console.log("x:" + move_x + " y: " + move_y);
             console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
             break;
