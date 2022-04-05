@@ -351,7 +351,7 @@ checkInventory();
     function move_out_of_cave() {
         if ((place_counter_x === 5) && (place_counter_y === 10)) {
             console.log("raus aus der Höhle");
-            window.location.href = "kreischcraft7.html";
+            window.location.href = "kreischcraft6.html";
             localStorage.setItem('player_origin', 13);
         }
     }
