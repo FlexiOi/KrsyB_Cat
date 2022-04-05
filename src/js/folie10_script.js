@@ -6,115 +6,22 @@
     let banned_squares_right = [
         
         {
-            x: 8, y: 9
-        },
-        {
-            x: 8, y: 8
-        },
-        {
-            x: 7, y: 7
-        },
-        {
-            x: 6, y: 6
-        },
-        {
-            x: 6, y: 5
-        },
-        {
-            x: 7, y: 4
-        },
-        {
-            x: 5, y: 10
-        },
-        {
-            x: 6, y: 3
+            x: 11, y: 9
         }
     ];
     let banned_squares_left = [
         {
-            x: 3, y: 9
-        },
-        {
-            x: 1, y: 8
-        },
-        {
-            x: 4, y: 7
-        },
-        {
-            x: 6, y: 6
-        },
-        {
-            x: 6, y: 5
-        },
-        {
-            x: 5, y: 4
-        },
-        {
-            x: 6, y: 3
-        },
-        {
-            x: 5, y: 10
+            x: 33, y: 9
         }
     ];
     let banned_squares_down = [
         {
-            x: 5, y: 4
-        },
-        {
-            x: 7, y: 4
-        },
-        {
-            x: 1, y: 8
-        },
-        {
-            x: 2, y: 8
-        },
-        {
-            x: 3, y: 9
-        },
-        {
-            x: 4, y: 9
-        },
-        {
-            x: 6, y: 9
-        },
-        {
-            x: 7, y: 9
-        },
-        {
-            x: 8, y: 9
+            x: 45, y: 4
         }
     ];
     let banned_squares_up = [
         {
-            x: 8, y: 8
-        },
-        {
-            x: 7, y: 7
-        },
-        {
-            x: 5, y: 7
-        },
-        {
-            x: 4, y: 7
-        },
-        {
-            x: 3, y: 8
-        },
-        {
-            x: 2, y: 8
-        },
-        {
-            x: 1, y: 8
-        },
-        {
-            x: 5, y: 4
-        },
-        {
-            x: 7, y: 4
-        },
-        {
-            x: 6, y: 4
+            x: 58, y: 8
         }
     ];
 
@@ -391,8 +298,8 @@ async function buyCarrot()
 
    var origin = localStorage.getItem('player_origin');
    switch (origin) {
-       case "9": // from  page 7
-           console.log("Player origin is page 7");
+       case "13": // from  page 7
+           console.log("Player origin is page 6");
            place_counter_x = 5;
            move_x = 15 + (62 * (place_counter_x - 1));
            r.style.setProperty('--move_x', move_x + "px");
