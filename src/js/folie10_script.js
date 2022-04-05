@@ -24,7 +24,7 @@
             x: 5, y: 4
         },
         {
-            x: 9, y: 3
+            x: 10, y: 3
         },
         {
             x: 9, y: 5
@@ -80,9 +80,6 @@
         },
         {
             x: 4, y: 9
-        },
-        {
-            x: 5, y: 9
         },
         {
             x: 6, y: 9
@@ -355,7 +352,7 @@ checkInventory();
         if ((place_counter_x === 5) && (place_counter_y === 10)) {
             console.log("raus aus der Höhle");
             window.location.href = "kreischcraft7.html";
-            localStorage.setItem('player_origin', 9);
+            localStorage.setItem('player_origin', 13);
         }
     }
 
@@ -370,8 +367,8 @@ checkInventory();
     var popup = document.getElementById("popup_vendor");
 
 function vendor_interface() {
-        if (((place_counter_x === 6) && (place_counter_y === 4)) && (vendor_done != 1)) {
-            if (vendor_timeout === false && inventory_coin == 1) {
+        if ((place_counter_x === 2) && (place_counter_y === 3))  {
+            if (vendor_timeout === false && inventory_carrot == 2) {
                 console.log("popup einschalten");
                 popup.classList.toggle("fadeIn");
                 vendor_timeout = true;
