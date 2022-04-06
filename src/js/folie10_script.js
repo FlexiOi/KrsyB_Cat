@@ -162,6 +162,9 @@
             x: 4, y: 5
         },
         {
+            x: 1, y: 3
+        },
+        {
             x: 2, y: 3
         },
         {
@@ -367,12 +370,14 @@ checkInventory();
     var popup = document.getElementById("popup_vendor");
 
 function vendor_interface() {
-        if ((place_counter_x === 2) && (place_counter_y === 3))  {
+        if ((place_counter_x === 1) && (place_counter_y === 3))  {
             if (vendor_timeout === false && inventory_carrot == 2) {
                 console.log("popup einschalten");
                 popup.classList.toggle("fadeIn");
                 vendor_timeout = true;
                 click_arrow.addEventListener("click", cancelVendor);
+                r.style.setProperty('--notiz', 1);
+                localStorage.setItem('note', 1);
             }
             else{
                 show_bubble10();
@@ -561,6 +566,7 @@ async function buyCarrot()
 
         if ((e.keyCode == '38') && (can_char_move === true)) { // up arrow
             prevent_move();
+            vendor_interface();
             document.getElementById('player_img').src = "src/images/cat_back_standing_black.png";
             if ((place_counter_y > 1) && (place_counter_y <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_up.length; i++) {
@@ -605,7 +611,6 @@ async function buyCarrot()
         }
         else if ((e.keyCode == '37') && (can_char_move === true)) { // left arrow
             prevent_move();
-            vendor_interface();
             document.getElementById('player_img').src = "src/images/cat_left_standing_black.png";
             if ((place_counter_x > 1) && (place_counter_x <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_left.length; i++) {
