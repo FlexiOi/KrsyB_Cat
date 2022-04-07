@@ -85,6 +85,9 @@
 
 async function checkPort()
 {
+    r.style.setProperty('--opacity_portal', 1);
+    await delay(300);
+
     if (portStatus == 5) {
         console.log("port durch");
         place_counter_x = 7;
@@ -101,6 +104,9 @@ async function checkPort()
         localStorage.setItem('note', 2);
         cat_done = localStorage.getItem('cat_status');
         checkInventory();
+
+    r.style.setProperty('--opacity_portal', 0);
+
 
     }
     else
@@ -320,6 +326,10 @@ async function cat_interface() {
                 checkInventory();
                 cancelCatIslandWindow();
 
+                await delay(100);
+                r.style.setProperty('--opacity_sprechblase18', 1);
+                await delay(1500);
+                r.style.setProperty('--opacity_sprechblase18', 0);
             }       
         }
     }

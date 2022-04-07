@@ -22,6 +22,9 @@
 --opacity_sprechblase15:0;
 --opacity_sprechblase16:0;
 --opacity_sprechblase17:0;
+--opacity_sprechblase18:0;
+
+--opacity_portal:0;
 
 }
 .precachingPictures
@@ -182,7 +185,24 @@ top:var(--move_y);
 	height: 200px;
 	width: auto;
   }
+.portal
+  {
+	position: absolute;
+	left:150px;
+	top:100px;
+	height: 150px;
+	width: auto;
+	opacity: var(--opacity_portal);
+  }
 
+  .sprechblase_new_item
+  {
+	position: absolute;
+	left:570px;
+	top:100px;
+	height: 150px;
+	width: auto;
+  }
 .visibility_sprechblase13
 {
 	opacity: var(--opacity_sprechblase13);
@@ -202,6 +222,10 @@ top:var(--move_y);
 .visibility_sprechblase17
 {
 	opacity: var(--opacity_sprechblase17);
+}
+.visibility_sprechblase18
+{
+	opacity: var(--opacity_sprechblase18);
 }
 
   .backArrow
