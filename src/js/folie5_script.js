@@ -275,7 +275,7 @@ checkInventory();
 let cat_timeout = false;
 var popup = document.getElementById("popup_catIsland");
 let cat_done = localStorage.getItem('cat_status');
-let click_arrow = document.querySelector("#backArrow");
+
 
 async function cat_interface() {
         if ((place_counter_x === 7) && (place_counter_y === 2))  {
@@ -284,7 +284,7 @@ async function cat_interface() {
                 console.log("popup einschalten");
                 popup.classList.toggle("fadeIn");
                 cat_timeout = true;
-                click_arrow.addEventListener("click", cancelCatIslandWindow);
+               
 
                 r.style.setProperty('--opacity_sprechblase13', 1);
                 await delay(3000);
@@ -317,7 +317,7 @@ async function cat_interface() {
                 document.getElementById("player_img").src = "src/images/cat_left_standing_black.png";
                 localStorage.setItem('grayscale_note', 1);
                 r.style.setProperty('--grayscale_note', 1);
-                localStorage.setItem('note', 2);
+                localStorage.setItem('note', 1);
                 cat_done = localStorage.getItem('cat_status');
                 
 
@@ -348,7 +348,6 @@ function cancelCatIslandWindow()
     popup.classList.toggle("fadeOut");
     cat_timeout = false;
     resetCatIslandWindow();
-    click_arrow.removeEventListener("click", cancelCatIslandWindow);
 
 }
     // get move_x
