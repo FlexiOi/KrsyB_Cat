@@ -89,7 +89,7 @@ async function checkPort()
 
     if (portStatus == 5) {
         r.style.setProperty('--opacity_portal', 1);
-        r.style.setProperty('--opacity_player', 1);
+        r.style.setProperty('--opacity_player', 0);
         await delay(1000);
         console.log("port durch");
         place_counter_x = 7;
