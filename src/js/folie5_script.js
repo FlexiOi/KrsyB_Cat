@@ -98,7 +98,7 @@ async function checkPort()
         document.getElementById("player_img").src = "src/images/catIsland_right_standing_black.png";
         localStorage.setItem('grayscale_note', 1);
         r.style.setProperty('--grayscale_note', 1);
-        localStorage.setItem('note', 2);
+        localStorage.setItem('note', 1);
         catIsland_done = localStorage.getItem('catIsland_status');
         checkInventory();
 
