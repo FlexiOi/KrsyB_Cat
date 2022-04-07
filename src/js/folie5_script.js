@@ -61,10 +61,11 @@
     var grayscale_ticket = localStorage.getItem('grayscale_ticket');
     var grayscale_note = localStorage.getItem('grayscale_note');
     var portStatus = 0;
+    var lastButtonClick = 0;
 
 async function checkPort()
 {
-    if ((portStatus == 5) && (place_counter_x === 1) && (place_counter_y === 3)) {
+    if (portStatus == 5) {
         console.log("port durch");
         place_counter_x = 6;
         move_x = 15 + (62 * (place_counter_x - 1));
@@ -75,14 +76,84 @@ async function checkPort()
         run_y = place_counter_y - 1;
         run_x = place_counter_x - 1;
         document.getElementById("player_img").src = "src/images/cat_right_standing_black.png";
+
     }
     else
     {
         console.log("port status erst "+ portStatus);
-        portStatus = 0;
     }
 }
 
+function checkFirstLetter()
+{
+if (lastButtonClick === "i") {
+    portStatus = 1;
+    checkPort();
+    console.log("i klappt;");
+}
+else
+{
+    console.log("i falsch;");
+    portStatus = 0;
+    lastButtonClick = "";
+}
+}
+function checkSecondLetter()
+{
+if (lastButtonClick === "d") {
+    portStatus = 2;
+    checkPort();
+    console.log("erstes d klappt;");
+}
+else
+{
+    console.log("erstes d falsch;");
+    portStatus = 0;
+    lastButtonClick = "";
+}
+}
+function checkThirdLetter()
+{
+if (lastButtonClick === "d") {
+    portStatus = 3;
+    checkPort();
+    console.log("zweites d klappt;");
+}
+else
+{
+    console.log("zweites d falsch;");
+    portStatus = 0;
+    lastButtonClick = "";
+}
+}
+function checkFourthLetter()
+{
+if (lastButtonClick === "q") {
+    portStatus = 4;
+    checkPort();
+    console.log("q klappt;");
+}
+else
+{
+    console.log("q falsch;");
+    portStatus = 0;
+    lastButtonClick = "";
+}
+}
+function checkFifthLetter()
+{
+if (lastButtonClick === "d") {
+    portStatus = 5;
+    checkPort();
+    console.log("drittes d klappt;");
+}
+else
+{
+    console.log("drittes d falsch;");
+    portStatus = 0;
+    lastButtonClick = "";
+}
+}
  function checkInventory()
  { 
     switch (inventory_fish) {
@@ -409,34 +480,30 @@ checkInventory();
                 console.log("rechts raus");
             }
         }
-        else if ((e.keyCode == '73') && (inventory_note != 1))
+        else if (((e.keyCode == '73') && (inventory_note != 1)) &&  (place_counter_x === 1) && (place_counter_y === 3))
          { // up arrow
-            portStatus = 1
-            checkPort();
-                console.log("i klappt;");
+            lastButtonClick = "i";
+            checkFirstLetter();
         }
-        else if ((e.keyCode == '68') && (portStatus == 1))
+        else if (((e.keyCode == '68') && (portStatus == 1)) &&  (place_counter_x === 1) && (place_counter_y === 3))
          { // up arrow
-            portStatus = 2
-            checkPort();
-                console.log("erstes d klappt;");
+            lastButtonClick = "d";
+            checkSecondLetter();
         }
-        else if ((e.keyCode == '68') && (portStatus == 2))
+        else if (((e.keyCode == '68') && (portStatus == 2)) &&  (place_counter_x === 1) && (place_counter_y === 3))
          { // up arrow
-            portStatus = 3
-            checkPort();
-                console.log("zweites d klappt;");
+            lastButtonClick = "d";
+            checkThirdLetter();
         }
-        else if ((e.keyCode == '81') && (portStatus == 3))
+        else if (((e.keyCode == '81') && (portStatus == 3)) &&  (place_counter_x === 1) && (place_counter_y === 3))
         { // up arrow
-           portStatus = 4
-           checkPort();
-               console.log("q klappt;");
+            lastButtonClick = "q";
+            checkFourthLetter();
+
        }
-       else if ((e.keyCode == '68') && (portStatus == 4))
+       else if (((e.keyCode == '68') && (portStatus == 4)) &&  (place_counter_x === 1) && (place_counter_y === 3))
        { // up arrow
-          portStatus = 5
-          checkPort();
-              console.log("drittes d klappt;");
+            lastButtonClick = "d";
+            checkFifthLetter();
       }
     }
