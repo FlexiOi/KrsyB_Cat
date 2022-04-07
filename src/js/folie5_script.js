@@ -85,10 +85,11 @@
 
 async function checkPort()
 {
-    r.style.setProperty('--opacity_portal', 1);
-    await delay(300);
+    
 
     if (portStatus == 5) {
+        r.style.setProperty('--opacity_portal', 1);
+        await delay(500);
         console.log("port durch");
         place_counter_x = 7;
         move_x = 15 + (62 * (place_counter_x - 1));
@@ -101,11 +102,11 @@ async function checkPort()
         document.getElementById("player_img").src = "src/images/cat_right_standing_black.png";
         localStorage.setItem('grayscale_note', 1);
         r.style.setProperty('--grayscale_note', 1);
-        localStorage.setItem('note', 2);
+        localStorage.setItem('note', 1);
         cat_done = localStorage.getItem('cat_status');
         checkInventory();
 
-    r.style.setProperty('--opacity_portal', 0);
+        r.style.setProperty('--opacity_portal', 0);
 
 
     }
