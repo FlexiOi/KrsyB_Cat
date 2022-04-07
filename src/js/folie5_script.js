@@ -103,7 +103,7 @@ async function checkPort()
         document.getElementById("player_img").src = "src/images/cat_right_standing_black.png";
         localStorage.setItem('grayscale_note', 1);
         r.style.setProperty('--grayscale_note', 1);
-        localStorage.setItem('note', 1);
+        localStorage.setItem('note', 2);
         cat_done = localStorage.getItem('cat_status');
         checkInventory();
 
