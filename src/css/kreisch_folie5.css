@@ -17,6 +17,12 @@
 --grayscale_ticket:0;
 --grayscale_note:0;
 
+--opacity_sprechblase13:0;
+--opacity_sprechblase14:0;
+--opacity_sprechblase15:0;
+--opacity_sprechblase16:0;
+--opacity_sprechblase17:0;
+
 }
 .precachingPictures
 {
@@ -171,47 +177,31 @@ top:var(--move_y);
 .sprechblase
   {
 	position: absolute;
-	left:300px;
-	top:220px;
-	height: 100px;
+	left:100px;
+	top:200px;
+	height: 200px;
 	width: auto;
   }
 
-  .sprechblase_dragon
-  {
-	position: absolute;
-	left:330px;
-	top:100px;
-	height: 100px;
-	width: auto;
-  }
-  .sprechblase_new_item
-  {
-	position: absolute;
-	left:570px;
-	top:100px;
-	height: 150px;
-	width: auto;
-  }
-.visibility_sprechblase6
+.visibility_sprechblase13
 {
-	opacity: var(--opacity_sprechblase6);
+	opacity: var(--opacity_sprechblase13);
 }
-.visibility_sprechblase7
+.visibility_sprechblase14
 {
-	opacity: var(--opacity_sprechblase7);
+	opacity: var(--opacity_sprechblase14);
 }
-.visibility_sprechblase8
+.visibility_sprechblase15
 {
-	opacity: var(--opacity_sprechblase7);
+	opacity: var(--opacity_sprechblase15);
 }
-.visibility_sprechblase9
+.visibility_sprechblase16
 {
-	opacity: var(--opacity_sprechblase7);
+	opacity: var(--opacity_sprechblase16);
 }
-.visibility_sprechblase10
+.visibility_sprechblase17
 {
-	opacity: var(--opacity_sprechblase10);
+	opacity: var(--opacity_sprechblase17);
 }
 
   .backArrow

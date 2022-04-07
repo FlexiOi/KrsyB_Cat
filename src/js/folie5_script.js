@@ -98,7 +98,7 @@ async function checkPort()
         document.getElementById("player_img").src = "src/images/cat_right_standing_black.png";
         localStorage.setItem('grayscale_note', 1);
         r.style.setProperty('--grayscale_note', 1);
-        localStorage.setItem('note', 1);
+        localStorage.setItem('note', 2);
         cat_done = localStorage.getItem('cat_status');
         checkInventory();
 
@@ -270,13 +270,56 @@ var popup = document.getElementById("popup_catIsland");
 let cat_done = localStorage.getItem('cat_status');
 let click_arrow = document.querySelector("#backArrow");
 
-function cat_interface() {
+async function cat_interface() {
         if ((place_counter_x === 7) && (place_counter_y === 2))  {
             if (cat_timeout === false && inventory_carrot == 2) {
+                prevent_move_for_x()
                 console.log("popup einschalten");
                 popup.classList.toggle("fadeIn");
                 cat_timeout = true;
                 click_arrow.addEventListener("click", cancelCatIslandWindow);
+
+                r.style.setProperty('--opacity_sprechblase13', 1);
+                await delay(3000);
+                r.style.setProperty('--opacity_sprechblase13', 0);
+                await delay(300);
+                r.style.setProperty('--opacity_sprechblase14', 1);
+                await delay(3000);
+                r.style.setProperty('--opacity_sprechblase14', 0);
+                await delay(300);
+                r.style.setProperty('--opacity_sprechblase15', 1);
+                await delay(3000);
+                r.style.setProperty('--opacity_sprechblase15', 0);
+                await delay(300);
+                r.style.setProperty('--opacity_sprechblase16', 1);
+                await delay(3000);
+                r.style.setProperty('--opacity_sprechblase16', 0);
+                await delay(300);
+                r.style.setProperty('--opacity_sprechblase17', 1);
+                await delay(3000);
+                r.style.setProperty('--opacity_sprechblase17', 0);
+                
+                place_counter_x = 3;
+                move_x = 15 + (62 * (place_counter_x - 1));
+                r.style.setProperty('--move_x', move_x + "px");
+                place_counter_y = 3;
+                move_y = 10 + (62 * (place_counter_y - 1));
+                r.style.setProperty('--move_y', move_y + "px");
+                run_y = place_counter_y - 1;
+                run_x = place_counter_x - 1;
+                document.getElementById("player_img").src = "src/images/cat_left_standing_black.png";
+                localStorage.setItem('grayscale_note', 1);
+                r.style.setProperty('--grayscale_note', 1);
+                localStorage.setItem('note', 2);
+                cat_done = localStorage.getItem('cat_status');
+                
+
+                await delay(300);
+                r.style.setProperty('--ticket', 1);
+                localStorage.setItem('ticket', 1);
+                checkInventory();
+                cancelCatIslandWindow();
+
             }       
         }
     }
@@ -340,6 +383,12 @@ function cancelCatIslandWindow()
     async function prevent_move() {
         can_char_move = false;
         await delay_movement(101);
+        can_char_move = true;
+    }
+
+    async function prevent_move_for_x() {
+        can_char_move = false;
+        await delay_movement(16200);
         can_char_move = true;
     }
 
