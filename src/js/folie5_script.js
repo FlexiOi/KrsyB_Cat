@@ -107,7 +107,7 @@ async function checkPort()
         cat_done = localStorage.getItem('cat_status');
         checkInventory();
 
-        r.style.setProperty('--portal_left', 400 + "px");
+        r.style.setProperty('--portal_left', 380 + "px");
         r.style.setProperty('--portal_top', 30 + "px");
         await delay(1000);
         r.style.setProperty('--opacity_portal', 0);
