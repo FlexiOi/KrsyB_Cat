@@ -24,7 +24,11 @@
 --opacity_sprechblase17:0;
 --opacity_sprechblase18:0;
 
+--opacity_player:0;
 --opacity_portal:0;
+
+--portal_left:150px;
+--portal_top:100px;
 
 }
 .precachingPictures
@@ -38,6 +42,7 @@ width: 62px;
 position:absolute;   
 left:var(--move_x);
 top:var(--move_y);
+opacity: var(--opacity_player);
 }
 
 .geld
@@ -188,8 +193,8 @@ top:var(--move_y);
 .portal
   {
 	position: absolute;
-	left:150px;
-	top:100px;
+	left:var(--portal_left);
+	top:var(--portal_top);
 	height: 150px;
 	width: auto;
 	opacity: var(--opacity_portal);

@@ -89,7 +89,8 @@ async function checkPort()
 
     if (portStatus == 5) {
         r.style.setProperty('--opacity_portal', 1);
-        await delay(500);
+        r.style.setProperty('--opacity_player', 0);
+        await delay(1000);
         console.log("port durch");
         place_counter_x = 7;
         move_x = 15 + (62 * (place_counter_x - 1));
@@ -106,7 +107,8 @@ async function checkPort()
         cat_done = localStorage.getItem('cat_status');
         checkInventory();
 
-        r.style.setProperty('--opacity_portal', 0);
+        r.style.setProperty('--portal_left', 400 + "px");
+        r.style.setProperty('--portal_top', 400 + "px");
 
 
     }
