@@ -161,11 +161,148 @@ top:var(--move_y);
 	  font-weight: bold;
   }
 
-  .schlafkatze
+  .vendorPic
+  {
+	height: 620px;
+	width: 620px;
+	border-radius: 15px;
+  }
+
+.sprechblase
   {
 	position: absolute;
-	height: 62px;
-	width: 62px;
-	left:700px;
-	top:350px;
+	left:300px;
+	top:220px;
+	height: 100px;
+	width: auto;
+  }
+
+  .sprechblase_dragon
+  {
+	position: absolute;
+	left:330px;
+	top:100px;
+	height: 100px;
+	width: auto;
+  }
+  .sprechblase_new_item
+  {
+	position: absolute;
+	left:570px;
+	top:100px;
+	height: 150px;
+	width: auto;
+  }
+.visibility_sprechblase6
+{
+	opacity: var(--opacity_sprechblase6);
+}
+.visibility_sprechblase7
+{
+	opacity: var(--opacity_sprechblase7);
+}
+.visibility_sprechblase8
+{
+	opacity: var(--opacity_sprechblase7);
+}
+.visibility_sprechblase9
+{
+	opacity: var(--opacity_sprechblase7);
+}
+.visibility_sprechblase10
+{
+	opacity: var(--opacity_sprechblase10);
+}
+
+  .backArrow
+  {
+	position: absolute;
+	height: 70px;
+	width: 150px;
+	left: 420px;
+	top: 550px;
+  }
+
+  .CatIslandPic
+  {
+	height: 620px;
+	width: 620px;
+	border-radius: 15px;
+  }
+
+
+/* sleeping cat popups */
+.popup_cat {
+	left:530px;
+	top:210px;
+	position: absolute;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  }
+
+/* Popup container - can be anything you want */
+.popup {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  }
+  
+  /* The actual popup */
+  .popuptext {
+	visibility: hidden;
+	background-color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+
+	border-radius: 6px;
+	position: absolute;
+	z-index: 1;
+	bottom: 25%;
+	left: -515px;
+	top:-200px;
+  }
+  
+
+  /* Popup arrow */
+.popuptext::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
+  }
+
+
+  
+  /* Toggle this class - hide and show the popup */
+  .popup, .popup_cat .fadeIn {
+	visibility: visible;
+	-webkit-animation: fadeIn 0.5s;
+	animation: fadeIn 0.5s;
+  }
+
+  .popup, .popup_cat .fadeOut {
+	visibility: visible;
+    opacity: 0;
+    transition: 750ms all;
+  }
+
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+	from {opacity: 0;} 
+	to {opacity: 0.75;}
+  }
+  
+  @keyframes fadeIn {
+	from {opacity: 0;}
+	to {opacity:0.75 ;}
   }
