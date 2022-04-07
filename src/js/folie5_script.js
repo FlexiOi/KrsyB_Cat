@@ -268,6 +268,7 @@ checkInventory();
 let cat_timeout = false;
 var popup = document.getElementById("popup_catIsland");
 let cat_done = localStorage.getItem('cat_status');
+let click_arrow = document.querySelector("#backArrow");
 
 function cat_interface() {
         if ((place_counter_x === 7) && (place_counter_y === 2))  {
