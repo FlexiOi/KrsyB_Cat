@@ -81,6 +81,8 @@
     var portStatus = 0;
     var lastButtonClick = 0;
 
+// port to island
+
 async function checkPort()
 {
     if (portStatus == 5) {
@@ -93,7 +95,12 @@ async function checkPort()
         r.style.setProperty('--move_y', move_y + "px");
         run_y = place_counter_y - 1;
         run_x = place_counter_x - 1;
-        document.getElementById("player_img").src = "src/images/cat_right_standing_black.png";
+        document.getElementById("player_img").src = "src/images/catIsland_right_standing_black.png";
+        localStorage.setItem('grayscale_note', 1);
+        r.style.setProperty('--grayscale_note', 1);
+        localStorage.setItem('note', 2);
+        catIsland_done = localStorage.getItem('catIsland_status');
+        checkInventory();
 
     }
     else
@@ -172,6 +179,9 @@ else
     lastButtonClick = "";
 }
 }
+
+ // check inventory
+
  function checkInventory()
  { 
     switch (inventory_fish) {
@@ -253,7 +263,39 @@ else
 }
 checkInventory();
 
+//popup for the cat
 
+let catIsland_timeout = false;
+var popup = document.getElementById("popup_catIsland");
+let catIsland_done = localStorage.getItem('catIsland_status');
+
+function catIsland_interface() {
+        if ((place_counter_x === 7) && (place_counter_y === 2))  {
+            if (catIsland_timeout === false && inventory_carrot == 2) {
+                console.log("popup einschalten");
+                popup.classList.toggle("fadeIn");
+                catIsland_timeout = true;
+                click_arrow.addEventListener("click", cancelCatIslandWindow);
+            }       
+        }
+    }
+       
+async function resetCatIslandWindow()
+    {
+        await delay(500);
+        popup.classList.toggle("fadeIn");
+        popup.classList.toggle("fadeOut");
+        console.log("reset");
+    }
+function cancelCatIslandWindow()
+{
+    console.log("popup ausschalten");
+    popup.classList.toggle("fadeOut");
+    catIsland_timeout = false;
+    resetCatIslandWindow();
+    click_arrow.removeEventListener("click", cancelCatIslandWindow);
+
+}
     // get move_x
     let move_x = rs.getPropertyValue('--move_x');
     let run_x = 0;
@@ -326,7 +368,7 @@ checkInventory();
             r.style.setProperty('--move_y', move_y + "px");
             run_y = place_counter_y - 1;
             run_x = place_counter_x - 1;
-            document.getElementById("player_img").src = "src/images/cat_right_standing_black.png";
+            document.getElementById("player_img").src = "src/images/catIsland_right_standing_black.png";
             console.log("x:" + move_x + " y: " + move_y);
             console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
             break;
@@ -342,10 +384,10 @@ checkInventory();
             console.log("x: " + place_counter_x + " y: " + place_counter_y);
             r.style.setProperty('--move_y', (move_y + (move_value / 3 * 2)) + "px");
             await delay(delay_duration);
-            document.getElementById("player_img").src = "src/images/cat_back_moving_black.png";
+            document.getElementById("player_img").src = "src/images/catIsland_back_moving_black.png";
             r.style.setProperty('--move_y', (move_y + (move_value / 3 * 1)) + "px");
             await delay(delay_duration);
-            document.getElementById("player_img").src = "src/images/cat_back_standing_black.png";
+            document.getElementById("player_img").src = "src/images/catIsland_back_standing_black.png";
             r.style.setProperty('--move_y', move_y + "px");
         }
     }
@@ -359,10 +401,10 @@ checkInventory();
             console.log("x: " + place_counter_x + " y: " + place_counter_y);
             r.style.setProperty('--move_y', (move_y - (move_value / 3 * 2)) + "px");
             await delay(delay_duration);
-            document.getElementById("player_img").src = "src/images/cat_front_moving_black.png";
+            document.getElementById("player_img").src = "src/images/catIsland_front_moving_black.png";
             r.style.setProperty('--move_y', (move_y - (move_value / 3 * 1)) + "px");
             await delay(delay_duration);
-            document.getElementById("player_img").src = "src/images/cat_front_standing_black.png";
+            document.getElementById("player_img").src = "src/images/catIsland_front_standing_black.png";
             r.style.setProperty('--move_y', move_y + "px");
         }
     }
@@ -376,10 +418,10 @@ checkInventory();
             console.log("x: " + place_counter_x + " y: " + place_counter_y);
             r.style.setProperty('--move_x', (move_x - (move_value / 3 * 2)) + "px");
             await delay(delay_duration);
-            document.getElementById("player_img").src = "src/images/cat_right_moving_black.png";
+            document.getElementById("player_img").src = "src/images/catIsland_right_moving_black.png";
             r.style.setProperty('--move_x', (move_x - (move_value / 3 * 1)) + "px");
             await delay(delay_duration);
-            document.getElementById("player_img").src = "src/images/cat_right_standing_black.png";
+            document.getElementById("player_img").src = "src/images/catIsland_right_standing_black.png";
             r.style.setProperty('--move_x', move_x + "px");
             console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
             console.log("x:" + move_x + " y: " + move_y);
@@ -395,10 +437,10 @@ checkInventory();
             console.log("x: " + place_counter_x + " y: " + place_counter_y);
             r.style.setProperty('--move_x', (move_x + (move_value / 3 * 2)) + "px");
             await delay(delay_duration);
-            document.getElementById("player_img").src = "src/images/cat_left_moving_black.png";
+            document.getElementById("player_img").src = "src/images/catIsland_left_moving_black.png";
             r.style.setProperty('--move_x', (move_x + (move_value / 3 * 1)) + "px");
             await delay(delay_duration);
-            document.getElementById("player_img").src = "src/images/cat_left_standing_black.png";
+            document.getElementById("player_img").src = "src/images/catIsland_left_standing_black.png";
             r.style.setProperty('--move_x', move_x + "px");
         }
     }
@@ -414,7 +456,7 @@ checkInventory();
 
         if ((e.keyCode == '38') && (can_char_move === true)) { // up arrow
             prevent_move();
-            document.getElementById('player_img').src = "src/images/cat_back_standing_black.png";
+            document.getElementById('player_img').src = "src/images/catIsland_back_standing_black.png";
             if ((place_counter_y > 1) && (place_counter_y <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_up.length; i++) {
                     if ((place_counter_x === banned_squares_up[i].x) && (place_counter_y === banned_squares_up[i].y)) {
@@ -435,7 +477,7 @@ checkInventory();
         }
         else if ((e.keyCode == '40') && (can_char_move === true)) { // down arrow
             prevent_move();
-            document.getElementById('player_img').src = "src/images/cat_front_standing_black.png";
+            document.getElementById('player_img').src = "src/images/catIsland_front_standing_black.png";
             if ((place_counter_y >= 1) && (place_counter_y < number_of_squares)) {
                 for (var i = 0; i < banned_squares_down.length; i++) {
                     if ((place_counter_x === banned_squares_down[i].x) && (place_counter_y === banned_squares_down[i].y)) {
@@ -458,7 +500,7 @@ checkInventory();
         else if ((e.keyCode == '37') && (can_char_move === true)) { // left arrow
             prevent_move();
             move_to_west();
-            document.getElementById('player_img').src = "src/images/cat_left_standing_black.png";
+            document.getElementById('player_img').src = "src/images/catIsland_left_standing_black.png";
             if ((place_counter_x > 1) && (place_counter_x <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_left.length; i++) {
                     if ((place_counter_x === banned_squares_left[i].x) && (place_counter_y === banned_squares_left[i].y)) {
@@ -479,7 +521,7 @@ checkInventory();
         }
         else if ((e.keyCode == '39') && (can_char_move === true)) { // right arrow
             prevent_move();
-            document.getElementById('player_img').src = "src/images/cat_right_standing_black.png";
+            document.getElementById('player_img').src = "src/images/catIsland_right_standing_black.png";
             if ((place_counter_x >= 1) && (place_counter_x < number_of_squares)) {
                 for (var i = 0; i < banned_squares_right.length; i++) {
                     if ((place_counter_x === banned_squares_right[i].x) && (place_counter_y === banned_squares_right[i].y)) {
