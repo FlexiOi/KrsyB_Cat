@@ -60,9 +60,28 @@
     var grayscale_mouse = localStorage.getItem('grayscale_mouse');
     var grayscale_ticket = localStorage.getItem('grayscale_ticket');
     var grayscale_note = localStorage.getItem('grayscale_note');
+    var portStatus = 0;
 
-
-
+async function checkPort()
+{
+    if ((portStatus == 5) && (place_counter_x === 1) && (place_counter_y === 3)) {
+        console.log("port durch");
+        place_counter_x = 6;
+        move_x = 15 + (62 * (place_counter_x - 1));
+        r.style.setProperty('--move_x', move_x + "px");
+        place_counter_y = 3;
+        move_y = 10 + (62 * (place_counter_y - 1));
+        r.style.setProperty('--move_y', move_y + "px");
+        run_y = place_counter_y - 1;
+        run_x = place_counter_x - 1;
+        document.getElementById("player_img").src = "src/images/cat_right_standing_black.png";
+    }
+    else
+    {
+        console.log("port status erst "+ portStatus);
+        portStatus = 0;
+    }
+}
 
  function checkInventory()
  { 
@@ -200,6 +219,8 @@ checkInventory();
             window.location.href = "kreischcraft3.html";
         }
     }
+
+    //port to island
 
 
     // place character depending on zone entry
@@ -388,4 +409,34 @@ checkInventory();
                 console.log("rechts raus");
             }
         }
+        else if ((e.keyCode == '73') && (inventory_note != 1))
+         { // up arrow
+            portStatus = 1
+            checkPort();
+                console.log("i klappt;");
+        }
+        else if ((e.keyCode == '68') && (portStatus == 1))
+         { // up arrow
+            portStatus = 2
+            checkPort();
+                console.log("erstes d klappt;");
+        }
+        else if ((e.keyCode == '68') && (portStatus == 2))
+         { // up arrow
+            portStatus = 3
+            checkPort();
+                console.log("zweites d klappt;");
+        }
+        else if ((e.keyCode == '81') && (portStatus == 3))
+        { // up arrow
+           portStatus = 4
+           checkPort();
+               console.log("q klappt;");
+       }
+       else if ((e.keyCode == '68') && (portStatus == 4))
+       { // up arrow
+          portStatus = 5
+          checkPort();
+              console.log("drittes d klappt;");
+      }
     }
