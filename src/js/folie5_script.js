@@ -109,7 +109,9 @@ async function checkPort()
 
         r.style.setProperty('--portal_left', 400 + "px");
         r.style.setProperty('--portal_top', 30 + "px");
-
+        await delay(1000);
+        r.style.setProperty('--opacity_portal', 0);
+        r.style.setProperty('--opacity_player', 1);
 
     }
     else
