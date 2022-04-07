@@ -67,10 +67,10 @@ async function checkPort()
 {
     if (portStatus == 5) {
         console.log("port durch");
-        place_counter_x = 6;
+        place_counter_x = 7;
         move_x = 15 + (62 * (place_counter_x - 1));
         r.style.setProperty('--move_x', move_x + "px");
-        place_counter_y = 3;
+        place_counter_y = 2;
         move_y = 10 + (62 * (place_counter_y - 1));
         r.style.setProperty('--move_y', move_y + "px");
         run_y = place_counter_y - 1;
@@ -480,28 +480,28 @@ checkInventory();
                 console.log("rechts raus");
             }
         }
-        else if (((e.keyCode == '73') && (inventory_note != 1)) &&  (place_counter_x === 1) && (place_counter_y === 3))
+        else if (((e.keyCode == '73') && (inventory_note == 1)) &&  (place_counter_x === 3) && (place_counter_y === 3))
          { // up arrow
             lastButtonClick = "i";
             checkFirstLetter();
         }
-        else if (((e.keyCode == '68') && (portStatus == 1)) &&  (place_counter_x === 1) && (place_counter_y === 3))
+        else if (((e.keyCode == '68') && (portStatus == 1)) &&  (place_counter_x === 3) && (place_counter_y === 3))
          { // up arrow
             lastButtonClick = "d";
             checkSecondLetter();
         }
-        else if (((e.keyCode == '68') && (portStatus == 2)) &&  (place_counter_x === 1) && (place_counter_y === 3))
+        else if (((e.keyCode == '68') && (portStatus == 2)) &&  (place_counter_x === 3) && (place_counter_y === 3))
          { // up arrow
             lastButtonClick = "d";
             checkThirdLetter();
         }
-        else if (((e.keyCode == '81') && (portStatus == 3)) &&  (place_counter_x === 1) && (place_counter_y === 3))
+        else if (((e.keyCode == '81') && (portStatus == 3)) &&  (place_counter_x === 3) && (place_counter_y === 3))
         { // up arrow
             lastButtonClick = "q";
             checkFourthLetter();
 
        }
-       else if (((e.keyCode == '68') && (portStatus == 4)) &&  (place_counter_x === 1) && (place_counter_y === 3))
+       else if (((e.keyCode == '68') && (portStatus == 4)) &&  (place_counter_x === 3) && (place_counter_y === 3))
        { // up arrow
             lastButtonClick = "d";
             checkFifthLetter();
