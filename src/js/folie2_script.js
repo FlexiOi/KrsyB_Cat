@@ -305,14 +305,6 @@ async function cat_interface() {
             cat_timeout = false
             is_cat_there = 0;
 
-            banned_R_x = 25;
-             banned_R_y = 25;
-            // banned square down
-             banned_D_x = 25;
-             banned_D_y = 25;
-            // banned square up
-             banned_U_x = 25;
-             banned_U_y = 25;
         }
         else{
             show_bubble19();
