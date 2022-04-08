@@ -148,6 +148,7 @@ function setBannedSquares() {
         // banned square up
         banned_U_x = 25;
         banned_U_y = 25;
+        banned_squares_up = banned_squares_up;
     }
 }
 
