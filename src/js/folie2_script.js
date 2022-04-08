@@ -306,7 +306,7 @@ checkInventory();
 
     // set map values
     size_map = 496;
-    number_of_squares = 8;
+    number_of_squares = 10;
     move_value = size_map / number_of_squares;
 
     // get move_y
