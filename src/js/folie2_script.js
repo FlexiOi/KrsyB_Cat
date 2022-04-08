@@ -146,7 +146,6 @@ function setBannedSquares() {
         {
             x: 8, y: 5
         }];
-
         banned_squares_right = [
             {
                 x: 4, y: 8
@@ -172,7 +171,7 @@ function setBannedSquares() {
                 x: 7, y: 4
             }
         ];
-        let banned_squares_up = [{
+        banned_squares_up = [{
             x: 1, y: 2
         },
         {
