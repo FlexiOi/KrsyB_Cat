@@ -278,7 +278,7 @@ function cat_interface() {
         if (cat_timeout === false && inventory_fish == 1) {
             console.log("popup einschalten");
             popup.classList.toggle("fadeIn");
-            cat_timeout = true;
+            
             click_arrow.addEventListener("click", cancel_cat_interface);
             r.style.setProperty('--notiz', 1);
             localStorage.setItem('note', 1);
@@ -307,24 +307,26 @@ click_arrow.removeEventListener("click", cancel_cat_interface);
 
 async function show_bubble19()
 {
+    cat_timeout = true;
     r.style.setProperty('--opacity_sprechblase19', 1);
     await delay(2000);
     r.style.setProperty('--opacity_sprechblase19', 0);
+    cat_timeout = false;
 }
 
 
     function cat_sleep_up() {
-        if (((place_counter_x === 7) && (place_counter_y === 3)) && (is_cat_there = 1)) {
+        if (((place_counter_x === 7) && (place_counter_y === 3)) && (is_cat_there = 1 && (cat_timeout == false))) {
             cat_interface();
         }
     }
     function cat_sleep_down() {
-        if (((place_counter_x === 7) && (place_counter_y === 1)) && (is_cat_there = 1)) {
+        if (((place_counter_x === 7) && (place_counter_y === 1)) && (is_cat_there = 1 && (cat_timeout == false))) {
             cat_interface();
         }
     }
     function cat_sleep_right() {
-        if (((place_counter_x === 6) && (place_counter_y === 2)) && (is_cat_there = 1)) {
+        if (((place_counter_x === 6) && (place_counter_y === 2)) && (is_cat_there = 1 && (cat_timeout == false))) {
             cat_interface();
         }
     }
