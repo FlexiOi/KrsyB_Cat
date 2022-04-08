@@ -305,7 +305,7 @@ checkInventory();
     move_x_int = parseInt(move_x);
 
     // set map values
-    size_map = 496;
+    size_map = 620;
     number_of_squares = 10;
     move_value = size_map / number_of_squares;
 
