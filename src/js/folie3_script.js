@@ -474,13 +474,13 @@ async function horse_interface() {
                 horse_timeout = true;
 
                 r.style.setProperty('--opacity_sprechblase12', 1);
-                await delay(2000);
+                await delay(1500);
                 r.style.setProperty('--opacity_sprechblase12', 0);
 
                 console.log("popup einschalten");
                 popup.classList.toggle("fadeIn");
                 
-                await delay(2000);
+                await delay(1000);
                 cancelVendor();
 
                 localStorage.setItem('horse_status', 1);
