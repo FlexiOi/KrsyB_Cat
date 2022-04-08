@@ -7,34 +7,136 @@
 
     let banned_squares_right = [
         {
-            x: 14, y: 81
+            x: 5, y: 10
         },
         {
-            x: 41, y: 71
+            x: 6, y: 9
+        },
+        {
+            x: 4, y: 6,
+        },
+        {
+            x: 4, y: 5,
+        },
+        {
+            x: 4, y: 4,
+        },
+        {
+            x: 9, y: 5,
+        },
+        {
+            x: 9, y: 3,
+        },
+        {
+            x: 8, y: 4,
         }
     ];
     let banned_squares_left = [{
-        x: 21, y: 11
+        x: 4, y: 10
     },
     {
-        x: 16, y: 13,
+        x: 4, y: 9,
+    },
+    {
+        x: 3, y: 8,
+    },
+    {
+        x: 3, y: 7,
+    },
+    {
+        x: 3, y: 6,
+    },
+    {
+        x: 3, y: 5,
+    },
+    {
+        x: 3, y: 4,
+    },
+    {
+        x: 4, y: 3,
+    },
+    {
+        x: 8, y: 4,
+    },
+    {
+        x: 8, y: 5,
+    },
+    {
+        x: 8, y: 6,
     }
     ];
     let banned_squares_down = [
         {
-            x: 5, y: 6
+            x: 4, y: 9
         }
         ,
         {
-            x: 61, y: 16
+            x: 3, y: 8
+        },
+        {
+            x: 5, y: 3,
+        },
+        {
+            x: 6, y: 3,
+        },
+        {
+            x: 7, y: 3,
+        },
+        {
+            x: 7, y: 8,
+        },
+        {
+            x: 8, y: 8,
+        },
+        {
+            x: 9, y: 8,
+        },
+        {
+            x: 10, y: 8,
+        },
+        {
+            x: 9, y: 3,
         }
         
     ];
     let banned_squares_up = [{
-        x: 11, y: 12
+        x: 5, y: 7
     },
     {
-        x: 13, y: 15
+        x: 6, y: 7
+    },
+    {
+        x: 7, y: 7,
+    },
+    {
+        x: 3, y: 4,
+    },
+    {
+        x: 4, y: 3,
+    },
+    {
+        x: 5, y: 3,
+    },
+    {
+        x: 6, y: 3,
+    },
+    {
+        x: 7, y: 3,
+    },
+    {
+        x: 8, y: 3,
+    },
+    {
+        x: 9, y: 3,
+    },
+    {
+        x: 10, y: 3,
+    },
+    {
+        x: 10, y: 6,
+    },
+    {
+        x: 9, y: 5,
     }
     ];
 
@@ -61,82 +163,95 @@
 function setBannedSquares() {
     if (inventory_fish == 2) {
         console.log("banned squares set!");
-        banned_squares_up = [{
-            x: 1, y: 2
-        },
-        {
-            x: 3, y: 5
-        },
-        {
-            x: 4, y: 5
-        },
-        {
-            x: 5, y: 5
-        },
-        {
-            x: 8, y: 5
-        }];
         banned_squares_right = [
             {
-                x: 4, y: 8
+                x: 5, y: 10
             },
             {
-                x: 4, y: 7
+                x: 6, y: 9
             },
             {
-                x: 2, y: 4
+                x: 4, y: 6,
             },
             {
-                x: 2, y: 3
-            }
-            ,
-            {
-                x: 7, y: 2
-            }
-            ,
-            {
-                x: 7, y: 3
+                x: 4, y: 5,
             },
             {
-                x: 7, y: 4
+                x: 4, y: 4,
+            },
+            {
+                x: 9, y: 5,
+            },
+            {
+                x: 9, y: 3,
             }
         ];
         banned_squares_down = [
             {
-                x: 5, y: 6
+                x: 4, y: 9
             }
             ,
             {
-                x: 6, y: 6
-            }
-            ,
+                x: 3, y: 8
+            },
             {
-                x: 7, y: 6
-            }
-            ,
+                x: 5, y: 3,
+            },
             {
-                x: 8, y: 6
-            }
-            ,
+                x: 6, y: 3,
+            },
             {
-                x: 5, y: 2
-            }
-            ,
+                x: 7, y: 3,
+            },
             {
-                x: 4, y: 2
-            }
-            ,
+                x: 7, y: 8,
+            },
             {
-                x: 3, y: 2
-            }
-            ,
+                x: 8, y: 8,
+            },
             {
-                x: 8, y: 1
-            }
-            ,
+                x: 9, y: 8,
+            },
             {
-                x: 1, y: 6
-            }
+                x: 10, y: 8,
+            }            
+        ];
+        banned_squares_up = [{
+            x: 5, y: 7
+        },
+        {
+            x: 6, y: 7
+        },
+        {
+            x: 7, y: 7,
+        },
+        {
+            x: 3, y: 4,
+        },
+        {
+            x: 4, y: 3,
+        },
+        {
+            x: 5, y: 3,
+        },
+        {
+            x: 6, y: 3,
+        },
+        {
+            x: 7, y: 3,
+        },
+        {
+            x: 8, y: 3,
+        },
+        {
+            x: 9, y: 3,
+        },
+        {
+            x: 10, y: 3,
+        },
+        {
+            x: 10, y: 6,
+        }
         ];
     }
 }
@@ -353,17 +468,17 @@ async function show_bubble19()
 
 
     function cat_sleep_up() {
-        if (((place_counter_x === 7) && (place_counter_y === 3)) && (inventory_fish != 2 && (cat_timeout == false))) {
+        if (((place_counter_x === 9) && (place_counter_y === 5)) && (inventory_fish != 2 && (cat_timeout == false))) {
             cat_interface();
         }
     }
     function cat_sleep_down() {
-        if (((place_counter_x === 7) && (place_counter_y === 1)) && (inventory_fish != 2 && (cat_timeout == false))) {
+        if (((place_counter_x === 9) && (place_counter_y === 3)) && (inventory_fish != 2 && (cat_timeout == false))) {
             cat_interface();
         }
     }
     function cat_sleep_right() {
-        if (((place_counter_x === 6) && (place_counter_y === 2)) && (inventory_fish != 2 && (cat_timeout == false))) {
+        if (((place_counter_x === 8) && (place_counter_y === 4)) && (inventory_fish != 2 && (cat_timeout == false))) {
             cat_interface();
         }
     }
