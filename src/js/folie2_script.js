@@ -150,6 +150,7 @@
         case "2": 
             r.style.setProperty('--fisch', inventory_fish);
             r.style.setProperty('--grayscale_fish', grayscale_fish);
+            r.style.setProperty('--opacity_cat', 0);
     }
 
     switch (inventory_carrot) {
@@ -298,6 +299,7 @@ async function cat_interface() {
 
             localStorage.setItem('grayscale_fish', 1);
             r.style.setProperty('--grayscale_fish', 1);
+            r.style.setProperty('--opacity_cat', 0);
             localStorage.setItem('fish', 2);
             inventory_fish = localStorage.getItem('fish');
 

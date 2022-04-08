@@ -19,6 +19,7 @@
   
   --opacity_sprechblase19:0;
   --opacity_sprechblase12:0;
+  --opacity_cat:1;
 }
 .precachingPictures
 {
@@ -99,7 +100,8 @@ top:var(--move_y);
 	width: 45px;
 	left:508px;
 	top:220px;
-	position:absolute;   
+	position:absolute; 
+	opacity: var(--opacity_cat);  
 }
 .border_radius_15
 {
