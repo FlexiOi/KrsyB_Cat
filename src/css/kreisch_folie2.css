@@ -17,6 +17,7 @@
   --grayscale_ticket:0;
   --grayscale_note:0;
   
+  --opacity_sprechblase19:0;
 }
 .precachingPictures
 {
@@ -154,6 +155,44 @@ top:var(--move_y);
 	font-size: 13px;
 	font-family: 'Lato', serif;
 }
+
+.cat_interface
+  {
+	height: 620px;
+	width: 620px;
+	border-radius: 15px;
+  }
+
+.sprechblase
+  {
+	position: absolute;
+	left:300px;
+	top:220px;
+	height: 100px;
+	width: auto;
+  }
+
+  .sprechblase_dragon
+  {
+	position: absolute;
+	left:330px;
+	top:100px;
+	height: 100px;
+	width: auto;
+  }
+  .sprechblase_new_item
+  {
+	position: absolute;
+	left:570px;
+	top:100px;
+	height: 150px;
+	width: auto;
+  }
+.visibility_sprechblase19
+{
+	opacity: var(--opacity_sprechblase19);
+}
+
 /* sleeping cat popups */
 .popup_cat {
 	left:530px;

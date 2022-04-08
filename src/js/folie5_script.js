@@ -104,6 +104,7 @@ async function checkPort()
         localStorage.setItem('grayscale_note', 1);
         r.style.setProperty('--grayscale_note', 1);
         localStorage.setItem('note', 2);
+        r.style.setProperty('--notiz', inventory_note);
         inventory_note = localStorage.getItem('note');
         cat_done = localStorage.getItem('cat_status');
         checkInventory();

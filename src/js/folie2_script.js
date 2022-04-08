@@ -267,44 +267,65 @@ checkInventory();
 
             window.location.href = "kreischcraft1.html";
         }
-
-        // check if cat is there
-        let is_cat_there = 1;
     }
+// new version of popup 
 
-    // cat sleeps and trigger popup
-    let meow_timeout = false;
-    async function meow() {
-        if (meow_timeout === false) {
-            set_meow_timeout();
-            console.log("popup!!");
-            var popup = document.getElementById("popup_cat");
+let cat_timeout = false;
+var popup = document.getElementById("popup_cat_interface");
+var is_cat_there = 1;
+
+function cat_interface() {
+        if (cat_timeout === false && inventory_fish == 1) {
+            console.log("popup einschalten");
             popup.classList.toggle("fadeIn");
-            await delay(2000);
-            popup.classList.toggle("fadeOut");
-
+            cat_timeout = true;
+            click_arrow.addEventListener("click", cancel_cat_interface);
+            r.style.setProperty('--notiz', 1);
+            localStorage.setItem('note', 1);
         }
+        else{
+            show_bubble19();
+        }
+       
+}
+   
+async function reset_cat_interface()
+{
+    await delay(500);
+    popup.classList.toggle("fadeIn");
+    popup.classList.toggle("fadeOut");
+    console.log("reset");
+}
+function cancel_cat_interface()
+{
+console.log("popup ausschalten");
+popup.classList.toggle("fadeOut");
+cat_timeout = false;
+reset_cat_interface();
+click_arrow.removeEventListener("click", cancel_cat_interface);
+}
 
-    }
+async function show_bubble19()
+{
+    r.style.setProperty('--opacity_sprechblase19', 1);
+    await delay(2000);
+    r.style.setProperty('--opacity_sprechblase19', 0);
+}
 
-    async function set_meow_timeout() {
-        meow_timeout = true;
-        await delay(4000);
-        meow_timeout = false;
-    }
+
     function cat_sleep_up() {
         if (((place_counter_x === 7) && (place_counter_y === 3)) && (is_cat_there = 1)) {
-            meow();
+            cat_interface();
         }
     }
     function cat_sleep_down() {
         if (((place_counter_x === 7) && (place_counter_y === 1)) && (is_cat_there = 1)) {
-            meow();
+            cat_interface();
         }
     }
     function cat_sleep_right() {
         if (((place_counter_x === 6) && (place_counter_y === 2)) && (is_cat_there = 1)) {
-            meow();
+            cat_interface();
         }
     }
 
