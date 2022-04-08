@@ -35,6 +35,9 @@
         x: 4, y: 10
     },
     {
+        x: 5, y: 10,
+    },
+    {
         x: 4, y: 9,
     },
     {
@@ -392,14 +395,14 @@ checkInventory();
     // move out of the house
 
     function move_out_of_house() {
-        if ((place_counter_x === 3) && (place_counter_y === 8)) {
+        if ((place_counter_x === 5) && (place_counter_y === 10)) {
             console.log("ab ins Haus");
             window.location.href = "kreischcraft1.html";
         }
     }
 
     function move_up_stairs() {
-        if ((place_counter_x === 7) && (place_counter_y === 2)) {
+        if ((place_counter_x === 9) && (place_counter_y === 4)) {
             console.log("ab ins Haus");
             localStorage.setItem('player_origin', 16);
             window.location.href = "kreischcraft11.html";
