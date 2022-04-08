@@ -98,6 +98,9 @@
             x: 10, y: 8,
         },
         {
+            x: 6, y: 9,
+        },
+        {
             x: 9, y: 3,
         }
         
@@ -187,6 +190,9 @@ function setBannedSquares() {
             },
             {
                 x: 9, y: 3,
+            },
+            {
+                x: 9, y: 4,
             }
         ];
         banned_squares_down = [
@@ -217,7 +223,10 @@ function setBannedSquares() {
             },
             {
                 x: 10, y: 8,
-            }            
+            },
+            {
+                x: 6, y: 9,
+            } 
         ];
         banned_squares_up = [{
             x: 5, y: 7
