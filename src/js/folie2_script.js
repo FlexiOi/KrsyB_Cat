@@ -9,8 +9,8 @@
         let banned_D_x = 7;
         let banned_D_y = 1;
         // banned square up
-        let banned_U_x = 7;
-        let banned_U_y = 3;
+        let banned_U_x = 3;
+        let banned_U_y = 8;
 
     // set banned squares
 
