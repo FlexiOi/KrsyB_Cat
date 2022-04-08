@@ -1,7 +1,16 @@
   // local storage of player origin
     myStorage = localStorage;
 
- 
+     // set banned squares for cat
+        // banned square right
+        let banned_R_x = 6;
+        let banned_R_y = 2;
+        // banned square down
+        let banned_D_x = 7;
+        let banned_D_y = 1;
+        // banned square up
+        let banned_U_x = 7;
+        let banned_U_y = 3;
 
     // set banned squares
 
@@ -128,16 +137,7 @@
     var grayscale_ticket = localStorage.getItem('grayscale_ticket');
     var grayscale_note = localStorage.getItem('grayscale_note');
 
-    // set banned squares for cat
-        // banned square right
-        var banned_R_x = 6;
-        var banned_R_y = 2;
-        // banned square down
-        var banned_D_x = 7;
-        var banned_D_y = 1;
-        // banned square up
-        var banned_U_x = 7;
-        var banned_U_y = 3;
+
 
  function checkInventory()
  { 
@@ -325,7 +325,7 @@ console.log("popup ausschalten");
 popup.classList.toggle("fadeOut");
 cat_timeout = false;
 reset_cat_interface();
-click_arrow.removeEventListener("click", cancel_cat_interface);
+
 }
 
 async function show_bubble19()
