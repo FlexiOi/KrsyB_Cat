@@ -242,6 +242,7 @@ top:var(--move_y);
   /* Popup arrow */
 .popuptext::after {
 	content: "";
+	opacity: 0;
 	position: absolute;
 	top: 100%;
 	left: 50%;
