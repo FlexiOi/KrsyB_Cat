@@ -182,8 +182,8 @@
 
 .precaching
 {
-	visibility: hidden;
 	position: absolute;
-	height: 1px;
-	width: auto;
+	display: none;
+	max-width: 1%;
+	max-height: 1%;
 }
