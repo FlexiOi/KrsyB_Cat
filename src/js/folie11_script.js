@@ -103,11 +103,11 @@
                 console.log("durchlauf: " + i +" x: "+ patrol_cat_x+" y: "+ patrol_cat_y);
                 patrol_cat_x = 15+ ((patrol_cat_start_x+(i)) * (move_value) + (move_value / 3 * 1));
                 r.style.setProperty('--cat_patrol_x', patrol_cat_x + "px");
-                await delay(75);
+                await delay(35);
                 document.getElementById("patrol_cat").src = "src/images/patrolCat_right_moving.png";
                 patrol_cat_x = 15+ ((patrol_cat_start_x+(i)) * (move_value) + (move_value / 3 * 2));
                 r.style.setProperty('--cat_patrol_x', patrol_cat_x + "px");
-                await delay(75);
+                await delay(35);
                 document.getElementById("patrol_cat").src = "src/images/patrolCat_right_standing.png";
                 patrol_cat_x = 15+ ((patrol_cat_start_x+(i)) * (move_value) + (move_value / 3 * 3));
                 r.style.setProperty('--cat_patrol_x', patrol_cat_x + "px");
@@ -139,11 +139,11 @@
                 console.log("durchlauf: " + i +" x: "+ patrol_cat_x+" y: "+ patrol_cat_y);
                 patrol_cat_y = 10+ ((patrol_cat_start_y+(i)) * (move_value) + (move_value / 3 * 1));
                 r.style.setProperty('--cat_patrol_y', patrol_cat_y + "px");
-                await delay(75);
+                await delay(35);
                 document.getElementById("patrol_cat").src = "src/images/patrolCat_front_moving.png";
                 patrol_cat_y = 10+ ((patrol_cat_start_y+(i)) * (move_value) + (move_value / 3 * 2));
                 r.style.setProperty('--cat_patrol_y', patrol_cat_y + "px");
-                await delay(75);
+                await delay(35);
                 document.getElementById("patrol_cat").src = "src/images/patrolCat_front_standing.png";
                 patrol_cat_y = 10+ ((patrol_cat_start_y+(i)) * (move_value) + (move_value / 3 * 3));
                 r.style.setProperty('--cat_patrol_y', patrol_cat_y + "px");
@@ -176,11 +176,11 @@
                 console.log("durchlauf: " + i +" x: "+ patrol_cat_x+" y: "+ patrol_cat_y);
                 patrol_cat_x = 10+ ((patrol_cat_start_x+(5-i)) * (move_value) - (move_value / 3 * 1));
                 r.style.setProperty('--cat_patrol_x', patrol_cat_x + "px");
-                await delay(75);
+                await delay(35);
                 document.getElementById("patrol_cat").src = "src/images/patrolCat_left_moving.png";
                 patrol_cat_x = 10+ ((patrol_cat_start_x+(5-i)) * (move_value) - (move_value / 3 * 2));
                 r.style.setProperty('--cat_patrol_x', patrol_cat_x + "px");
-                await delay(75);
+                await delay(35);
                 document.getElementById("patrol_cat").src = "src/images/patrolCat_left_standing.png";
                 patrol_cat_x = 10+ ((patrol_cat_start_x+(5-i)) * (move_value) - (move_value / 3 * 3));
                 r.style.setProperty('--cat_patrol_x', patrol_cat_x + "px");
@@ -214,11 +214,11 @@
                 patrol_cat_y = 10+ ((patrol_cat_start_y+(6-i)) * (move_value) - (move_value / 3 * 1));
                 r.style.setProperty('--cat_patrol_y', patrol_cat_y + "px");
                 
-                await delay(75);
+                await delay(35);
                 document.getElementById("patrol_cat").src = "src/images/patrolCat_back_moving.png";
                 patrol_cat_y = 10+ ((patrol_cat_start_y+(6-i)) * (move_value) - (move_value / 3 * 2));
                 r.style.setProperty('--cat_patrol_y', patrol_cat_y + "px");
-                await delay(75);
+                await delay(35);
                 document.getElementById("patrol_cat").src = "src/images/patrolCat_back_standing.png";
                 patrol_cat_y = 10+ ((patrol_cat_start_y+(6-i)) * (move_value) - (move_value / 3 * 3));
                 r.style.setProperty('--cat_patrol_y', patrol_cat_y + "px");
