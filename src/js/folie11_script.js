@@ -193,13 +193,8 @@ checkInventory();
 
     //  vendor interface
 
-    let click_arrow = document.querySelector("#backArrow");
 
     // pop up
-
-    let vendor_timeout = false;
-    let vendor_done = localStorage.getItem('vendor_status');
-    var popup = document.getElementById("popup_vendor");
 
 
 
@@ -305,7 +300,6 @@ checkInventory();
 
         if ((e.keyCode == '38') && (can_char_move === true)) { // up arrow
             prevent_move();
-            vendor_interface();
             document.getElementById('player_img').src = "src/images/cat_back_standing_black.png";
             if ((place_counter_y > 1) && (place_counter_y <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_up.length; i++) {
@@ -327,7 +321,6 @@ checkInventory();
         }
         else if ((e.keyCode == '40') && (can_char_move === true)) { // down arrow
             prevent_move();
-            move_out_of_cave();
             document.getElementById('player_img').src = "src/images/cat_front_standing_black.png";
             if ((place_counter_y >= 1) && (place_counter_y < number_of_squares)) {
                 for (var i = 0; i < banned_squares_down.length; i++) {
