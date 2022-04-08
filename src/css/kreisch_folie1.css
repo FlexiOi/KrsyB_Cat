@@ -21,6 +21,7 @@
 .precachingPictures
 {
 	visibility: hidden;
+	position: absolute;
 }
 .figur
 {
