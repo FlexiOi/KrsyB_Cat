@@ -3,6 +3,9 @@
   --move_x:15px;
   --move_y:10px;
 
+  --cat_patrol_x:15px;
+  --cat_patrol_y:10px;
+
 
   --opacity_sprechblase6:1;
   --opacity_sprechblase7:0;
@@ -38,6 +41,14 @@ width: 62px;
 position:absolute;   
 left:var(--move_x);
 top:var(--move_y);
+}
+.patrol_cat
+{
+	height: 62px;
+	width: 62px;
+	position:absolute;   
+	left:var(--cat_patrol_x);
+	top:var(--cat_patrol_y);
 }
 .geld
 {

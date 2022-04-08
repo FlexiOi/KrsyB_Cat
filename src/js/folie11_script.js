@@ -25,10 +25,29 @@
         }
     ];
 
+        // get root
+        var r = document.querySelector(':root');
+        var rs = getComputedStyle(r);
 
-    // get root
-    var r = document.querySelector(':root');
-    var rs = getComputedStyle(r);
+    // Square-Counter (Wo ist die Figur)
+    let place_counter_x = 5
+    let place_counter_y = 1
+
+    // get move_x
+    let move_x = rs.getPropertyValue('--move_x');
+    let run_x = 0;
+    move_x = move_x.replace("px", "");
+    let move_x_int = parseInt(move_x);
+    
+    
+
+    // get move_y
+    let move_y = rs.getPropertyValue('--move_y');
+    let run_y = 0;
+    move_y = move_y.replace("px", "");
+    move_y_int = parseInt(move_y);
+
+
 
     // inventory
 
@@ -51,8 +70,167 @@
     var grayscale_ticket = localStorage.getItem('grayscale_ticket');
     var grayscale_note = localStorage.getItem('grayscale_note');
 
+    // set map values
+    size_map = 620;
+    number_of_squares = 10;
+    let move_value = size_map / number_of_squares;
 
+    // cat patrol
 
+    let patrol_cat_x = 196;
+    let patrol_cat_y = 134;
+    let patrol_cat_max = 8;
+    let patrol_cat_start_x = 3;
+    let patrol_cat_start_y = 2;
+    r.style.setProperty('--cat_patrol_x', ((patrol_cat_start_x  *move_value)+15) + "px");
+    r.style.setProperty('--cat_patrol_y', ((patrol_cat_start_y  *move_value)+10) + "px");
+    let loopLength = 4;
+
+    async function patrolCatTop()
+    {
+        document.getElementById("patrol_cat").src = "src/images/patrolCat_right_standing.png";
+        for (let i = 0; i  <= loopLength; i++) 
+        {
+            if ((Math.abs(move_x - patrol_cat_x) <= 20) && (Math.abs(move_y - patrol_cat_y) <= 20))
+            {
+                console.log("kollision auf Top!");
+                console.log("Spieler: "+ (move_x_int) +" / "+(move_y_int)  +" Katze: "+patrol_cat_x+" / "+patrol_cat_y);
+                break;
+            }
+            else
+            {
+                console.log("durchlauf: " + i +" x: "+ patrol_cat_x+" y: "+ patrol_cat_y);
+                patrol_cat_x = 15+ ((patrol_cat_start_x+(i)) * (move_value) + (move_value / 3 * 1));
+                r.style.setProperty('--cat_patrol_x', patrol_cat_x + "px");
+                await delay(75);
+                document.getElementById("patrol_cat").src = "src/images/patrolCat_right_moving.png";
+                patrol_cat_x = 15+ ((patrol_cat_start_x+(i)) * (move_value) + (move_value / 3 * 2));
+                r.style.setProperty('--cat_patrol_x', patrol_cat_x + "px");
+                await delay(75);
+                document.getElementById("patrol_cat").src = "src/images/patrolCat_right_standing.png";
+                patrol_cat_x = 15+ ((patrol_cat_start_x+(i)) * (move_value) + (move_value / 3 * 3));
+                r.style.setProperty('--cat_patrol_x', patrol_cat_x + "px");
+    
+                if (i == (loopLength)) 
+                    {
+                    console.log("letzter Durchlauf auf Top");
+                    patrolCatRight();
+                    }
+
+            }      
+        }
+    }
+
+    async function patrolCatRight()
+    {
+        document.getElementById("patrol_cat").src = "src/images/patrolCat_front_standing.png";
+        for (let i = 0; i  <= (loopLength+1); i++) 
+        {
+            if ((Math.abs(move_x - patrol_cat_x) <= 20) && (Math.abs(move_y - patrol_cat_y) <= 20))
+            {
+                console.log("kollision auf rechts!");
+                console.log("Spieler: "+ (move_x-move_value) +" / "+(move_y-move_value)  +" Katze: "+patrol_cat_x+" / "+patrol_cat_y);
+                break;
+            }
+            else
+            {
+                console.log("durchlauf: " + i +" x: "+ patrol_cat_x+" y: "+ patrol_cat_y);
+                patrol_cat_y = 10+ ((patrol_cat_start_y+(i)) * (move_value) + (move_value / 3 * 1));
+                r.style.setProperty('--cat_patrol_y', patrol_cat_y + "px");
+                await delay(75);
+                document.getElementById("patrol_cat").src = "src/images/patrolCat_front_moving.png";
+                patrol_cat_y = 10+ ((patrol_cat_start_y+(i)) * (move_value) + (move_value / 3 * 2));
+                r.style.setProperty('--cat_patrol_y', patrol_cat_y + "px");
+                await delay(75);
+                document.getElementById("patrol_cat").src = "src/images/patrolCat_front_standing.png";
+                patrol_cat_y = 10+ ((patrol_cat_start_y+(i)) * (move_value) + (move_value / 3 * 3));
+                r.style.setProperty('--cat_patrol_y', patrol_cat_y + "px");
+    
+                if (i == (loopLength+1)) 
+                    {
+                    console.log("durchlauf: " + i +" x: "+ patrol_cat_x+" y: "+ patrol_cat_y);
+                    console.log("letzter Durchlauf rechts");
+                    patrolCatBottom();
+                    }
+
+            }                
+        }
+    }
+
+    async function patrolCatBottom()
+    {
+        document.getElementById("patrol_cat").src = "src/images/patrolCat_left_standing.png";
+        for (let i = 0; i  <= loopLength; i++) 
+        {
+            if ((Math.abs(move_x - patrol_cat_x) <= 20) && (Math.abs(move_y - patrol_cat_y) <= 20))
+            {
+                console.log("kollision auf Bottom!");
+                console.log("Spieler: "+ (move_x-move_value) +" / "+(move_y-move_value)  +" Katze: "+patrol_cat_x+" / "+patrol_cat_y);
+                break;
+            }
+            else
+            {
+                console.log("durchlauf: " + i +" x: "+ patrol_cat_x+" y: "+ patrol_cat_y);
+                patrol_cat_x = 10+ ((patrol_cat_start_x+(5-i)) * (move_value) - (move_value / 3 * 1));
+                r.style.setProperty('--cat_patrol_x', patrol_cat_x + "px");
+                await delay(75);
+                document.getElementById("patrol_cat").src = "src/images/patrolCat_left_moving.png";
+                patrol_cat_x = 10+ ((patrol_cat_start_x+(5-i)) * (move_value) - (move_value / 3 * 2));
+                r.style.setProperty('--cat_patrol_x', patrol_cat_x + "px");
+                await delay(75);
+                document.getElementById("patrol_cat").src = "src/images/patrolCat_left_standing.png";
+                patrol_cat_x = 10+ ((patrol_cat_start_x+(5-i)) * (move_value) - (move_value / 3 * 3));
+                r.style.setProperty('--cat_patrol_x', patrol_cat_x + "px");
+    
+                if (i == (loopLength)) 
+                    {
+                    console.log("durchlauf: " + i +" x: "+ patrol_cat_x+" y: "+ patrol_cat_y);
+                    console.log("letzter Durchlauf auf Bottom");
+                    patrolCatLeft();
+                    }
+
+            }          
+        }
+    }
+
+    async function patrolCatLeft()
+    {
+        document.getElementById("patrol_cat").src = "src/images/patrolCat_back_standing.png";
+        for (let i = 0; i  <= (loopLength+1); i++) 
+        {
+            if ((Math.abs(move_x - patrol_cat_x) <= 20) && (Math.abs(move_y - patrol_cat_y) <= 20))
+            {
+                console.log("kollision auf Links!");
+                console.log("Spieler: "+ (move_x-move_value) +" / "+(move_y-move_value)  +" Katze: "+patrol_cat_x+" / "+patrol_cat_y);
+                break;
+            }
+            else
+            {
+                console.log("durchlauf: " + i +" x: "+ patrol_cat_x+" y: "+ patrol_cat_y);
+                patrol_cat_y = 10+ ((patrol_cat_start_y+(6-i)) * (move_value) - (move_value / 3 * 1));
+                r.style.setProperty('--cat_patrol_y', patrol_cat_y + "px");
+                
+                await delay(75);
+                document.getElementById("patrol_cat").src = "src/images/patrolCat_back_moving.png";
+                patrol_cat_y = 10+ ((patrol_cat_start_y+(6-i)) * (move_value) - (move_value / 3 * 2));
+                r.style.setProperty('--cat_patrol_y', patrol_cat_y + "px");
+                await delay(75);
+                document.getElementById("patrol_cat").src = "src/images/patrolCat_back_standing.png";
+                patrol_cat_y = 10+ ((patrol_cat_start_y+(6-i)) * (move_value) - (move_value / 3 * 3));
+                r.style.setProperty('--cat_patrol_y', patrol_cat_y + "px");
+                if (i == (loopLength+1)) 
+                    {
+                    console.log("durchlauf: " + i +" x: "+ patrol_cat_x+" y: "+ patrol_cat_y);
+                    console.log("letzter Durchlauf Links");
+                    patrolCatTop();
+                    }  
+
+            }        
+        }
+        
+    }
+
+    patrolCatTop();
 
  function checkInventory()
  { 
@@ -135,22 +313,7 @@
 }
 checkInventory();
 
-    // get move_x
-    let move_x = rs.getPropertyValue('--move_x');
-    let run_x = 0;
-    move_x = move_x.replace("px", "");
-    let move_x_int = parseInt(move_x);
 
-    // set map values
-    size_map = 620;
-    number_of_squares = 10;
-    move_value = size_map / number_of_squares;
-
-    // get move_y
-    let move_y = rs.getPropertyValue('--move_y');
-    let run_y = 0;
-    move_y = move_y.replace("px", "");
-    move_y_int = parseInt(move_y);
 
     // set counters for Arrow Keys
     let counter_arrow_up = 0;
@@ -158,9 +321,7 @@ checkInventory();
     let counter_arrow_left = 0;
     let counter_arrow_right = 0;
 
-    // Square-Counter (Wo ist die Figur)
-    let place_counter_x = 5
-    let place_counter_y = 1
+
 
     // delay for set time for movement animation
     let delay_duration = 50;
