@@ -1,16 +1,7 @@
   // local storage of player origin
     myStorage = localStorage;
 
-     // set banned squares for cat
-        // banned square right
-        let banned_R_x = 6;
-        let banned_R_y = 2;
-        // banned square down
-        let banned_D_x = 7;
-        let banned_D_y = 1;
-        // banned square up
-        let banned_U_x = 3;
-        let banned_U_y = 8;
+
 
     // set banned squares
 
@@ -29,7 +20,7 @@
         }
         ,
         {
-            x: banned_R_x, y: banned_R_y
+            x: 6, y: 2
         }
         ,
         {
@@ -86,7 +77,7 @@
         }
         ,
         {
-            x: banned_D_x, y: banned_D_y
+            x: 7, y: 1
         }
         ,
         {
@@ -110,7 +101,7 @@
         x: 5, y: 5
     },
     {
-        x: banned_U_x, y: banned_U_y
+        x: 7, y: 3
     },
     {
         x: 8, y: 5
@@ -141,6 +132,47 @@ function setBannedSquares() {
     if (inventory_fish == 2) {
         console.log("banned squares set!");
         banned_squares_up = [{
+            x: 1, y: 2
+        },
+        {
+            x: 3, y: 5
+        },
+        {
+            x: 4, y: 5
+        },
+        {
+            x: 5, y: 5
+        },
+        {
+            x: 8, y: 5
+        }];
+
+        banned_squares_right = [
+            {
+                x: 4, y: 8
+            },
+            {
+                x: 4, y: 7
+            },
+            {
+                x: 2, y: 4
+            },
+            {
+                x: 2, y: 3
+            }
+            ,
+            {
+                x: 7, y: 2
+            }
+            ,
+            {
+                x: 7, y: 3
+            },
+            {
+                x: 7, y: 4
+            }
+        ];
+        let banned_squares_up = [{
             x: 1, y: 2
         },
         {
