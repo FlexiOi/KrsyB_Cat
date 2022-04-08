@@ -349,8 +349,15 @@ checkInventory();
     function move_out_of_house() {
         if ((place_counter_x === 3) && (place_counter_y === 8)) {
             console.log("ab ins Haus");
-
             window.location.href = "kreischcraft1.html";
+        }
+    }
+
+    function move_up_stairs() {
+        if ((place_counter_x === 7) && (place_counter_y === 2)) {
+            console.log("ab ins Haus");
+            localStorage.setItem('player_origin', 16);
+            window.location.href = "kreischcraft11.html";
         }
     }
 // new version of popup 
@@ -429,6 +436,42 @@ async function show_bubble19()
         if (((place_counter_x === 6) && (place_counter_y === 2)) && (inventory_fish != 2 && (cat_timeout == false))) {
             cat_interface();
         }
+    }
+
+    // place character depending on zone entry
+
+    var origin = localStorage.getItem('player_origin');
+    switch (origin) {
+        case "1": // from page 3
+            console.log("Player origin is the north");
+            place_counter_x = 3;
+            move_x = 15 + (62 * (place_counter_x - 1));
+            r.style.setProperty('--move_x', move_x + "px");
+            place_counter_y = 8;
+            move_y = 10 + (62 * (place_counter_y - 1));
+            r.style.setProperty('--move_y', move_y + "px");
+            run_y = place_counter_y - 1;
+            run_x = place_counter_x - 1;
+            document.getElementById("player_img").src = "src/images/cat_back_standing_black.png";
+            console.log("x:" + move_x + " y: " + move_y);
+            console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
+            break;
+        case "16": // out of the house
+            console.log("Player origin is the house at the sea");
+            place_counter_x = 7;
+            move_x = 15 + (62 * (place_counter_x - 1));
+            r.style.setProperty('--move_x', move_x + "px");
+            place_counter_y = 2;
+            move_y = 10 + (62 * (place_counter_y - 1));
+            r.style.setProperty('--move_y', move_y + "px");
+            run_y = place_counter_y - 1;
+            run_x = place_counter_x - 1;
+            document.getElementById("player_img").src = "src/images/cat_left_standing_black.png";
+            move_x_int = 15;
+            move_y_int = 10;
+            console.log("x:" + move_x + " y: " + move_y);
+            console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
+            break;
     }
 
 
@@ -582,6 +625,7 @@ async function show_bubble19()
         else if ((e.keyCode == '39') && (can_char_move === true)) { // right arrow
             cat_sleep_right();
             prevent_move();
+            move_up_stairs();
             document.getElementById('player_img').src = "src/images/cat_right_standing_black.png";
             if ((place_counter_x >= 1) && (place_counter_x < number_of_squares)) {
                 for (var i = 0; i < banned_squares_right.length; i++) {
