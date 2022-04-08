@@ -166,8 +166,8 @@ top:var(--move_y);
 .sprechblase
   {
 	position: absolute;
-	left:300px;
-	top:220px;
+	left:520px;
+	top:120px;
 	height: 100px;
 	width: auto;
   }
