@@ -443,7 +443,7 @@ async function show_bubble19()
     var origin = localStorage.getItem('player_origin');
     switch (origin) {
         case "1": // from page 3
-            console.log("Player origin is the north");
+            console.log("Player origin is page1");
             place_counter_x = 3;
             move_x = 15 + (62 * (place_counter_x - 1));
             r.style.setProperty('--move_x', move_x + "px");
