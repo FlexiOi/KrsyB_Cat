@@ -322,8 +322,8 @@ checkInventory();
     let counter_arrow_right = 0;
 
     // Square-Counter (Wo ist die Figur)
-    let place_counter_x = 1
-    let place_counter_y = 1
+    let place_counter_x = 1;
+    let place_counter_y = 1;
 
     // delay for set time for movement animation
     let delay_duration = 50;
@@ -445,10 +445,10 @@ async function show_bubble19()
         case "1": // from page 3
             console.log("Player origin is page1");
             place_counter_x = 3;
-            move_x = 15 + (62 * (place_counter_x + 2));
+            move_x = 15 + (62 * (place_counter_x - 1));
             r.style.setProperty('--move_x', move_x + "px");
             place_counter_y = 8;
-            move_y = 10 + (62 * (place_counter_y + 2));
+            move_y = 10 + (62 * (place_counter_y - 1));
             r.style.setProperty('--move_y', move_y + "px");
             run_y = place_counter_y - 1;
             run_x = place_counter_x - 1;
