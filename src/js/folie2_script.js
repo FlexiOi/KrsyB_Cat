@@ -274,7 +274,7 @@ let cat_timeout = false;
 var popup = document.getElementById("popup_cat_interface");
 var is_cat_there = 1;
 
-function cat_interface() {
+async function cat_interface() {
         if (cat_timeout === false && inventory_fish == 1) {
             cat_timeout = true;
 
@@ -295,7 +295,7 @@ function cat_interface() {
             localStorage.setItem('carrot', 2);
             vendor_done = localStorage.getItem('horse_status');
             */
-           
+
             checkInventory();
             cat_timeout = false
         }
