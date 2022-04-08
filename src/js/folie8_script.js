@@ -363,7 +363,7 @@ async function buyCarrot()
     show_bubble9();
     cancelVendor();
 }
-    // show info for fish
+
 
     async function show_bubble8()
     {

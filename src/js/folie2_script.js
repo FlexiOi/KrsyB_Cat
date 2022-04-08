@@ -151,6 +151,7 @@
             r.style.setProperty('--fisch', inventory_fish);
             r.style.setProperty('--grayscale_fish', grayscale_fish);
             r.style.setProperty('--opacity_cat', 0);
+            console.log("Case 2 Fisch!");
     }
 
     switch (inventory_carrot) {
