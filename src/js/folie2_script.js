@@ -153,6 +153,16 @@
             r.style.setProperty('--grayscale_fish', grayscale_fish);
             r.style.setProperty('--opacity_cat', 0);
             console.log("Case 2 Fisch!");
+
+            banned_R_x = 25;
+            banned_R_y = 25;
+            // banned square down
+            banned_D_x = 25;
+            banned_D_y = 25;
+            // banned square up
+            banned_U_x = 25;
+            banned_U_y = 25;
+
             break;
     }
 
@@ -301,11 +311,10 @@ async function cat_interface() {
             cancel_cat_interface();
 
             localStorage.setItem('grayscale_fish', 1);
-            r.style.setProperty('--grayscale_fish', 1);
             r.style.setProperty('--opacity_cat', 0);
             localStorage.setItem('fish', 2);
             inventory_fish = localStorage.getItem('fish');
-
+            r.style.setProperty('--grayscale_fish', 1);
             checkInventory();
             cat_timeout = false
             is_cat_there = 0;
