@@ -140,15 +140,22 @@
 function setBannedSquares() {
     if (inventory_fish == 2) {
         console.log("banned squares set!");
-        banned_R_x = 25;
-        banned_R_y = 25;
-        // banned square down
-        banned_D_x = 25;
-        banned_D_y = 25;
-        // banned square up
-        banned_U_x = 25;
-        banned_U_y = 25;
-        banned_squares_up = banned_squares_up;
+        banned_squares_up = [{
+            x: 1, y: 2
+        },
+        {
+            x: 3, y: 5
+        },
+        {
+            x: 4, y: 5
+        },
+        {
+            x: 5, y: 5
+        },
+        {
+            x: 8, y: 5
+        }
+        ];
     }
 }
 
