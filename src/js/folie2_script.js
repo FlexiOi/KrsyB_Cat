@@ -276,12 +276,28 @@ var is_cat_there = 1;
 
 function cat_interface() {
         if (cat_timeout === false && inventory_fish == 1) {
+            cat_timeout = true;
+
+            r.style.setProperty('--opacity_sprechblase12', 1);
+            await delay(2000);
+            r.style.setProperty('--opacity_sprechblase12', 0);
+
             console.log("popup einschalten");
             popup.classList.toggle("fadeIn");
             
-            click_arrow.addEventListener("click", cancel_cat_interface);
-            r.style.setProperty('--notiz', 1);
-            localStorage.setItem('note', 1);
+            await delay(2000);
+            cancelVendor();
+
+            /*
+            localStorage.setItem('horse_status', 1);
+            localStorage.setItem('grayscale_carrot', 1);
+            r.style.setProperty('--grayscale_carrot', 1);
+            localStorage.setItem('carrot', 2);
+            vendor_done = localStorage.getItem('horse_status');
+            */
+           
+            checkInventory();
+            cat_timeout = false
         }
         else{
             show_bubble19();

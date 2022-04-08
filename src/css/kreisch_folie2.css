@@ -156,6 +156,15 @@ top:var(--move_y);
 	font-family: 'Lato', serif;
 }
 
+.backArrow
+{
+  position: absolute;
+  height: 70px;
+  width: 150px;
+  left: 420px;
+  top: 550px;
+}
+
 .cat_interface
   {
 	height: 620px;
