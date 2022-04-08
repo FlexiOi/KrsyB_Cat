@@ -339,17 +339,17 @@ async function show_bubble19()
 
 
     function cat_sleep_up() {
-        if (((place_counter_x === 7) && (place_counter_y === 3)) && (is_cat_there = 1 && (cat_timeout == false))) {
+        if (((place_counter_x === 7) && (place_counter_y === 3)) && (is_cat_there == 1 && (cat_timeout == false))) {
             cat_interface();
         }
     }
     function cat_sleep_down() {
-        if (((place_counter_x === 7) && (place_counter_y === 1)) && (is_cat_there = 1 && (cat_timeout == false))) {
+        if (((place_counter_x === 7) && (place_counter_y === 1)) && (is_cat_there == 1 && (cat_timeout == false))) {
             cat_interface();
         }
     }
     function cat_sleep_right() {
-        if (((place_counter_x === 6) && (place_counter_y === 2)) && (is_cat_there = 1 && (cat_timeout == false))) {
+        if (((place_counter_x === 6) && (place_counter_y === 2)) && (is_cat_there == 1 && (cat_timeout == false))) {
             cat_interface();
         }
     }
