@@ -137,7 +137,19 @@
     var grayscale_ticket = localStorage.getItem('grayscale_ticket');
     var grayscale_note = localStorage.getItem('grayscale_note');
 
-
+function setBannedSquares() {
+    if (inventory_fish == 2) {
+        console.log("banned squares set!");
+        banned_R_x = 25;
+        banned_R_y = 25;
+        // banned square down
+        banned_D_x = 25;
+        banned_D_y = 25;
+        // banned square up
+        banned_U_x = 25;
+        banned_U_y = 25;
+    }
+}
 
  function checkInventory()
  { 
@@ -153,16 +165,7 @@
             r.style.setProperty('--grayscale_fish', grayscale_fish);
             r.style.setProperty('--opacity_cat', 0);
             console.log("Case 2 Fisch!");
-
-            banned_R_x = 25;
-            banned_R_y = 25;
-            // banned square down
-            banned_D_x = 25;
-            banned_D_y = 25;
-            // banned square up
-            banned_U_x = 25;
-            banned_U_y = 25;
-
+            setBannedSquares();
             break;
     }
 
