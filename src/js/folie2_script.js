@@ -286,7 +286,7 @@ async function cat_interface() {
             popup.classList.toggle("fadeIn");
             
             await delay(2000);
-            cancelVendor();
+            cancel_cat_interface();
 
             /*
             localStorage.setItem('horse_status', 1);
