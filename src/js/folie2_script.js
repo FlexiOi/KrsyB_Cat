@@ -20,7 +20,7 @@
         }
         ,
         {
-            x: 6, y: 2
+            x: banned_R_x, y: banned_R_y
         }
         ,
         {
@@ -77,7 +77,7 @@
         }
         ,
         {
-            x: 7, y: 1
+            x: banned_D_x, y: banned_D_y
         }
         ,
         {
@@ -101,7 +101,7 @@
         x: 5, y: 5
     },
     {
-        x: 7, y: 3
+        x: banned_U_x, y: banned_U_y
     },
     {
         x: 8, y: 5
@@ -128,8 +128,16 @@
     var grayscale_ticket = localStorage.getItem('grayscale_ticket');
     var grayscale_note = localStorage.getItem('grayscale_note');
 
-
-
+    // set banned squares for cat
+        // banned square right
+        let banned_R_x = 6;
+        let banned_R_y = 2;
+        // banned square down
+        let banned_D_x = 7;
+        let banned_D_y = 1;
+        // banned square up
+        let banned_U_x = 7;
+        let banned_U_y = 3;
 
  function checkInventory()
  { 
@@ -288,16 +296,23 @@ async function cat_interface() {
             await delay(1000);
             cancel_cat_interface();
 
-            /*
-            localStorage.setItem('horse_status', 1);
-            localStorage.setItem('grayscale_carrot', 1);
-            r.style.setProperty('--grayscale_carrot', 1);
-            localStorage.setItem('carrot', 2);
-            vendor_done = localStorage.getItem('horse_status');
-            */
+            localStorage.setItem('grayscale_fish', 1);
+            r.style.setProperty('--grayscale_fish', 1);
+            localStorage.setItem('fish', 2);
+            inventory_fish = localStorage.getItem('fish');
 
             checkInventory();
             cat_timeout = false
+            is_cat_there = 0;
+
+            banned_R_x = 25;
+             banned_R_y = 25;
+            // banned square down
+             banned_D_x = 25;
+             banned_D_y = 25;
+            // banned square up
+             banned_U_x = 25;
+             banned_U_y = 25;
         }
         else{
             show_bubble19();

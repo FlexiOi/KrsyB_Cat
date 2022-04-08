@@ -173,10 +173,18 @@ top:var(--move_y);
 	border-radius: 15px;
   }
 
-.sprechblase
+.sprechblase1
   {
 	position: absolute;
 	left:520px;
+	top:120px;
+	height: 100px;
+	width: auto;
+  }
+  .sprechblase2
+  {
+	position: absolute;
+	left:430px;
 	top:120px;
 	height: 100px;
 	width: auto;
@@ -201,6 +209,10 @@ top:var(--move_y);
 .visibility_sprechblase19
 {
 	opacity: var(--opacity_sprechblase19);
+}
+.visibility_sprechblase12
+{
+	opacity: var(--opacity_sprechblase12);
 }
 
   /* sleeping cat popups */
