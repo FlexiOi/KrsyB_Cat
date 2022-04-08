@@ -95,6 +95,7 @@
             {
                 console.log("kollision auf Top!");
                 console.log("Spieler: "+ (move_x_int) +" / "+(move_y_int)  +" Katze: "+patrol_cat_x+" / "+patrol_cat_y);
+                window.location.href = "kreischcraft6.html";
                 break;
             }
             else
@@ -130,6 +131,7 @@
             {
                 console.log("kollision auf rechts!");
                 console.log("Spieler: "+ (move_x-move_value) +" / "+(move_y-move_value)  +" Katze: "+patrol_cat_x+" / "+patrol_cat_y);
+                window.location.href = "kreischcraft6.html";
                 break;
             }
             else
@@ -166,6 +168,7 @@
             {
                 console.log("kollision auf Bottom!");
                 console.log("Spieler: "+ (move_x-move_value) +" / "+(move_y-move_value)  +" Katze: "+patrol_cat_x+" / "+patrol_cat_y);
+                window.location.href = "kreischcraft6.html";
                 break;
             }
             else
@@ -202,6 +205,7 @@
             {
                 console.log("kollision auf Links!");
                 console.log("Spieler: "+ (move_x-move_value) +" / "+(move_y-move_value)  +" Katze: "+patrol_cat_x+" / "+patrol_cat_y);
+                window.location.href = "kreischcraft6.html";
                 break;
             }
             else
