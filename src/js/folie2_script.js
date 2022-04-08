@@ -130,14 +130,14 @@
 
     // set banned squares for cat
         // banned square right
-        let banned_R_x = 6;
-        let banned_R_y = 2;
+        var banned_R_x = 6;
+        var banned_R_y = 2;
         // banned square down
-        let banned_D_x = 7;
-        let banned_D_y = 1;
+        var banned_D_x = 7;
+        var banned_D_y = 1;
         // banned square up
-        let banned_U_x = 7;
-        let banned_U_y = 3;
+        var banned_U_x = 7;
+        var banned_U_y = 3;
 
  function checkInventory()
  { 
