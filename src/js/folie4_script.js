@@ -350,28 +350,16 @@ async function ShipInterface() {
     if ((place_counter_x === 3) && (place_counter_y === 5))  {
         if ((exchangeBottle_timeout === false) && (inventory_ticket == 1)) {
 
+  
+           
+
+            r.style.setProperty('--opacity_sprechblase27', 1);
+            await delay(3000);
+
             prevent_move_for_x();
             console.log("popup einschalten");
             popup_exchangeBottle.classList.toggle("fadeIn");
             exchangeBottle_timeout = true;
-           
-
-            r.style.setProperty('--opacity_sprechblase22', 1);
-            await delay(3000);
-            r.style.setProperty('--opacity_sprechblase22', 0);
-            await delay(300);
-            r.style.setProperty('--opacity_sprechblase23', 1);
-            await delay(3000);
-            r.style.setProperty('--opacity_sprechblase23', 0);
-            await delay(300);
-            r.style.setProperty('--opacity_sprechblase24', 1);
-            await delay(3000);
-            r.style.setProperty('--opacity_sprechblase24', 0);
-            await delay(300);
-            r.style.setProperty('--opacity_sprechblase25', 1);
-            await delay(3000);
-            r.style.setProperty('--opacity_sprechblase25', 0);
-            await delay(300);
 
             localStorage.setItem('grayscale_mouse', 1);
             r.style.setProperty('--grayscale_mouse', 1);
