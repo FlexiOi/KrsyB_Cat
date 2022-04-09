@@ -405,7 +405,7 @@
         
     }
 
-    // patrolCatTop(); 
+    patrolCatTop(); 
 
  function checkInventory()
  { 
