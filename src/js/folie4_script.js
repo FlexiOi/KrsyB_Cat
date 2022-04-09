@@ -274,7 +274,7 @@ async function exchangeBottle__interface() {
             exchangeBottle_timeout = true;
            
 
-            r.style.setProperty('--opacity_sprechblase2', 1);
+            r.style.setProperty('--opacity_sprechblase22', 1);
             await delay(300000);
             r.style.setProperty('--opacity_sprechblase13', 0);
             await delay(300);
