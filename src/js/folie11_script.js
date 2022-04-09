@@ -704,7 +704,7 @@ async function show_bubble10()
         }
         else if ((e.keyCode == '37') && (can_char_move === true)) { // left arrow
             prevent_move();
-            move_out_of_page11;
+            move_out_of_page11();
             document.getElementById('player_img').src = "src/images/cat_left_standing_black.png";
             if ((place_counter_x > 1) && (place_counter_x <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_left.length; i++) {
