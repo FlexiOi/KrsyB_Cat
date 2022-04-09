@@ -348,21 +348,17 @@ async function resetBottleExchange()
 // popup ship
 
 async function ShipInterface() {
+    checkInventory();
     if ((place_counter_x === 3) && (place_counter_y === 5))  {
         if ((exchangeBottle_timeout === false) && (inventory_ticket == 1)) {
-
-  
-           
-
             r.style.setProperty('--opacity_sprechblase27', 1);
             await delay(3000);
             r.style.setProperty('--opacity_sprechblase27', 0);
             await delay(1000);
 
-
             prevent_move_for_x();
             console.log("popup einschalten");
-            popup_exchangeBottle.classList.toggle("fadeIn");
+            popup_Ship.classList.toggle("fadeIn");
             exchangeBottle_timeout = true;
 
             await delay(5000);
