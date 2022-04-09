@@ -272,14 +272,9 @@ async function exchangeBottle__interface() {
             console.log("popup einschalten");
             popup_exchangeBottle.classList.toggle("fadeIn");
             exchangeBottle_timeout = true;
-
-            prevent_move_for_x()
-            console.log("popup einschalten");
-            popup.classList.toggle("fadeIn");
-            cat_timeout = true;
            
 
-            r.style.setProperty('--opacity_sprechblase22', 1);
+            r.style.setProperty('--opacity_sprechblase2', 1);
             await delay(300000);
             r.style.setProperty('--opacity_sprechblase13', 0);
             await delay(300);
