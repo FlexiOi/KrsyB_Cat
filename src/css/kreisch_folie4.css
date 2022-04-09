@@ -288,6 +288,7 @@ top:var(--move_y);
 
   /* Popup arrow */
 .popuptext::after {
+	opacity: 0;
 	content: "";
 	position: absolute;
 	top: 100%;
