@@ -188,9 +188,9 @@ top:var(--move_y);
   .sprechblase_new_item
   {
 	position: absolute;
-	left:570px;
-	top:100px;
-	height: 150px;
+	left:420px;
+	top:150px;
+	height: 250px;
 	width: auto;
   }
 
