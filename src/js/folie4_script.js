@@ -270,7 +270,7 @@ function exchangeBottle__interface() {
 
             prevent_move_for_x();
             console.log("popup einschalten");
-            popup.classList.toggle("fadeIn");
+            popup_exchangeBottle.classList.toggle("fadeIn");
             exchangeBottle_timeout = true;
             click_arrow.addEventListener("click", cancelExchangeBottle);
         }
