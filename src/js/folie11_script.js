@@ -46,6 +46,9 @@
         },
         {
             x: 7, y: 8
+        },
+        {
+            x: 9, y: 5
         }
     ];
     let banned_squares_left = [
@@ -84,6 +87,9 @@
         },
         {
             x: 6, y: 2
+        },
+        {
+            x: 3, y: 2
         }
     ];
     let banned_squares_down = [
@@ -178,6 +184,15 @@
         },
         {
             x: 5, y: 9
+        },
+        {
+            x: 2, y: 6
+        },
+        {
+            x: 3, y: 6
+        },
+        {
+            x: 1, y: 5
         }
     ];
 
@@ -390,7 +405,7 @@
         
     }
 
-   
+    patrolCatTop(); 
 
  function checkInventory()
  { 
