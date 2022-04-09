@@ -342,7 +342,7 @@ function cancelVendor()
     vendor_done = localStorage.getItem('vendor_status');
     checkInventory();
     await delay(750);
-    show_bubble9();
+    show_bubble8();
     cancelVendor();
 }
 
