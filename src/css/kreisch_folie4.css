@@ -11,6 +11,11 @@
   --ticket:0;
 
   --opacity_sprechblase21:0;
+  --opacity_sprechblase22:0;
+  --opacity_sprechblase23:0;
+  --opacity_sprechblase24:0;
+  --opacity_sprechblase25:0;
+
 
 --grayscale_coin:0;
 --grayscale_fish:0;
@@ -171,6 +176,14 @@ top:var(--move_y);
 	height: 100px;
 	width: auto;
   }
+.sprechblase_katze
+{
+  position: absolute;
+  left:480px;
+  top:90px;
+  height: 100px;
+  width: auto;
+}
 
   .sprechblase_new_item
   {
@@ -184,6 +197,22 @@ top:var(--move_y);
 .visibility_sprechblase21
 {
 	opacity: var(--opacity_sprechblase21);
+}
+.visibility_sprechblase22
+{
+	opacity: var(--opacity_sprechblase22);
+}
+.visibility_sprechblase23
+{
+	opacity: var(--opacity_sprechblase23);
+}
+.visibility_sprechblase24
+{
+	opacity: var(--opacity_sprechblase24);
+}
+.visibility_sprechblase25
+{
+	opacity: var(--opacity_sprechblase25);
 }
 
 .backArrow

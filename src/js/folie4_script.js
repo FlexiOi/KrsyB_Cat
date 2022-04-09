@@ -272,7 +272,59 @@ async function exchangeBottle__interface() {
             console.log("popup einschalten");
             popup_exchangeBottle.classList.toggle("fadeIn");
             exchangeBottle_timeout = true;
-            click_arrow.addEventListener("click", cancelExchangeBottle);
+
+            prevent_move_for_x()
+            console.log("popup einschalten");
+            popup.classList.toggle("fadeIn");
+            cat_timeout = true;
+           
+
+            r.style.setProperty('--opacity_sprechblase22', 1);
+            await delay(300000);
+            r.style.setProperty('--opacity_sprechblase13', 0);
+            await delay(300);
+            r.style.setProperty('--opacity_sprechblase14', 1);
+            await delay(3000);
+            r.style.setProperty('--opacity_sprechblase14', 0);
+            await delay(300);
+            r.style.setProperty('--opacity_sprechblase15', 1);
+            await delay(3000);
+            r.style.setProperty('--opacity_sprechblase15', 0);
+            await delay(300);
+            r.style.setProperty('--opacity_sprechblase16', 1);
+            await delay(3000);
+            r.style.setProperty('--opacity_sprechblase16', 0);
+            await delay(300);
+            r.style.setProperty('--opacity_sprechblase17', 1);
+            await delay(3000);
+            r.style.setProperty('--opacity_sprechblase17', 0);
+            
+            place_counter_x = 3;
+            move_x = 15 + (62 * (place_counter_x - 1));
+            r.style.setProperty('--move_x', move_x + "px");
+            place_counter_y = 3;
+            move_y = 10 + (62 * (place_counter_y - 1));
+            r.style.setProperty('--move_y', move_y + "px");
+            run_y = place_counter_y - 1;
+            run_x = place_counter_x - 1;
+            document.getElementById("player_img").src = "src/images/cat_left_standing_black.png";
+            localStorage.setItem('grayscale_note', 1);
+            r.style.setProperty('--grayscale_note', 1);
+            localStorage.setItem('note', 1);
+            cat_done = localStorage.getItem('cat_status');
+            
+
+            await delay(300);
+            r.style.setProperty('--ticket', 1);
+            localStorage.setItem('ticket', 1);
+            checkInventory();
+            cancelCatIslandWindow();
+
+            await delay(100);
+            r.style.setProperty('--opacity_sprechblase18', 1);
+            await delay(1500);
+            r.style.setProperty('--opacity_sprechblase18', 0);
+
             exchangeBottle_timeout = false;
 
         }
@@ -292,10 +344,18 @@ function cancelExchangeBottle()
     console.log("popup ausschalten");
     popup_exchangeBottle.classList.toggle("fadeOut");
     meow_timeout = false;
-    resetShellgame();
+    resetBottleExchange();
     click_arrow.removeEventListener("click", cancelExchangeBottle);
 
 }
+
+async function resetBottleExchange()
+    {
+        await delay(500);
+        popup.classList.toggle("fadeIn");
+        popup.classList.toggle("fadeOut");
+        console.log("reset");
+    }
 
 // show info
 
