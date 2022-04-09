@@ -493,7 +493,7 @@ checkInventory();
 
 let bottle_timeout = false;
 let bottle_done = localStorage.getItem('bottle_status');
-var popup = document.getElementById("popup_vendor");
+
 
 function bottle_interface() {
     if ((place_counter_x === 9) && (place_counter_y === 8))  {
@@ -508,23 +508,6 @@ function bottle_interface() {
     }
 }
    
-async function resetVendor()
-{
-    await delay(500);
-    popup.classList.toggle("fadeIn");
-    popup.classList.toggle("fadeOut");
-    console.log("reset");
-}
-function cancelVendor()
-{
-console.log("popup ausschalten");
-popup.classList.toggle("fadeOut");
-bottle_timeout = false;
-resetVendor();
-click_arrow.removeEventListener("click", cancelVendor);
-
-}
-
 // show info
 
 async function show_bubble10()
@@ -563,7 +546,7 @@ async function show_bubble10()
 
     // move out of the cave
 
-    function move_out_of_cave() {
+    function move_out_of_page11() {
         if ((place_counter_x === 3) && (place_counter_y === 4)) {
             console.log("raus auf dem 1.OG");
             window.location.href = "kreischcraft2.html";
@@ -716,6 +699,7 @@ async function show_bubble10()
         }
         else if ((e.keyCode == '37') && (can_char_move === true)) { // left arrow
             prevent_move();
+            move_out_of_page11;
             document.getElementById('player_img').src = "src/images/cat_left_standing_black.png";
             if ((place_counter_x > 1) && (place_counter_x <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_left.length; i++) {
