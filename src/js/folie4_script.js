@@ -275,34 +275,22 @@ async function exchangeBottle__interface() {
            
 
             r.style.setProperty('--opacity_sprechblase22', 1);
-            await delay(300000);
-            r.style.setProperty('--opacity_sprechblase13', 0);
-            await delay(300);
-            r.style.setProperty('--opacity_sprechblase14', 1);
             await delay(3000);
-            r.style.setProperty('--opacity_sprechblase14', 0);
+            r.style.setProperty('--opacity_sprechblase22', 0);
             await delay(300);
-            r.style.setProperty('--opacity_sprechblase15', 1);
+            r.style.setProperty('--opacity_sprechblase23', 1);
             await delay(3000);
-            r.style.setProperty('--opacity_sprechblase15', 0);
+            r.style.setProperty('--opacity_sprechblase23', 0);
             await delay(300);
-            r.style.setProperty('--opacity_sprechblase16', 1);
+            r.style.setProperty('--opacity_sprechblas24', 1);
             await delay(3000);
-            r.style.setProperty('--opacity_sprechblase16', 0);
+            r.style.setProperty('--opacity_sprechblas24', 0);
             await delay(300);
-            r.style.setProperty('--opacity_sprechblase17', 1);
+            r.style.setProperty('--opacity_sprechblase25', 1);
             await delay(3000);
-            r.style.setProperty('--opacity_sprechblase17', 0);
-            
-            place_counter_x = 3;
-            move_x = 15 + (62 * (place_counter_x - 1));
-            r.style.setProperty('--move_x', move_x + "px");
-            place_counter_y = 3;
-            move_y = 10 + (62 * (place_counter_y - 1));
-            r.style.setProperty('--move_y', move_y + "px");
-            run_y = place_counter_y - 1;
-            run_x = place_counter_x - 1;
-            document.getElementById("player_img").src = "src/images/cat_left_standing_black.png";
+            r.style.setProperty('--opacity_sprechblase25', 0);
+            await delay(300);
+
             localStorage.setItem('grayscale_note', 1);
             r.style.setProperty('--grayscale_note', 1);
             localStorage.setItem('note', 1);
