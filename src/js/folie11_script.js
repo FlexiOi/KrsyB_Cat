@@ -486,7 +486,7 @@
     }
     console.log("Inventar neugeladen.");
 }
-checkInventory();
+ //checkInventory();
 
 
 // pop up
