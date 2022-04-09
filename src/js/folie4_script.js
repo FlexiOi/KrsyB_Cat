@@ -253,13 +253,30 @@ checkInventory();
     function move_out_of_house() {
         if ((place_counter_x === 3) && (place_counter_y === 8)) {
             console.log("raus aus de ins Haus");
-
             window.location.href = "kreischcraft3.html";
         }
 
     }
 
-
+    var origin = localStorage.getItem('player_origin');
+    switch (origin) {
+        case "3": // out of the house
+            console.log("Player origin is the house at the sea");
+            place_counter_x = 3;
+            move_x = 15 + (62 * (place_counter_x - 1));
+            r.style.setProperty('--move_x', move_x + "px");
+            place_counter_y = 8;
+            move_y = 10 + (62 * (place_counter_y - 1));
+            r.style.setProperty('--move_y', move_y + "px");
+            run_y = place_counter_y - 1;
+            run_x = place_counter_x - 1;
+            document.getElementById("player_img").src = "src/images/cat_back_standing_black.png";
+            move_x_int = 15;
+            move_y_int = 10;
+            console.log("x:" + move_x + " y: " + move_y);
+            console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
+            break;
+    }
 
 
     // move up
