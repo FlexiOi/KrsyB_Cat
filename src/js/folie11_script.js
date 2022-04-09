@@ -501,7 +501,7 @@ function bottle_interface() {
             r.style.setProperty('--maus', 1);
             localStorage.setItem('mouse', 1);
             inventory_mouse = localStorage.getItem('mouse');
-            bottle_done = true;
+            localStorage.setItem('bottle_status', true);
             show_bubble10();
             checkInventory();
         }
