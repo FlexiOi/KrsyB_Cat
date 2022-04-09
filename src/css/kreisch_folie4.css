@@ -179,8 +179,8 @@ top:var(--move_y);
 .sprechblase_katze
 {
 	position: absolute;
-	left:350px;
-	top:100px;
+	left:50px;
+	top:20px;
 	height: 250px;
 	width: auto;
 }
