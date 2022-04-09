@@ -355,7 +355,10 @@ async function ShipInterface() {
 
             r.style.setProperty('--opacity_sprechblase27', 1);
             await delay(3000);
+            r.style.setProperty('--opacity_sprechblase27', 0);
 
+
+/*
             prevent_move_for_x();
             console.log("popup einschalten");
             popup_exchangeBottle.classList.toggle("fadeIn");
@@ -380,7 +383,7 @@ async function ShipInterface() {
             await delay(1500);
             r.style.setProperty('--opacity_sprechblase18', 0);
 
-           
+           */
 
         }
         else
