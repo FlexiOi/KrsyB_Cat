@@ -356,34 +356,19 @@ async function ShipInterface() {
             r.style.setProperty('--opacity_sprechblase27', 1);
             await delay(3000);
             r.style.setProperty('--opacity_sprechblase27', 0);
+            await delay(1000);
 
 
-/*
             prevent_move_for_x();
             console.log("popup einschalten");
             popup_exchangeBottle.classList.toggle("fadeIn");
             exchangeBottle_timeout = true;
 
-            localStorage.setItem('grayscale_mouse', 1);
-            r.style.setProperty('--grayscale_mouse', 1);
-            localStorage.setItem('mouse', 2);
-            inventory_mouse = localStorage.getItem('mouse');          
+            localStorage.clear();
+            location.reload();
 
-            await delay(300);
-            r.style.setProperty('--ticket', 1);
-            localStorage.setItem('ticket', 1);
-            inventory_ticket = localStorage.getItem('ticket');
-            checkInventory();
-
-            cancelExchangeBottle();
-            exchangeBottle_timeout = false;
-
-            await delay(100);
-            r.style.setProperty('--opacity_sprechblase18', 1);
-            await delay(1500);
-            r.style.setProperty('--opacity_sprechblase18', 0);
-
-           */
+            await delay(5000);
+            window.location.href = "index.html";
 
         }
         else

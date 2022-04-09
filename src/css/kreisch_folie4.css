@@ -188,6 +188,14 @@ top:var(--move_y);
 	height: 250px;
 	width: auto;
 }
+.sprechblase_Ship
+{
+	position: absolute;
+	left:20px;
+	top:20px;
+	height: 150px;
+	width: auto;
+}
 
   .sprechblase_new_item
   {
