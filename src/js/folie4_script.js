@@ -300,13 +300,15 @@ async function exchangeBottle__interface() {
             localStorage.setItem('ticket', 1);
             checkInventory();
 
+            cancelExchangeBottle();
+            exchangeBottle_timeout = false;
+
             await delay(100);
             r.style.setProperty('--opacity_sprechblase18', 1);
             await delay(1500);
             r.style.setProperty('--opacity_sprechblase18', 0);
 
-            cancelExchangeBottle()
-            exchangeBottle_timeout = false;
+           
 
         }
         else
