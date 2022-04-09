@@ -255,7 +255,6 @@ checkInventory();
 
 let exchangeBottle_timeout = false;
 let exchangeBottle_done = localStorage.getItem('bottle_status');
-let click_arrow = document.querySelector("#backArrow");
 var popup_exchangeBottle = document.getElementById("popup_exchangeBottle");
 var popup_Ship = document.getElementById("popup_exchangeBottle");
 
@@ -333,7 +332,6 @@ function cancelExchangeBottle()
     popup_exchangeBottle.classList.toggle("fadeOut");
     meow_timeout = false;
     resetBottleExchange();
-    click_arrow.removeEventListener("click", cancelExchangeBottle);
 
 }
 
@@ -382,7 +380,7 @@ function cancelExchangeBottle()
     popup_exchangeBottle.classList.toggle("fadeOut");
     meow_timeout = false;
     resetBottleExchange();
-    click_arrow.removeEventListener("click", cancelExchangeBottle);
+
 
 }
 
