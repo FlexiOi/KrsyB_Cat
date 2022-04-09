@@ -284,7 +284,7 @@ function exchangeBottle__interface() {
 function cancelExchangeBottle()
 {
     console.log("popup ausschalten");
-    popup.classList.toggle("fadeOut");
+    popup_exchangeBottle.classList.toggle("fadeOut");
     meow_timeout = false;
     resetShellgame();
     click_arrow.removeEventListener("click", cancelExchangeBottle);
