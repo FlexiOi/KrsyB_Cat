@@ -497,7 +497,7 @@ let bottle_done = localStorage.getItem('bottle_status');
 
 function bottle_interface() {
     if ((place_counter_x === 9) && (place_counter_y === 8))  {
-        if (bottle_timeout === false) {
+        if ((bottle_timeout === false) && (bottle_done != true)) {
             r.style.setProperty('--maus', 1);
             localStorage.setItem('mouse', 1);
             inventory_mouse = localStorage.getItem('mouse');
