@@ -524,7 +524,7 @@ async function show_bubble10()
             }
         }
         else if ((e.keyCode == '39') && (can_char_move === true)) { // right arrow
-
+            exchangeBottle__interface();
             prevent_move();
             document.getElementById('player_img').src = "src/images/cat_right_standing_black.png";
             if ((place_counter_x >= 1) && (place_counter_x < number_of_squares)) {
