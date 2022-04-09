@@ -6,59 +6,59 @@
 
     let banned_squares_right = [
         {
-            x: 4, y: 8
+            x: 6, y: 10
         },
         {
-            x: 4, y: 7
-        },
-        {
-            x: 4, y: 4
-        },
-        {
-            x: 4, y: 3
-        },
-        {
-            x: 7, y: 2
-        },
-        {
-            x: 6, y: 1
-        }
-
-
-    ];
-    let banned_squares_left = [{
-        x: 3, y: 2
-    },
-    {
-        x: 3, y: 1,
-    },
-    {
-        x: 7, y: 7
-    }
-
-    ];
-    let banned_squares_down = [
-        {
-            x: 5, y: 2
-        }
-        ,
-        {
-            x: 6, y: 2
-        },
-        {
-            x: 7, y: 2
-        },
-        {
-            x: 5, y: 6
+            x: 6, y: 9
         },
         {
             x: 6, y: 6
         },
         {
-            x: 7, y: 7
+            x: 6, y: 5
         },
         {
-            x: 8, y: 7
+            x: 9, y: 4
+        },
+        {
+            x: 8, y: 3
+        }
+
+
+    ];
+    let banned_squares_left = [{
+        x: 5, y: 4
+    },
+    {
+        x: 5, y: 3,
+    },
+    {
+        x: 9, y: 9
+    }
+
+    ];
+    let banned_squares_down = [
+        {
+            x: 7, y: 4
+        }
+        ,
+        {
+            x: 8, y: 4
+        },
+        {
+            x: 9, y: 4
+        },
+        {
+            x: 7, y: 8
+        },
+        {
+            x: 8, y: 8
+        },
+        {
+            x: 9, y: 9
+        },
+        {
+            x: 10, y: 9
         }
 
 
@@ -251,7 +251,7 @@ checkInventory();
     // move out of the house
 
     function move_out_of_house() {
-        if ((place_counter_x === 3) && (place_counter_y === 8)) {
+        if ((place_counter_x === 5) && (place_counter_y === 10)) {
             console.log("raus aus de ins Haus");
             window.location.href = "kreischcraft3.html";
         }
