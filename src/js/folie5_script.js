@@ -323,7 +323,7 @@ async function cat_interface() {
                 document.getElementById("player_img").src = "src/images/cat_left_standing_black.png";
                 localStorage.setItem('grayscale_note', 1);
                 r.style.setProperty('--grayscale_note', 1);
-                localStorage.setItem('note', 1);
+                localStorage.setItem('note', 2);
                 cat_done = localStorage.getItem('cat_status');
                 
 

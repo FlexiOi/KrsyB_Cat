@@ -293,7 +293,7 @@ async function exchangeBottle__interface() {
 
             localStorage.setItem('grayscale_mouse', 1);
             r.style.setProperty('--grayscale_mouse', 1);
-            localStorage.setItem('note', 1);            
+            //localStorage.setItem('note', 1);            
 
             await delay(300);
             r.style.setProperty('--ticket', 1);
