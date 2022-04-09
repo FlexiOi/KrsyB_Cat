@@ -59,6 +59,9 @@
     },
     {
         x: 9, y: 9
+    },
+    {
+        x: 9, y: 8
     }
 
     ];
@@ -248,7 +251,54 @@
 }
 checkInventory();
 
+// pop up
 
+let exchangeBottle_timeout = false;
+let exchangeBottle_done = localStorage.getItem('bottle_status');
+let click_arrow = document.querySelector("#backArrow");
+var popup_exchangeBottle = document.getElementById("popup_exchangeBottle");
+
+async function prevent_move_for_x() {
+    can_char_move = false;
+    await delay_movement(16200);
+    can_char_move = true;
+}
+
+function exchangeBottle__interface() {
+    if ((place_counter_x === 9) && (place_counter_y === 4))  {
+        if ((exchangeBottle_timeout === false) && (inventory_mouse == 1)) {
+
+            prevent_move_for_x();
+            console.log("popup einschalten");
+            popup.classList.toggle("fadeIn");
+            exchangeBottle_timeout = true;
+            click_arrow.addEventListener("click", cancelExchangeBottle);
+        }
+        else
+        {
+            console.log("nix da");
+        }
+    }
+}
+
+function cancelExchangeBottle()
+{
+    console.log("popup ausschalten");
+    popup.classList.toggle("fadeOut");
+    meow_timeout = false;
+    resetShellgame();
+    click_arrow.removeEventListener("click", cancelExchangeBottle);
+
+}
+
+// show info
+
+async function show_bubble10()
+{
+    r.style.setProperty('--opacity_sprechblase20', 1);
+    await delay(2000);
+    r.style.setProperty('--opacity_sprechblase20', 0);
+}
 
     // get move_x
     let move_x = rs.getPropertyValue('--move_x');
