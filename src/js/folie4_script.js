@@ -209,8 +209,8 @@ checkInventory();
     move_x_int = parseInt(move_x);
 
     // set map values
-    size_map = 496;
-    number_of_squares = 8;
+    size_map = 620;
+    number_of_squares = 10;
     move_value = size_map / number_of_squares;
 
     // get move_y
@@ -262,10 +262,10 @@ checkInventory();
     switch (origin) {
         case "3": // out of the house
             console.log("Player origin is the house at the sea");
-            place_counter_x = 3;
+            place_counter_x = 5;
             move_x = 15 + (62 * (place_counter_x - 1));
             r.style.setProperty('--move_x', move_x + "px");
-            place_counter_y = 8;
+            place_counter_y = 10;
             move_y = 10 + (62 * (place_counter_y - 1));
             r.style.setProperty('--move_y', move_y + "px");
             run_y = place_counter_y - 1;
