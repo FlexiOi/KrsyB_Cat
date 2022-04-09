@@ -28,6 +28,9 @@
         },
         {
             x: 9, y: 3
+        },
+        {
+            x: 9, y: 8
         }
     ];
     let banned_squares_left = [{
@@ -93,6 +96,12 @@
         },
         {
             x: 9, y: 4
+        },
+        {
+            x: 7, y: 7
+        },
+        {
+            x: 8, y: 7
         }
     ];
     let banned_squares_up = [{
