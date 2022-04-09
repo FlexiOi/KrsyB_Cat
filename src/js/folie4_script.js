@@ -273,10 +273,16 @@ function exchangeBottle__interface() {
             popup_exchangeBottle.classList.toggle("fadeIn");
             exchangeBottle_timeout = true;
             click_arrow.addEventListener("click", cancelExchangeBottle);
+            exchangeBottle_timeout = false;
+
         }
         else
         {
-            console.log("nix da");
+            exchangeBottle_timeout = true;
+            r.style.setProperty('--opacity_sprechblase21', 1);
+            await delay(2000);
+            r.style.setProperty('--opacity_sprechblase21', 0);
+            exchangeBottle_timeout = false;
         }
     }
 }

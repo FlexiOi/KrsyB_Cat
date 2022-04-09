@@ -10,7 +10,9 @@
   --notiz:0;
   --ticket:0;
 
-  --grayscale_coin:0;
+  --opacity_sprechblase21:0;
+
+--grayscale_coin:0;
 --grayscale_fish:0;
 --grayscale_carrot:0;
 --grayscale_mouse:0;
@@ -164,8 +166,8 @@ top:var(--move_y);
 .sprechblase
   {
 	position: absolute;
-	left:300px;
-	top:220px;
+	left:480px;
+	top:90px;
 	height: 100px;
 	width: auto;
   }
@@ -178,25 +180,10 @@ top:var(--move_y);
 	height: 150px;
 	width: auto;
   }
-.visibility_sprechblase6
+
+.visibility_sprechblase21
 {
-	opacity: var(--opacity_sprechblase6);
-}
-.visibility_sprechblase7
-{
-	opacity: var(--opacity_sprechblase7);
-}
-.visibility_sprechblase8
-{
-	opacity: var(--opacity_sprechblase7);
-}
-.visibility_sprechblase9
-{
-	opacity: var(--opacity_sprechblase7);
-}
-.visibility_sprechblase10
-{
-	opacity: var(--opacity_sprechblase10);
+	opacity: var(--opacity_sprechblase21);
 }
 
 .backArrow
