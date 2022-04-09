@@ -264,7 +264,7 @@ async function prevent_move_for_x() {
     can_char_move = true;
 }
 
-function exchangeBottle__interface() {
+async function exchangeBottle__interface() {
     if ((place_counter_x === 9) && (place_counter_y === 4))  {
         if ((exchangeBottle_timeout === false) && (inventory_mouse == 1)) {
 
