@@ -256,7 +256,7 @@ checkInventory();
 let exchangeBottle_timeout = false;
 let exchangeBottle_done = localStorage.getItem('bottle_status');
 var popup_exchangeBottle = document.getElementById("popup_exchangeBottle");
-var popup_Ship = document.getElementById("popup_exchangeBottle");
+var popup_Ship = document.getElementById("popup_Ship");
 
 async function prevent_move_for_x() {
     can_char_move = false;
