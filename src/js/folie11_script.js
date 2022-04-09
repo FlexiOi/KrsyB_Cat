@@ -196,9 +196,9 @@
         }
     ];
 
-        // get root
-        var r = document.querySelector(':root');
-        var rs = getComputedStyle(r);
+    // get root
+    var r = document.querySelector(':root');
+    var rs = getComputedStyle(r);
 
     // Square-Counter (Wo ist die Figur)
     let place_counter_x = 5
@@ -547,9 +547,14 @@ async function show_bubble10()
     // move out of the cave
 
     function move_out_of_page11() {
-        if ((place_counter_x === 3) && (place_counter_y === 4)) {
+        if ((place_counter_x === 3) && (place_counter_y === 4))
+        {
             console.log("raus auf dem 1.OG");
             window.location.href = "kreischcraft2.html";
+        }
+        else
+        {
+            console.log("klappt leider nicht.");
         }
     }
 
