@@ -282,26 +282,23 @@ async function exchangeBottle__interface() {
             await delay(3000);
             r.style.setProperty('--opacity_sprechblase23', 0);
             await delay(300);
-            r.style.setProperty('--opacity_sprechblas24', 1);
+            r.style.setProperty('--opacity_sprechblase24', 1);
             await delay(3000);
-            r.style.setProperty('--opacity_sprechblas24', 0);
+            r.style.setProperty('--opacity_sprechblase24', 0);
             await delay(300);
             r.style.setProperty('--opacity_sprechblase25', 1);
             await delay(3000);
             r.style.setProperty('--opacity_sprechblase25', 0);
             await delay(300);
 
-            localStorage.setItem('grayscale_note', 1);
-            r.style.setProperty('--grayscale_note', 1);
-            localStorage.setItem('note', 1);
-            cat_done = localStorage.getItem('cat_status');
-            
+            localStorage.setItem('grayscale_mouse', 1);
+            r.style.setProperty('--grayscale_mouse', 1);
+            localStorage.setItem('note', 1);            
 
             await delay(300);
             r.style.setProperty('--ticket', 1);
             localStorage.setItem('ticket', 1);
             checkInventory();
-            cancelCatIslandWindow();
 
             await delay(100);
             r.style.setProperty('--opacity_sprechblase18', 1);
