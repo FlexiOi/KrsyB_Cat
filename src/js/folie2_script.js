@@ -406,6 +406,7 @@ checkInventory();
     function move_out_of_house() {
         if ((place_counter_x === 5) && (place_counter_y === 10)) {
             console.log("ab ins Haus");
+            localStorage.setItem('player_origin', 1);
             window.location.href = "kreischcraft1.html";
         }
     }
