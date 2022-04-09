@@ -178,19 +178,19 @@ top:var(--move_y);
   }
 .sprechblase_katze
 {
-  position: absolute;
-  left:480px;
-  top:90px;
-  height: 100px;
-  width: auto;
+	position: absolute;
+	left:420px;
+	top:150px;
+	height: 250px;
+	width: auto;
 }
 
   .sprechblase_new_item
   {
 	position: absolute;
-	left:420px;
-	top:150px;
-	height: 250px;
+	left:570px;
+	top:100px;
+	height: 150px;
 	width: auto;
   }
 
@@ -212,7 +212,7 @@ top:var(--move_y);
 }
 .visibility_sprechblase25
 {
-	opacity: var(--opacity_sprechblase25);
+	opacity: var(--opacity_sprechblase21);
 }
 
 .backArrow
