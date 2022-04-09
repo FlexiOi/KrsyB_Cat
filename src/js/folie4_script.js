@@ -264,6 +264,8 @@ async function prevent_move_for_x() {
     can_char_move = true;
 }
 
+// popup cat
+
 async function exchangeBottle__interface() {
     if ((place_counter_x === 9) && (place_counter_y === 4))  {
         if ((exchangeBottle_timeout === false) && (inventory_mouse == 1)) {
@@ -293,11 +295,13 @@ async function exchangeBottle__interface() {
 
             localStorage.setItem('grayscale_mouse', 1);
             r.style.setProperty('--grayscale_mouse', 1);
-            localStorage.setItem('mouse', 2);            
+            localStorage.setItem('mouse', 2);
+            inventory_mouse = localStorage.getItem('mouse');          
 
             await delay(300);
             r.style.setProperty('--ticket', 1);
             localStorage.setItem('ticket', 1);
+            inventory_ticket = localStorage.getItem('ticket');
             checkInventory();
 
             cancelExchangeBottle();
@@ -335,8 +339,88 @@ function cancelExchangeBottle()
 async function resetBottleExchange()
     {
         await delay(500);
-        popup.classList.toggle("fadeIn");
-        popup.classList.toggle("fadeOut");
+        popup_exchangeBottle.classList.toggle("fadeIn");
+        popup_exchangeBottle.classList.toggle("fadeOut");
+        console.log("reset");
+    }
+
+// popup ship
+
+async function ShipInterface() {
+    if ((place_counter_x === 3) && (place_counter_y === 5))  {
+        if ((exchangeBottle_timeout === false) && (inventory_ticket == 1)) {
+
+            prevent_move_for_x();
+            console.log("popup einschalten");
+            popup_exchangeBottle.classList.toggle("fadeIn");
+            exchangeBottle_timeout = true;
+           
+
+            r.style.setProperty('--opacity_sprechblase22', 1);
+            await delay(3000);
+            r.style.setProperty('--opacity_sprechblase22', 0);
+            await delay(300);
+            r.style.setProperty('--opacity_sprechblase23', 1);
+            await delay(3000);
+            r.style.setProperty('--opacity_sprechblase23', 0);
+            await delay(300);
+            r.style.setProperty('--opacity_sprechblase24', 1);
+            await delay(3000);
+            r.style.setProperty('--opacity_sprechblase24', 0);
+            await delay(300);
+            r.style.setProperty('--opacity_sprechblase25', 1);
+            await delay(3000);
+            r.style.setProperty('--opacity_sprechblase25', 0);
+            await delay(300);
+
+            localStorage.setItem('grayscale_mouse', 1);
+            r.style.setProperty('--grayscale_mouse', 1);
+            localStorage.setItem('mouse', 2);
+            inventory_mouse = localStorage.getItem('mouse');          
+
+            await delay(300);
+            r.style.setProperty('--ticket', 1);
+            localStorage.setItem('ticket', 1);
+            inventory_ticket = localStorage.getItem('ticket');
+            checkInventory();
+
+            cancelExchangeBottle();
+            exchangeBottle_timeout = false;
+
+            await delay(100);
+            r.style.setProperty('--opacity_sprechblase18', 1);
+            await delay(1500);
+            r.style.setProperty('--opacity_sprechblase18', 0);
+
+           
+
+        }
+        else
+        {
+            exchangeBottle_timeout = true;
+            r.style.setProperty('--opacity_sprechblase28', 1);
+            await delay(2000);
+            r.style.setProperty('--opacity_sprechblase28', 0);
+            exchangeBottle_timeout = false;
+        }
+    }
+}
+
+function cancelExchangeBottle()
+{
+    console.log("popup ausschalten");
+    popup_exchangeBottle.classList.toggle("fadeOut");
+    meow_timeout = false;
+    resetBottleExchange();
+    click_arrow.removeEventListener("click", cancelExchangeBottle);
+
+}
+
+async function resetBottleExchange()
+    {
+        await delay(500);
+        popup_exchangeBottle.classList.toggle("fadeIn");
+        popup_exchangeBottle.classList.toggle("fadeOut");
         console.log("reset");
     }
 
@@ -508,6 +592,7 @@ async function show_bubble10()
 
         if ((e.keyCode == '38') && (can_char_move === true)) { // up arrow
             prevent_move();
+            ShipInterface();
             document.getElementById('player_img').src = "src/images/cat_back_standing_black.png";
             if ((place_counter_y > 1) && (place_counter_y <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_up.length; i++) {

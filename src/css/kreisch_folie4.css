@@ -17,6 +17,8 @@
   --opacity_sprechblase23:0;
   --opacity_sprechblase24:0;
   --opacity_sprechblase25:0;
+  --opacity_sprechblase27:0;
+  --opacity_sprechblase28:0;
 
 
 --grayscale_coin:0;
@@ -218,6 +220,14 @@ top:var(--move_y);
 .visibility_sprechblase25
 {
 	opacity: var(--opacity_sprechblase25);
+}
+.visibility_sprechblase27
+{
+	opacity: var(--opacity_sprechblase27);
+}
+.visibility_sprechblase28
+{
+	opacity: var(--opacity_sprechblase28);
 }
 
 .backArrow
