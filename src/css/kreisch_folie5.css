@@ -105,14 +105,7 @@ opacity: var(--opacity_player);
 	opacity: var(--ticket);
 	filter: grayscale(var(--grayscale_ticket));
 }
-.sleeping_cat_position
-{
-	height: 30px;
-	width: 45px;
-	left:508px;
-	top:220px;
-	position:absolute;   
-}
+
 .border_radius_15
 {
   border-radius: 15px;
@@ -188,6 +181,15 @@ opacity: var(--opacity_player);
 	left:100px;
 	top:200px;
 	height: 200px;
+	width: auto;
+  }
+
+  .sprechblase_new_item
+  {
+	position: absolute;
+	left:570px;
+	top:100px;
+	height: 150px;
 	width: auto;
   }
 .portal

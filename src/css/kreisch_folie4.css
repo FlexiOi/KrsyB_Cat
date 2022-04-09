@@ -10,6 +10,8 @@
   --notiz:0;
   --ticket:0;
 
+
+  --opacity_sprechblase18:0;
   --opacity_sprechblase21:0;
   --opacity_sprechblase22:0;
   --opacity_sprechblase23:0;
@@ -193,7 +195,10 @@ top:var(--move_y);
 	height: 150px;
 	width: auto;
   }
-
+  .visibility_sprechblase18
+  {
+	  opacity: var(--opacity_sprechblase18);
+  }
 .visibility_sprechblase21
 {
 	opacity: var(--opacity_sprechblase21);
