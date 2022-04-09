@@ -257,6 +257,7 @@ let exchangeBottle_timeout = false;
 let exchangeBottle_done = localStorage.getItem('bottle_status');
 let click_arrow = document.querySelector("#backArrow");
 var popup_exchangeBottle = document.getElementById("popup_exchangeBottle");
+var popup_Ship = document.getElementById("popup_exchangeBottle");
 
 async function prevent_move_for_x() {
     can_char_move = false;
@@ -363,9 +364,6 @@ async function ShipInterface() {
             console.log("popup einschalten");
             popup_exchangeBottle.classList.toggle("fadeIn");
             exchangeBottle_timeout = true;
-
-            localStorage.clear();
-            location.reload();
 
             await delay(5000);
             window.location.href = "index.html";
