@@ -489,6 +489,50 @@
 checkInventory();
 
 
+// pop up
+
+let bottle_timeout = false;
+let bottle_done = localStorage.getItem('bottle_status');
+var popup = document.getElementById("popup_vendor");
+
+function bottle_interface() {
+    if ((place_counter_x === 9) && (place_counter_y === 8))  {
+        if (bottle_timeout === false) {
+            r.style.setProperty('--maus', 1);
+            localStorage.setItem('mouse', 1);
+            inventory_mouse = localStorage.getItem('mouse');
+            bottle_done = true;
+            show_bubble10();
+            checkInventory();
+        }
+    }
+}
+   
+async function resetVendor()
+{
+    await delay(500);
+    popup.classList.toggle("fadeIn");
+    popup.classList.toggle("fadeOut");
+    console.log("reset");
+}
+function cancelVendor()
+{
+console.log("popup ausschalten");
+popup.classList.toggle("fadeOut");
+bottle_timeout = false;
+resetVendor();
+click_arrow.removeEventListener("click", cancelVendor);
+
+}
+
+// show info
+
+async function show_bubble10()
+{
+    r.style.setProperty('--opacity_sprechblase20', 1);
+    await delay(2000);
+    r.style.setProperty('--opacity_sprechblase20', 0);
+}
 
     // set counters for Arrow Keys
     let counter_arrow_up = 0;
@@ -520,18 +564,11 @@ checkInventory();
     // move out of the cave
 
     function move_out_of_cave() {
-        if ((place_counter_x === 5) && (place_counter_y === 10)) {
-            console.log("raus aus der Höhle");
+        if ((place_counter_x === 3) && (place_counter_y === 4)) {
+            console.log("raus auf dem 1.OG");
             window.location.href = "kreischcraft2.html";
-            localStorage.setItem('player_origin', 13);
         }
     }
-
-    //  vendor interface
-
-
-    // pop up
-
 
 
    // place character depending on zone entry
@@ -700,6 +737,7 @@ checkInventory();
         }
         else if ((e.keyCode == '39') && (can_char_move === true)) { // right arrow
             prevent_move();
+            bottle_interface();
             document.getElementById('player_img').src = "src/images/cat_right_standing_black.png";
             if ((place_counter_x >= 1) && (place_counter_x < number_of_squares)) {
                 for (var i = 0; i < banned_squares_right.length; i++) {

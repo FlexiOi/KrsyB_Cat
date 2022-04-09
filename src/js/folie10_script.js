@@ -400,58 +400,7 @@ function cancelVendor()
 
 }
 
-    // buy items
-
-    async function buyFish()
-{
-    r.style.setProperty('--opacity_sprechblase6', 0);    
-    r.style.setProperty('--opacity_sprechblase7', 1);
-    r.style.setProperty('--fisch', 1);
-    localStorage.setItem('fish', 1);
-
-    localStorage.setItem('vendor_status', 1);
-    localStorage.setItem('grayscale_coin', 1);
-    r.style.setProperty('--grayscale_coin', 1);
-    localStorage.setItem('coin', 2);
-    vendor_done = localStorage.getItem('vendor_status');
-    checkInventory();
-    await delay(750);
-    show_bubble8();
-    cancelVendor();
-}
-
-async function buyCarrot()
-{
-    r.style.setProperty('--opacity_sprechblase6', 0);    
-    r.style.setProperty('--opacity_sprechblase7', 1);
-    r.style.setProperty('--karotte', 1);
-    localStorage.setItem('carrot', 1);
-
-    localStorage.setItem('vendor_status', 1);
-    localStorage.setItem('grayscale_coin', 1);
-    r.style.setProperty('--grayscale_coin', 1);
-    localStorage.setItem('coin', 2);
-    vendor_done = localStorage.getItem('vendor_status');
-    checkInventory();
-    await delay(750);
-    show_bubble9();
-    cancelVendor();
-}
-    // show info for fish
-
-    async function show_bubble8()
-    {
-        r.style.setProperty('--opacity_sprechblase8', 1);
-        await delay(2000);
-        r.style.setProperty('--opacity_sprechblase8', 0);
-    }
-
-    async function show_bubble9()
-    {
-        r.style.setProperty('--opacity_sprechblase9', 1);
-        await delay(2000);
-        r.style.setProperty('--opacity_sprechblase9', 0);
-    }
+    // show info
 
     async function show_bubble10()
     {

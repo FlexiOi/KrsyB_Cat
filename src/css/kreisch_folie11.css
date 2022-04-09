@@ -7,11 +7,7 @@
   --cat_patrol_y:10px;
 
 
-  --opacity_sprechblase6:1;
-  --opacity_sprechblase7:0;
-  --opacity_sprechblase8:0;
-  --opacity_sprechblase9:0;
-  --opacity_sprechblase10:0;
+  --opacity_sprechblase20:0;
 
   --geld:0;
   --fisch:0;
@@ -181,23 +177,13 @@ top:var(--move_y);
 	border-radius: 15px;
   }
 
-.sprechblase
+  .bottlePic
   {
-	position: absolute;
-	left:300px;
-	top:220px;
-	height: 100px;
-	width: auto;
+	height: 620px;
+	width: 620px;
+	border-radius: 15px;
   }
 
-  .sprechblase_dragon
-  {
-	position: absolute;
-	left:330px;
-	top:100px;
-	height: 100px;
-	width: auto;
-  }
   .sprechblase_new_item
   {
 	position: absolute;
@@ -206,62 +192,12 @@ top:var(--move_y);
 	height: 150px;
 	width: auto;
   }
-.visibility_sprechblase6
+
+.visibility_sprechblase20
 {
-	opacity: var(--opacity_sprechblase6);
-}
-.visibility_sprechblase7
-{
-	opacity: var(--opacity_sprechblase7);
-}
-.visibility_sprechblase8
-{
-	opacity: var(--opacity_sprechblase7);
-}
-.visibility_sprechblase9
-{
-	opacity: var(--opacity_sprechblase7);
-}
-.visibility_sprechblase10
-{
-	opacity: var(--opacity_sprechblase10);
+	opacity: var(--opacity_sprechblase20);
 }
 
-  .backArrow
-  {
-	position: absolute;
-	height: 70px;
-	width: 150px;
-	left: 420px;
-	top: 550px;
-  }
-
-  .buyFish
-  {
-	  position: absolute;
-	  left: 170px;
-	  top:420px;
-	  padding: 10px 20px;
-	  text-align: center;
-	  text-decoration: none;
-	  display: inline-block;
-	  border-radius: 15px;
-	  border: none;
-	  background: rgba(161, 229, 134, 0.575);
-  }
-  .buyCarrot
-  {
-	  position: absolute;
-	  left: 340px;
-	  top:420px;
-	  padding: 10px 20px;
-	  text-align: center;
-	  text-decoration: none;
-	  display: inline-block;
-	  border-radius: 15px;
-	  border: none;
-	  background: rgba(161, 229, 134, 0.575);
-  }
 
 /* sleeping cat popups */
 .popup_cat {
