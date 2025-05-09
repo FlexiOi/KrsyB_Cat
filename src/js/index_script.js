@@ -5,7 +5,7 @@ function checkKey(e) {
 
     if (e.keyCode == '13') { // up arrow
 
-        window.location.href = "kreischcraft1.html";
+        window.location.href = "map_001.html";
 
     }
 }

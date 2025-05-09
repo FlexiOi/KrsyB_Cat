@@ -1,192 +1,188 @@
   // local storage of player origin
     myStorage = localStorage;
 
+
+
     // set banned squares
 
     let banned_squares_right = [
         
         {
-            x: 9, y: 5
+            x: 5, y: 2
         },
         {
-            x: 8, y: 7
-        },
-        {
-            x: 8, y: 8
-        },
-        {
-            x: 8, y: 9
-        },
-        {
-            x: 5, y: 5
-        },
-        {
-            x: 5, y: 3
-        },
-        {
-            x: 9, y: 2
-        },
-        {
-            x: 3, y: 4
-        },
-        {
-            x: 3, y: 7
-        },
-        {
-            x: 3, y: 8
-        },
-        {
-            x: 6, y: 4
-        }
-    ];
-    let banned_squares_left = [
-        {
-            x: 9, y: 5
-        },
-        {
-            x: 8, y: 7
-        },
-        {
-            x: 7, y: 8
-        },
-        {
-            x: 5, y: 9
+            x: 6, y: 3
         },
         {
             x: 5, y: 4
         },
         {
-            x: 5, y: 3
+            x: 7, y: 3
         },
         {
-            x: 5, y: 2
+            x: 7, y: 4
         },
         {
-            x: 3, y: 4
+            x: 7, y: 5
         },
         {
-            x: 3, y: 5
+            x: 7, y: 6
         },
         {
-            x: 3, y: 6
+            x: 9, y: 7
         },
         {
-            x: 3, y: 7
+            x: 9, y: 4
         },
         {
-            x: 2, y: 8
+            x: 10, y: 2
+        },
+        {
+            x: 6, y: 6
+        },
+        {
+            x: 6, y: 7
         }
     ];
-    let banned_squares_down = [
+    let banned_squares_left = [
         {
-            x: 10, y: 6
+            x: 2, y: 5
+        },
+        {
+            x: 5, y: 7
+        },
+        {
+            x: 7, y: 3
+        },
+        {
+            x: 7, y: 4
+        },
+        {
+            x: 7, y: 6
+        },
+        {
+            x: 7, y: 7
         },
         {
             x: 9, y: 6
         },
         {
-            x: 8, y: 9
+            x: 9, y: 5
         },
         {
-            x: 7, y: 9
+            x: 9, y: 4
+        }
+    ];
+    let banned_squares_down = [
+        {
+            x: 1, y: 2
         },
         {
-            x: 6, y: 9
+            x: 2, y: 2
         },
         {
-            x: 5, y: 9
+            x: 3, y: 2
         },
         {
-            x: 7, y: 6
+            x: 4, y: 2
         },
         {
-            x: 6, y: 6
+            x: 1, y: 4
         },
         {
-            x: 5, y: 6
+            x: 1, y: 6
+        },
+        {
+            x: 2, y: 6
+        },
+        {
+            x: 3, y: 6
         },
         {
             x: 4, y: 6
         },
         {
-            x: 3, y: 8
+            x: 5, y: 7
         },
         {
-            x: 2, y: 8
+            x: 6, y: 7
         },
         {
-            x: 4, y: 5
+            x: 7, y: 7
         },
         {
-            x: 6, y: 4
+            x: 8, y: 7
         },
         {
-            x: 6, y: 2
+            x: 9, y: 7
         },
-        {
-            x: 7, y: 2
-        },
-        {
-            x: 8, y: 2
-        },
-        {
-            x: 9, y: 2
-        }
-    ];
-    let banned_squares_up = [
         {
             x: 10, y: 6
         },
         {
-            x: 9, y: 5
+            x: 10, y: 3
         },
         {
-            x: 8, y: 6
+            x: 8, y: 3
         },
         {
-            x: 7, y: 6
+            x: 6, y: 3
+        }
+    ];
+    let banned_squares_up = [
+        {
+            x: 1, y: 2
         },
         {
-            x: 6, y: 6
+            x: 2, y: 2
         },
         {
-            x: 6, y: 4
+            x: 3, y: 2
         },
         {
-            x: 4, y: 5
-        },
-        {
-            x: 3, y: 4
-        },
-        {
-            x: 2, y: 8
-        },
-        {
-            x: 4, y: 6
+            x: 4, y: 2
         },
         {
             x: 5, y: 2
         },
         {
-            x: 6, y: 2
+            x: 1, y: 3
         },
         {
-            x: 7, y: 2
+            x: 2, y: 3
+        },
+        {
+            x: 3, y: 3
+        },
+        {
+            x: 4, y: 3
+        },
+        {
+            x: 6, y: 3
+        },
+        {
+            x: 6, y: 5
+        },
+        {
+            x: 7, y: 3
+        },
+        {
+            x: 8, y: 7
+        },
+        {
+            x: 10, y: 3
         },
         {
             x: 8, y: 2
         },
         {
+            x: 1, y: 6
+        },
+        {
+            x: 10, y: 5
+        },
+        {
             x: 9, y: 2
-        },
-        {
-            x: 7, y: 8
-        },
-        {
-            x: 6, y: 9
-        },
-        {
-            x: 5, y: 9
         }
     ];
 
@@ -294,11 +290,12 @@
 }
 checkInventory();
 
+
     // get move_x
     let move_x = rs.getPropertyValue('--move_x');
     let run_x = 0;
     move_x = move_x.replace("px", "");
-    let move_x_int = parseInt(move_x);
+    move_x_int = parseInt(move_x);
 
     // set map values
     size_map = 620;
@@ -340,400 +337,55 @@ checkInventory();
         can_char_move = true;
     }
 
-    // move back to page 3
+    // move  into the cave
 
-    function move_to_page3() {
-        if ((place_counter_x === 10) && (place_counter_y === 6)) {
-            window.location.href = "kreischcraft3.html";
-            localStorage.setItem('player_origin', 11);
+    function move_into_cave() {
+        if ((place_counter_x === 9) && (place_counter_y === 2)) {
+            console.log("ab in die Höhle");
+            window.location.href = "map_008.html";
+            localStorage.setItem('player_origin', 9);
         }
     }
 
-    //  Shell game
+    // move out back to west
 
-    var shell_game_status = localStorage.getItem('shell_game_status');
-
-    // pop up
-
-    let meow_timeout = false;
-    let shell_game_done = localStorage.getItem('shell_game_status');
-    var popup = document.getElementById("popup_cat");
-function ShellGame() {
-        if (((place_counter_x === 7) && (place_counter_y === 6)) && (shell_game_done != 1)) {
-            if (meow_timeout === false) {
-                console.log("popup einschalten");
-                popup.classList.toggle("fadeIn");
-                meow_timeout = true;
-                click_arrow.addEventListener("click", cancelShellGame);
-            }
-            else{
-;
-            }
-           
-        }
-    }
-       
-async function resetShellgame()
-    {
-        await delay(500);
-        popup.classList.toggle("fadeIn");
-        popup.classList.toggle("fadeOut");
-        console.log("reset");
-    }
-function cancelShellGame()
-{
-    console.log("popup ausschalten");
-    popup.classList.toggle("fadeOut");
-    meow_timeout = false;
-    resetShellgame();
-    click_arrow.removeEventListener("click", cancelShellGame);
-
-}
-    // get coords of cups
-    
-    let distance_between_cups = 133;
-
-        //cup1
-    let cup1_x = rs.getPropertyValue('--cup1_x');
-    cup1_x = cup1_x.replace("px", "");
-    let cup1_x_int = parseInt(cup1_x);
-
-    let cup1_y = rs.getPropertyValue('--cup1_y');
-    cup1_y = cup1_y.replace("px", "");
-    let cup1_y_int = parseInt(cup1_y);
-
-        //cup2
-    let cup2_x = rs.getPropertyValue('--cup2_x');
-    cup2_x = cup2_x.replace("px", "");
-    let cup2_x_int = parseInt(cup2_x);
-
-    let cup2_y = rs.getPropertyValue('--cup2_y');
-    cup2_y = cup2_y.replace("px", "");
-    let cup2_y_int = parseInt(cup2_y);
-    
-        //cup3
-    let cup3_x = rs.getPropertyValue('--cup3_x');
-    cup3_x = cup3_x.replace("px", "");
-    let cup3_x_int = parseInt(cup3_x);
-
-    let cup3_y = rs.getPropertyValue('--cup3_y');
-    cup3_y = cup3_y.replace("px", "");
-    let cup3_y_int = parseInt(cup3_y);
-
-        //nuss
-    let nuss_x = rs.getPropertyValue('--nuss_x');
-    nuss_x = nuss_x.replace("px", "");
-    let nuss_x_int = parseInt(nuss_x);
-
-    let nuss_y = rs.getPropertyValue('--nuss_y');
-    nuss_y = nuss_y.replace("px", "");
-    let nuss_y_int = parseInt(nuss_y);
-    
-    let nut_counter = 0;
-    let alternate_nut_counter1 = 0;
-    let alternate_nut_counter2 = 1;
-
-    // shuffle
-
-    async function shuffle()
-{
-    set_cup_click();
-
-    r.style.setProperty('--opacity_sprechblase2', 0);    
-    r.style.setProperty('--opacity_sprechblase1', 0);
-
-    r.style.setProperty('--nuss_opacity', 1);
-    await delay(200);
-    nuss_y = nuss_y_int+((100/4)*1);
-    r.style.setProperty('--nuss_y', nuss_y + "px");
-    await delay(100);
-    nuss_y = nuss_y_int+((100/4)*2);
-    r.style.setProperty('--nuss_y', nuss_y + "px");
-    await delay(100);
-    nuss_y = nuss_y_int+((100/4)*3);
-    r.style.setProperty('--nuss_y', nuss_y + "px");
-    await delay(100);
-    r.style.setProperty('--nuss_opacity', 0);
-    nuss_y = nuss_y_int;
-    r.style.setProperty('--nuss_y', nuss_y + "px");
-    await delay(500);
-
-        for (let i = 0; i < 11; i++) {
-        let randomShuffle = Math.random();
-        if (randomShuffle >= 0.5) {
-            shuffle1_2();
-            
-            if (alternate_nut_counter2 == 0) {
-                console.log("Nuss hat sich nicht bewegt."); 
-            }
-            else
-            {
-            if (alternate_nut_counter1 == 0) {
-                alternate_nut_counter1 = 1;
-                nut_counter = 2;
-                console.log("Nuss auf: "+ nut_counter);
-            }
-            else
-            {
-                alternate_nut_counter1 = 0;
-                nut_counter = 1;
-                console.log("Nuss auf: "+ nut_counter);
-                        }
-                    }
-                    await delay(300);
-        }
-        else{
-            shuffle2_3();
-            if (alternate_nut_counter1 == 0) {
-             console.log("Nuss hat sich nicht bewegt.");   
-            }
-            else
-            {
-            if (alternate_nut_counter2 == 0) {
-                alternate_nut_counter2 = 1;
-                nut_counter = 2;
-                console.log("Nuss auf: "+ nut_counter);
-                        }
-            else
-            {
-                alternate_nut_counter2 = 0;
-                nut_counter = 3;
-                console.log("Nuss auf: "+ nut_counter);
-                        } 
-                    }
-                    await delay(300);
-        }
-        
-    }
-    }
-
-    async function shuffle1_2()
-    {
-
-        r.style.setProperty('--cup2_x', cup2_x_int + "px");
-        r.style.setProperty('--cup3_x', cup3_x_int + "px");
-
-        r.style.setProperty('--cup2_y', cup2_y_int + "px");
-        r.style.setProperty('--cup3_y', cup3_y_int + "px"); 
-        
-
-        cup1_x = (cup1_x_int+((distance_between_cups/4)*1));
-        cup2_x = (cup2_x_int-((distance_between_cups/4)*1));
-
-        cup1_y = cup1_y_int+50;
-        cup2_y = cup2_y_int-50;
-
-        r.style.setProperty('--cup1_x', cup1_x + "px");
-        r.style.setProperty('--cup2_x', cup2_x + "px");
-
-        r.style.setProperty('--cup2_y', cup2_y + "px");
-        r.style.setProperty('--cup1_y', cup1_y + "px");
-        
-        await delay(50);
-
-
-        cup1_x = (cup1_x_int+((distance_between_cups/4)*2));
-        cup2_x = (cup2_x_int-((distance_between_cups/4)*2));
-        
-        r.style.setProperty('--cup1_x', cup1_x + "px");
-        r.style.setProperty('--cup2_x', cup2_x + "px");
-    
-        await delay(50);
-
-        cup1_x = (cup1_x_int+((distance_between_cups/4)*3));
-        cup2_x = (cup2_x_int-((distance_between_cups/4)*3));
-        
-        r.style.setProperty('--cup1_x', cup1_x + "px");
-        r.style.setProperty('--cup2_x', cup2_x + "px");
-    
-        await delay(50);
-
-        cup1_x = (cup1_x_int+((distance_between_cups/4)*4));
-        cup2_x = (cup2_x_int-((distance_between_cups/4)*4));
-
-        cup1_y = cup1_y_int;
-        cup2_y = cup2_y_int;
-
-        r.style.setProperty('--cup1_x', cup1_x_int + "px");
-        r.style.setProperty('--cup2_x', cup2_x_int + "px");
-
-        r.style.setProperty('--cup2_y', cup2_y_int + "px");
-        r.style.setProperty('--cup1_y', cup1_y_int + "px");  
-
-        
-        
-    }
-
-    async function shuffle2_3()
-    {
-
-        r.style.setProperty('--cup1_x', cup1_x_int + "px");
-        r.style.setProperty('--cup2_x', cup2_x_int + "px");
-
-        r.style.setProperty('--cup2_y', cup2_y_int + "px");
-        r.style.setProperty('--cup1_y', cup1_y_int + "px"); 
-
-        cup2_x = (cup2_x_int+((distance_between_cups/4)*1));
-        cup3_x = (cup3_x_int-((distance_between_cups/4)*1));
-
-        cup2_y = cup2_y_int+50;
-        cup3_y = cup3_y_int-50;
-
-        r.style.setProperty('--cup2_x', cup2_x + "px");
-        r.style.setProperty('--cup3_x', cup3_x + "px");
-
-        r.style.setProperty('--cup2_y', cup2_y + "px");
-        r.style.setProperty('--cup3_y', cup3_y + "px");
-        
-        await delay(50);
-
-
-        cup2_x = (cup2_x_int+((distance_between_cups/4)*2));
-        cup3_x = (cup3_x_int-((distance_between_cups/4)*2));
-        
-        r.style.setProperty('--cup2_x', cup2_x + "px");
-        r.style.setProperty('--cup3_x', cup3_x + "px");
-    
-        await delay(50);
-
-        cup2_x = (cup2_x_int+((distance_between_cups/4)*3));
-        cup3_x = (cup3_x_int-((distance_between_cups/4)*3));
-        
-        r.style.setProperty('--cup2_x', cup2_x + "px");
-        r.style.setProperty('--cup3_x', cup3_x + "px");
-    
-        await delay(50);
-
-        cup2_x = (cup2_x_int+((distance_between_cups/4)*4));
-        cup3_x = (cup3_x_int-((distance_between_cups/4)*4));
-
-        cup2_y = cup2_y_int;
-        cup3_y = cup3_y_int;
-
-        r.style.setProperty('--cup2_x', cup2_x_int + "px");
-        r.style.setProperty('--cup3_x', cup3_x_int + "px");
-
-        r.style.setProperty('--cup2_y', cup2_y_int + "px");
-        r.style.setProperty('--cup3_y', cup3_y_int + "px"); 
-        
-    }
-
-    // click the right cup
-
-    let click_cup1 = document.querySelector("#cup1");
-    let click_cup2 = document.querySelector("#cup2");
-    let click_cup3 = document.querySelector("#cup3");
-    let click_arrow = document.querySelector("#backArrow");
-
-    async function set_cup_click()
-    {
-        r.style.setProperty('--opacity_sprechblase3', 0);
-        await delay(4300);
-        click_cup1.addEventListener("click", checkCup1);
-        click_cup2.addEventListener("click", checkCup2);
-        click_cup3.addEventListener("click", checkCup3);
-        
-        r.style.setProperty('--opacity_sprechblase2', 1);
-        
-    } 
-
-    async function checkCup1()
-    {
-        r.style.setProperty('--opacity_sprechblase2', 0);
-        if (nut_counter == 1) {
- 
-            click_cup1.removeEventListener("click", checkCup1);
-            click_cup2.removeEventListener("click", checkCup2);
-            click_cup3.removeEventListener("click", checkCup3);
-            r.style.setProperty('--opacity_sprechblase4', 1);
-            r.style.setProperty('--geld', 1);
-            localStorage.setItem('coin', 1);
-            localStorage.setItem('shell_game_status', 1);
-            checkInventory();
-            shell_game_done = true;
-            await delay(1000);
-            show_bubble5();
-            cancelShellGame();
-        }
-        else
-        {
-
-            click_cup1.removeEventListener("click", checkCup1);
-            click_cup2.removeEventListener("click", checkCup2);
-            click_cup3.removeEventListener("click", checkCup3);
-            r.style.setProperty('--opacity_sprechblase3', 1);
-        }
-    }
-    async function checkCup2()
-    {
-        if (nut_counter == 2) {
-
-            click_cup1.removeEventListener("click", checkCup1);
-            click_cup2.removeEventListener("click", checkCup2);
-            click_cup3.removeEventListener("click", checkCup3);
-            r.style.setProperty('--opacity_sprechblase4', 1);
-            r.style.setProperty('--geld', 1);
-            localStorage.setItem('coin', 1);
-            localStorage.setItem('shell_game_status', 1);
-            checkInventory();
-            shell_game_done = true;
-            await delay(1000);
-            show_bubble5();
-            cancelShellGame();
-        }
-        else
-        {
-
-            click_cup1.removeEventListener("click", checkCup1);
-            click_cup2.removeEventListener("click", checkCup2);
-            click_cup3.removeEventListener("click", checkCup3);
-            r.style.setProperty('--opacity_sprechblase3', 1);
-            
-        }
-    }
-    async function checkCup3()
-    {
-        if (nut_counter == 3) {
-
-            click_cup1.removeEventListener("click", checkCup1);
-            click_cup2.removeEventListener("click", checkCup2);
-            click_cup3.removeEventListener("click", checkCup3);
-            r.style.setProperty('--opacity_sprechblase4', 1);
-            r.style.setProperty('--geld', 1);
-            localStorage.setItem('coin', 1);
-            localStorage.setItem('shell_game_status', 1);
-            checkInventory();
-            shell_game_done = true;
-            await delay(1000);
-            show_bubble5();
-            cancelShellGame();
-        }
-        else
-        {
-
-            click_cup1.removeEventListener("click", checkCup1);
-            click_cup2.removeEventListener("click", checkCup2);
-            click_cup3.removeEventListener("click", checkCup3);
-            r.style.setProperty('--opacity_sprechblase3', 1);
+    function move_to_westTop() {
+        if ((place_counter_x === 1) && (place_counter_y === 2)) {
+            console.log("raus aus dem Süden");
+            window.location.href = "map_006.html";
+            localStorage.setItem('player_origin', 7);
         }
     }
 
-    // show info for coins
-
-    async function show_bubble5()
-    {
-        r.style.setProperty('--opacity_sprechblase5', 1);
-        await delay(2000);
-        r.style.setProperty('--opacity_sprechblase5', 0);
+    function move_to_westBottom() {
+        if ((place_counter_x === 1) && (place_counter_y === 6)) {
+            console.log("raus aus dem Süden");
+            window.location.href = "map_006.html";
+            localStorage.setItem('player_origin', 8);
+        }
     }
 
     // place character depending on zone entry
 
     var origin = localStorage.getItem('player_origin');
     switch (origin) {
-        case "10": // from  page 6(top)
+        case "7": // from  page 6(top)
             console.log("Player origin is page 6(top)");
-            place_counter_x = 10;
+            place_counter_x = 1;
+            move_x = 15 + (62 * (place_counter_x - 1));
+            r.style.setProperty('--move_x', move_x + "px");
+            place_counter_y = 2;
+            move_y = 10 + (62 * (place_counter_y - 1));
+            r.style.setProperty('--move_y', move_y + "px");
+            run_y = place_counter_y - 1;
+            run_x = place_counter_x - 1;
+            document.getElementById("player_img").src = "src/images/cat_right_standing_black.png";
+            console.log("x:" + move_x + " y: " + move_y);
+            console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
+            break;
+        case "8": // from  page 6(bottom)
+            console.log("Player origin is page 6(bottom)");
+            place_counter_x = 1;
             move_x = 15 + (62 * (place_counter_x - 1));
             r.style.setProperty('--move_x', move_x + "px");
             place_counter_y = 6;
@@ -741,7 +393,21 @@ function cancelShellGame()
             r.style.setProperty('--move_y', move_y + "px");
             run_y = place_counter_y - 1;
             run_x = place_counter_x - 1;
-            document.getElementById("player_img").src = "src/images/cat_left_standing_black.png";
+            document.getElementById("player_img").src = "src/images/cat_right_standing_black.png";
+            console.log("x:" + move_x + " y: " + move_y);
+            console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
+            break;
+        case "9": // from  page 8
+            console.log("Player origin is page 8");
+            place_counter_x = 9;
+            move_x = 15 + (62 * (place_counter_x - 1));
+            r.style.setProperty('--move_x', move_x + "px");
+            place_counter_y = 2;
+            move_y = 10 + (62 * (place_counter_y - 1));
+            r.style.setProperty('--move_y', move_y + "px");
+            run_y = place_counter_y - 1;
+            run_x = place_counter_x - 1;
+            document.getElementById("player_img").src = "src/images/cat_front_standing_black.png";
             console.log("x:" + move_x + " y: " + move_y);
             console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
             break;
@@ -829,7 +495,7 @@ function cancelShellGame()
 
         if ((e.keyCode == '38') && (can_char_move === true)) { // up arrow
             prevent_move();
-            ShellGame();
+            move_into_cave();
             document.getElementById('player_img').src = "src/images/cat_back_standing_black.png";
             if ((place_counter_y > 1) && (place_counter_y <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_up.length; i++) {
@@ -873,6 +539,8 @@ function cancelShellGame()
         }
         else if ((e.keyCode == '37') && (can_char_move === true)) { // left arrow
             prevent_move();
+            move_to_westTop();
+            move_to_westBottom();
             document.getElementById('player_img').src = "src/images/cat_left_standing_black.png";
             if ((place_counter_x > 1) && (place_counter_x <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_left.length; i++) {
@@ -894,7 +562,6 @@ function cancelShellGame()
         }
         else if ((e.keyCode == '39') && (can_char_move === true)) { // right arrow
             prevent_move();
-            move_to_page3();
             document.getElementById('player_img').src = "src/images/cat_right_standing_black.png";
             if ((place_counter_x >= 1) && (place_counter_x < number_of_squares)) {
                 for (var i = 0; i < banned_squares_right.length; i++) {

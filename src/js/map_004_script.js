@@ -1,6 +1,5 @@
-  // local storage of player origin
+   // local storage of player origin
     myStorage = localStorage;
-
 
 
     // set banned squares
@@ -13,137 +12,139 @@
             x: 6, y: 9
         },
         {
-            x: 4, y: 6,
+            x: 6, y: 8
         },
         {
-            x: 4, y: 5,
+            x: 10, y: 8
         },
         {
-            x: 4, y: 4,
+            x: 6, y: 6
         },
         {
-            x: 9, y: 5,
+            x: 6, y: 5
         },
         {
-            x: 9, y: 3,
+            x: 9, y: 4
         },
         {
-            x: 8, y: 4,
+            x: 9, y: 3
+        },
+        {
+            x: 9, y: 8
         }
     ];
     let banned_squares_left = [{
-        x: 4, y: 10
+        x: 5, y: 10
     },
     {
-        x: 5, y: 10,
+        x: 3, y: 9,
     },
     {
-        x: 4, y: 9,
+        x: 3, y: 8
     },
     {
-        x: 3, y: 8,
+        x: 3, y: 7
     },
     {
-        x: 3, y: 7,
+        x: 3, y: 6
     },
     {
-        x: 3, y: 6,
+        x: 3, y: 5
     },
     {
-        x: 3, y: 5,
+        x: 5, y: 4
     },
     {
-        x: 3, y: 4,
+        x: 5, y: 3
     },
     {
-        x: 4, y: 3,
+        x: 9, y: 9
     },
     {
-        x: 8, y: 4,
-    },
-    {
-        x: 8, y: 5,
-    },
-    {
-        x: 8, y: 6,
+        x: 9, y: 8
     }
+
     ];
     let banned_squares_down = [
         {
-            x: 4, y: 9
+            x: 6, y: 9
         }
         ,
         {
-            x: 3, y: 8
+            x: 4, y: 9
         },
         {
-            x: 5, y: 3,
+            x: 3, y: 9
         },
         {
-            x: 6, y: 3,
+            x: 7, y: 8
         },
         {
-            x: 7, y: 3,
+            x: 8, y: 8
         },
         {
-            x: 7, y: 8,
+            x: 9, y: 9
         },
         {
-            x: 8, y: 8,
+            x: 10, y: 9
         },
         {
-            x: 9, y: 8,
+            x: 10, y: 7
         },
         {
-            x: 10, y: 8,
+            x: 7, y: 4
         },
         {
-            x: 6, y: 9,
+            x: 8, y: 4
         },
         {
-            x: 9, y: 3,
+            x: 9, y: 4
+        },
+        {
+            x: 7, y: 7
+        },
+        {
+            x: 8, y: 7
         }
-        
     ];
     let banned_squares_up = [{
-        x: 5, y: 7
+        x: 10, y: 7
     },
     {
-        x: 6, y: 7
+        x: 9, y: 7
     },
     {
-        x: 7, y: 7,
+        x: 8, y: 7
     },
     {
-        x: 3, y: 4,
+        x: 7, y: 7
     },
     {
-        x: 4, y: 3,
-    },
-    {
-        x: 5, y: 3,
-    },
-    {
-        x: 6, y: 3,
-    },
-    {
-        x: 7, y: 3,
-    },
-    {
-        x: 8, y: 3,
-    },
-    {
-        x: 9, y: 3,
-    },
-    {
-        x: 10, y: 3,
-    },
-    {
-        x: 10, y: 6,
-    },
-    {
-        x: 9, y: 5,
+        x: 3, y: 5
     }
+        ,
+    {
+        x: 4, y: 5
+    },
+    {
+        x: 5, y: 3
+    },
+    {
+        x: 10, y: 9
+    },
+    {
+        x: 6, y: 3
+    },
+    {
+        x: 7, y: 3
+    },
+    {
+        x: 8, y: 3
+    },
+    {
+        x: 9, y: 3
+    }
+
     ];
 
     // get root
@@ -166,107 +167,8 @@
     var grayscale_ticket = localStorage.getItem('grayscale_ticket');
     var grayscale_note = localStorage.getItem('grayscale_note');
 
-function setBannedSquares() {
-    if (inventory_fish == 2) {
-        console.log("banned squares set!");
-        banned_squares_right = [
-            {
-                x: 5, y: 10
-            },
-            {
-                x: 6, y: 9
-            },
-            {
-                x: 4, y: 6,
-            },
-            {
-                x: 4, y: 5,
-            },
-            {
-                x: 4, y: 4,
-            },
-            {
-                x: 9, y: 5,
-            },
-            {
-                x: 9, y: 3,
-            },
-            {
-                x: 9, y: 4,
-            }
-        ];
-        banned_squares_down = [
-            {
-                x: 4, y: 9
-            }
-            ,
-            {
-                x: 3, y: 8
-            },
-            {
-                x: 5, y: 3,
-            },
-            {
-                x: 6, y: 3,
-            },
-            {
-                x: 7, y: 3,
-            },
-            {
-                x: 7, y: 8,
-            },
-            {
-                x: 8, y: 8,
-            },
-            {
-                x: 9, y: 8,
-            },
-            {
-                x: 10, y: 8,
-            },
-            {
-                x: 6, y: 9,
-            } 
-        ];
-        banned_squares_up = [{
-            x: 5, y: 7
-        },
-        {
-            x: 6, y: 7
-        },
-        {
-            x: 7, y: 7,
-        },
-        {
-            x: 3, y: 4,
-        },
-        {
-            x: 4, y: 3,
-        },
-        {
-            x: 5, y: 3,
-        },
-        {
-            x: 6, y: 3,
-        },
-        {
-            x: 7, y: 3,
-        },
-        {
-            x: 8, y: 3,
-        },
-        {
-            x: 9, y: 3,
-        },
-        {
-            x: 10, y: 3,
-        },
-        {
-            x: 10, y: 6,
-        }
-        ];
-    }
-}
+
+
 
  function checkInventory()
  { 
@@ -276,14 +178,9 @@ function setBannedSquares() {
             break;
         case "1": 
             r.style.setProperty('--fisch', inventory_fish);
-            break;
         case "2": 
             r.style.setProperty('--fisch', inventory_fish);
             r.style.setProperty('--grayscale_fish', grayscale_fish);
-            r.style.setProperty('--opacity_cat', 0);
-            console.log("Case 2 Fisch!");
-            setBannedSquares();
-            break;
     }
 
     switch (inventory_carrot) {
@@ -354,6 +251,155 @@ function setBannedSquares() {
 }
 checkInventory();
 
+// pop up
+
+let exchangeBottle_timeout = false;
+let exchangeBottle_done = localStorage.getItem('bottle_status');
+var popup_exchangeBottle = document.getElementById("popup_exchangeBottle");
+var popup_Ship = document.getElementById("popup_Ship");
+
+async function prevent_move_for_x() {
+    can_char_move = false;
+    await delay_movement(16200);
+    can_char_move = true;
+}
+
+// popup cat
+
+async function exchangeBottle__interface() {
+    if ((place_counter_x === 9) && (place_counter_y === 4))  {
+        if ((exchangeBottle_timeout === false) && (inventory_mouse == 1)) {
+
+            prevent_move_for_x();
+            console.log("popup einschalten");
+            popup_exchangeBottle.classList.toggle("fadeIn");
+            exchangeBottle_timeout = true;
+           
+
+            r.style.setProperty('--opacity_sprechblase22', 1);
+            await delay(3000);
+            r.style.setProperty('--opacity_sprechblase22', 0);
+            await delay(300);
+            r.style.setProperty('--opacity_sprechblase23', 1);
+            await delay(3000);
+            r.style.setProperty('--opacity_sprechblase23', 0);
+            await delay(300);
+            r.style.setProperty('--opacity_sprechblase24', 1);
+            await delay(3000);
+            r.style.setProperty('--opacity_sprechblase24', 0);
+            await delay(300);
+            r.style.setProperty('--opacity_sprechblase25', 1);
+            await delay(3000);
+            r.style.setProperty('--opacity_sprechblase25', 0);
+            await delay(300);
+
+            localStorage.setItem('grayscale_mouse', 1);
+            r.style.setProperty('--grayscale_mouse', 1);
+            localStorage.setItem('mouse', 2);
+            inventory_mouse = localStorage.getItem('mouse');          
+
+            await delay(300);
+            r.style.setProperty('--ticket', 1);
+            localStorage.setItem('ticket', 1);
+            inventory_ticket = localStorage.getItem('ticket');
+            checkInventory();
+
+            cancelExchangeBottle();
+            exchangeBottle_timeout = false;
+
+            await delay(100);
+            r.style.setProperty('--opacity_sprechblase18', 1);
+            await delay(1500);
+            r.style.setProperty('--opacity_sprechblase18', 0);
+
+           
+
+        }
+        else
+        {
+            exchangeBottle_timeout = true;
+            r.style.setProperty('--opacity_sprechblase21', 1);
+            await delay(2000);
+            r.style.setProperty('--opacity_sprechblase21', 0);
+            exchangeBottle_timeout = false;
+        }
+    }
+}
+
+function cancelExchangeBottle()
+{
+    console.log("popup ausschalten");
+    popup_exchangeBottle.classList.toggle("fadeOut");
+    meow_timeout = false;
+    resetBottleExchange();
+
+}
+
+async function resetBottleExchange()
+    {
+        await delay(500);
+        popup_exchangeBottle.classList.toggle("fadeIn");
+        popup_exchangeBottle.classList.toggle("fadeOut");
+        console.log("reset");
+    }
+
+// popup ship
+
+async function ShipInterface() {
+    checkInventory();
+    if ((place_counter_x === 3) && (place_counter_y === 5))  {
+        if ((exchangeBottle_timeout === false) && (inventory_ticket == 1)) {
+            r.style.setProperty('--opacity_sprechblase27', 1);
+            await delay(3000);
+            r.style.setProperty('--opacity_sprechblase27', 0);
+            await delay(1000);
+
+            prevent_move_for_x();
+            console.log("popup einschalten");
+            popup_Ship.classList.toggle("fadeIn");
+            exchangeBottle_timeout = true;
+
+            await delay(5000);
+            window.location.href = "index.html";
+
+        }
+        else
+        {
+            exchangeBottle_timeout = true;
+            r.style.setProperty('--opacity_sprechblase28', 1);
+            await delay(2000);
+            r.style.setProperty('--opacity_sprechblase28', 0);
+            exchangeBottle_timeout = false;
+        }
+    }
+}
+
+function cancelExchangeBottle()
+{
+    console.log("popup ausschalten");
+    popup_exchangeBottle.classList.toggle("fadeOut");
+    meow_timeout = false;
+    resetBottleExchange();
+
+
+}
+
+async function resetBottleExchange()
+    {
+        await delay(500);
+        popup_exchangeBottle.classList.toggle("fadeIn");
+        popup_exchangeBottle.classList.toggle("fadeOut");
+        console.log("reset");
+    }
+
+// show info
+
+async function show_bubble10()
+{
+    r.style.setProperty('--opacity_sprechblase20', 1);
+    await delay(2000);
+    r.style.setProperty('--opacity_sprechblase20', 0);
+}
 
     // get move_x
     let move_x = rs.getPropertyValue('--move_x');
@@ -379,8 +425,8 @@ checkInventory();
     let counter_arrow_right = 0;
 
     // Square-Counter (Wo ist die Figur)
-    let place_counter_x = 1;
-    let place_counter_y = 1;
+    let place_counter_x = 3
+    let place_counter_y = 8
 
     // delay for set time for movement animation
     let delay_duration = 50;
@@ -405,103 +451,16 @@ checkInventory();
 
     function move_out_of_house() {
         if ((place_counter_x === 5) && (place_counter_y === 10)) {
-            console.log("ab ins Haus");
-            localStorage.setItem('player_origin', 1);
-            window.location.href = "kreischcraft1.html";
+            console.log("raus aus de ins Haus");
+            window.location.href = "map_003.html";
         }
+
     }
-
-    function move_up_stairs() {
-        if ((place_counter_x === 9) && (place_counter_y === 4)) {
-            console.log("ab ins Haus");
-            localStorage.setItem('player_origin', 16);
-            window.location.href = "kreischcraft11.html";
-        }
-    }
-// new version of popup 
-
-let cat_timeout = false;
-var popup = document.getElementById("popup_cat_interface");
-var is_cat_there = 1;
-
-async function cat_interface() {
-        if (cat_timeout === false && inventory_fish == 1) {
-            cat_timeout = true;
-
-            r.style.setProperty('--opacity_sprechblase12', 1);
-            await delay(1500);
-            r.style.setProperty('--opacity_sprechblase12', 0);
-
-            console.log("popup einschalten");
-            popup.classList.toggle("fadeIn");
-            
-            await delay(1000);
-            cancel_cat_interface();
-
-            localStorage.setItem('grayscale_fish', 1);
-            r.style.setProperty('--opacity_cat', 0);
-            localStorage.setItem('fish', 2);
-            inventory_fish = localStorage.getItem('fish');
-            r.style.setProperty('--grayscale_fish', 1);
-            checkInventory();
-            cat_timeout = false
-            is_cat_there = 0;
-
-        }
-        else{
-            show_bubble19();
-        }
-       
-}
-   
-async function reset_cat_interface()
-{
-    await delay(500);
-    popup.classList.toggle("fadeIn");
-    popup.classList.toggle("fadeOut");
-    console.log("reset");
-}
-function cancel_cat_interface()
-{
-console.log("popup ausschalten");
-popup.classList.toggle("fadeOut");
-cat_timeout = false;
-reset_cat_interface();
-
-}
-
-async function show_bubble19()
-{
-    cat_timeout = true;
-    r.style.setProperty('--opacity_sprechblase19', 1);
-    await delay(2000);
-    r.style.setProperty('--opacity_sprechblase19', 0);
-    cat_timeout = false;
-}
-
-
-    function cat_sleep_up() {
-        if (((place_counter_x === 9) && (place_counter_y === 5)) && (inventory_fish != 2 && (cat_timeout == false))) {
-            cat_interface();
-        }
-    }
-    function cat_sleep_down() {
-        if (((place_counter_x === 9) && (place_counter_y === 3)) && (inventory_fish != 2 && (cat_timeout == false))) {
-            cat_interface();
-        }
-    }
-    function cat_sleep_right() {
-        if (((place_counter_x === 8) && (place_counter_y === 4)) && (inventory_fish != 2 && (cat_timeout == false))) {
-            cat_interface();
-        }
-    }
-
-    // place character depending on zone entry
 
     var origin = localStorage.getItem('player_origin');
     switch (origin) {
-        case "1": // from page 3
-            console.log("Player origin is page1");
+        case "3": // out of the house
+            console.log("Player origin is the house at the sea");
             place_counter_x = 5;
             move_x = 15 + (62 * (place_counter_x - 1));
             r.style.setProperty('--move_x', move_x + "px");
@@ -511,20 +470,6 @@ async function show_bubble19()
             run_y = place_counter_y - 1;
             run_x = place_counter_x - 1;
             document.getElementById("player_img").src = "src/images/cat_back_standing_black.png";
-            console.log("x:" + move_x + " y: " + move_y);
-            console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
-            break;
-        case "16": // out of the house
-            console.log("Player origin is the house at the sea");
-            place_counter_x = 9;
-            move_x = 15 + (62 * (place_counter_x - 1));
-            r.style.setProperty('--move_x', move_x + "px");
-            place_counter_y = 4;
-            move_y = 10 + (62 * (place_counter_y - 1));
-            r.style.setProperty('--move_y', move_y + "px");
-            run_y = place_counter_y - 1;
-            run_x = place_counter_x - 1;
-            document.getElementById("player_img").src = "src/images/cat_left_standing_black.png";
             move_x_int = 15;
             move_y_int = 10;
             console.log("x:" + move_x + " y: " + move_y);
@@ -614,8 +559,8 @@ async function show_bubble19()
         e = e || window.event;
 
         if ((e.keyCode == '38') && (can_char_move === true)) { // up arrow
-            cat_sleep_up()
             prevent_move();
+            ShipInterface();
             document.getElementById('player_img').src = "src/images/cat_back_standing_black.png";
             if ((place_counter_y > 1) && (place_counter_y <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_up.length; i++) {
@@ -636,7 +581,7 @@ async function show_bubble19()
             }
         }
         else if ((e.keyCode == '40') && (can_char_move === true)) { // down arrow
-            cat_sleep_down();
+
             move_out_of_house();
             prevent_move();
             document.getElementById('player_img').src = "src/images/cat_front_standing_black.png";
@@ -681,9 +626,8 @@ async function show_bubble19()
             }
         }
         else if ((e.keyCode == '39') && (can_char_move === true)) { // right arrow
-            cat_sleep_right();
+            exchangeBottle__interface();
             prevent_move();
-            move_up_stairs();
             document.getElementById('player_img').src = "src/images/cat_right_standing_black.png";
             if ((place_counter_x >= 1) && (place_counter_x < number_of_squares)) {
                 for (var i = 0; i < banned_squares_right.length; i++) {

@@ -6,16 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="src/css/kreisch_folie2.css">
+    <link rel="stylesheet" href="src/css/map_001_style.css">
 </head>
 
 <body bgcolor="#D3D3D3">
     <div class="background">
         <div class="box_row">
             <div class="one_row">
-                <img src="src/images/folie2.png" class="border_radius_15">
-                <img src="src/images/cat_back_standing_black.png" class="figur" id="player_img">
-                <img src="src/images/schlafkatze.gif" class="sleeping_cat_position">
+                <img src="src/images/folie1.png" class="border_radius_15">
+                <img src="src/images/cat_right_standing_black.png" class="figur" id="player_img">
 
                 <img src="src/images/geld.png" class="geld">
                 <img src="src/images/Karotte.png" class="karotte">
@@ -23,17 +22,6 @@
                 <img src="src/images/maus.png" class="maus">
                 <img src="src/images/Notiz.png" class="notiz">
                 <img src="src/images/Ticket.png" class="ticket">
-                <img src="src/images/sprechblase19.png" class="sprechblase1 visibility_sprechblase19">
-                <img src="src/images/sprechblase12.png" class="sprechblase2 visibility_sprechblase12">
-
-                <span class="popup_cat">
-                    <span class="popuptext" id="popup_cat_interface">
-                        <img src="src/images/folie13.png" class="cat_interface">
-                        <img src="src/images/PfeilZurück.png" class="backArrow" id="backArrow">
-                    </span>
-                </span>
-
-
             </div>
             <div class="two_row">
                 <div class="box_column">
@@ -45,21 +33,27 @@
                     <img src="src/images/gegenstände.png" class="border_radius_15">
 
                     <div class="by_felix">by Felix Beuermann (2022)
-
+                        <button onclick="reset_player_origin()">Reset</button>
+                        </span>
                     </div>
                 </div>
+
             </div>
         </div>
-    </div>
 
+    </div>
+    <div class="precachingPictures">
+        <img src="src/images/cat_back_moving_black.png">
+        <img src="src/images/cat_back_standing_black.png">
+        <img src="src/images/cat_front_moving_black.png">
+        <img src="src/images/cat_front_standing_black.png">
+        <img src="src/images/cat_left_moving_black.png">
+        <img src="src/images/cat_left_standing_black.png">
+        <img src="src/images/cat_right_moving_black.png">
+        <img src="src/images/cat_right_standing_black.png">
+    </div>
 </body>
-<span class="popuptext" id="popup_cat">
-    <p>Use <span class="help_text">
-            Arrow Keys</span> to move your character.</p>
-    <p>Press <span class="help_text">
-            E</span> to interact with environment.</p>
-</span>
-<script src="src/js/folie2_script.js">
+<script src="src/js/map_001_script.js">
 </script>
 
 </html>

@@ -1,206 +1,230 @@
-  // local storage of player origin
+ // local storage of player origin
     myStorage = localStorage;
 
-    // set banned squares
-
-    let banned_squares_right = [
-        
-        {
-            x: 5, y: 10
-        },
-        {
-            x: 3, y: 8
-        },
-        {
-            x: 3, y: 7
-        },
-        {
-            x: 5, y: 6
-        },
-        {
-            x: 5, y: 5
-        },
-        {
-            x: 5, y: 4
-        },
-        {
-            x: 10, y: 3
-        },
-        {
-            x: 9, y: 5
-        },
-        {
-            x: 9, y: 6
-        }
-    ];
-    let banned_squares_left = [
-        {
-            x: 5, y: 10
-        },
-        {
-            x: 3, y: 8
-        },
-        {
-            x: 3, y: 7
-        },
-        {
-            x: 3, y: 6
-        },
-        {
-            x: 3, y: 5
-        },
-        {
-            x: 5, y: 4
-        },
-        {
-            x: 8, y: 4
-        },
-        {
-            x: 8, y: 5
-        },
-        {
-            x: 8, y: 6
-        },
-        {
-            x: 8, y: 8
-        }
-    ];
-    let banned_squares_down = [
-        {
-            x: 1, y: 9
-        },
-        {
-            x: 2, y: 9
-        },
-        {
-            x: 3, y: 9
-        },
-        {
-            x: 4, y: 9
-        },
-        {
-            x: 6, y: 9
-        },
-        {
-            x: 7, y: 9
-        },
-        {
-            x: 8, y: 9
-        },
-        {
-            x: 9, y: 9
-        },
-        {
-            x: 10, y: 9
-        },
-        {
-            x: 4, y: 6
-        },
-        {
-            x: 5, y: 6
-        },
-        {
-            x: 2, y: 3
-        },
-        {
-            x: 3, y: 3
-        },
-        {
-            x: 4, y: 3
-        },
-        {
-            x: 6, y: 3
-        },
-        {
-            x: 7, y: 3
-        },
-        {
-            x: 8, y: 6
-        },
-        {
-            x: 9, y: 6
-        },
-        {
-            x: 10, y: 4
-        }
-    ];
-    let banned_squares_up = [
-        {
-            x: 1, y: 9
-        },
-        {
-            x: 2, y: 9
-        },
-        {
-            x: 4, y: 9
-        },
-        {
-            x: 5, y: 9
-        },
-        {
-            x: 6, y: 9
-        },
-        {
-            x: 7, y: 9
-        },
-        {
-            x: 8, y: 8
-        },
-        {
-            x: 9, y: 8
-        },
-        {
-            x: 10, y: 8
-        },
-        {
-            x: 3, y: 5
-        },
-        {
-            x: 4, y: 5
-        },
-        {
-            x: 1, y: 3
-        },
-        {
-            x: 2, y: 3
-        },
-        {
-            x: 3, y: 3
-        },
-        {
-            x: 4, y: 3
-        },
-        {
-            x: 5, y: 3
-        },
-        {
-            x: 6, y: 3
-        },
-        {
-            x: 7, y: 3
-        },
-        {
-            x: 8, y: 3
-        },
-        {
-            x: 9, y: 3
-        },
-        {
-            x: 10, y: 3
-        }
-    ];
-
-
-    // get root
-    var r = document.querySelector(':root');
-    var rs = getComputedStyle(r);
-
-    // inventory
-
+    // reset storage of player origin
     function reset_player_origin() {
         localStorage.clear();
         location.reload();
     }
+    // set banned squares
+
+    let banned_squares_right = [{
+        x: 5,
+        y: 1
+    }
+        ,
+    {
+        x: 5,
+        y: 2
+    }
+        ,
+    {
+        x: 3,
+        y: 3
+    }
+        ,
+    {
+        x: 5,
+        y: 5
+    }
+        ,
+    {
+        x: 5,
+        y: 4
+    }
+        ,
+    {
+        x: 9,
+        y: 6
+    }
+        ,
+    {
+        x: 8,
+        y: 7
+    }
+        ,
+    {
+        x: 8,
+        y: 8
+    }
+        ,
+    {
+        x: 7,
+        y: 10
+    }
+        ,
+    {
+        x: 3,
+        y: 5
+    }
+        ,
+    {
+        x: 5,
+        y: 9
+    }
+    ];
+    let banned_squares_left = [{
+        x: 3,
+        y: 3
+    }
+        ,
+    {
+        x: 3,
+        y: 4
+    }
+        ,
+    {
+        x: 5,
+        y: 5
+    }
+        ,
+    {
+        x: 2,
+        y: 5
+    }
+        ,
+    {
+        x: 3,
+        y: 6
+    }
+        ,
+    {
+        x: 4,
+        y: 7
+    }
+        ,
+    {
+        x: 4,
+        y: 8
+    }
+        ,
+    {
+        x: 4,
+        y: 10
+    }
+        ,
+    {
+        x: 5,
+        y: 9
+    }
+    ];
+    let banned_squares_down = [{
+        x: 4,
+        y: 2
+    }
+        ,
+    {
+        x: 5,
+        y: 2
+    }
+        ,
+    {
+        x: 1,
+        y: 2
+    }
+        ,
+    {
+        x: 2,
+        y: 2
+    }
+        ,
+    {
+        x: 2,
+        y: 5
+    }
+        ,
+    {
+        x: 3,
+        y: 6
+    }
+        ,
+    {
+        x: 4,
+        y: 8
+    }
+        ,
+    {
+        x: 6,
+        y: 8
+    }
+        ,
+    {
+        x: 7,
+        y: 8
+    }
+        ,
+    {
+        x: 8,
+        y: 8
+    }
+        ,
+    {
+        x: 4,
+        y: 4
+    }
+        ,
+    {
+        x: 9,
+        y: 6
+    }];
+    let banned_squares_up = [{
+        x: 4,
+        y: 4
+    }
+        ,
+    {
+        x: 5,
+        y: 4
+    }
+        ,
+    {
+        x: 2,
+        y: 5
+    }
+        ,
+    {
+        x: 4,
+        y: 6
+    }
+        ,
+    {
+        x: 6,
+        y: 6
+    }
+        ,
+    {
+        x: 7,
+        y: 6
+    }
+        ,
+    {
+        x: 8,
+        y: 6
+    }
+        ,
+    {
+        x: 9,
+        y: 6
+    }
+        ,
+    {
+        x: 4,
+        y: 10
+    }
+        ,
+    {
+        x: 6,
+        y: 10
+    }
+        ,
+    {
+        x: 7,
+        y: 10
+    }];
+
+    // get root
+    var r = document.querySelector(':root');
+    var rs = getComputedStyle(r);
 
     var inventory_fish = localStorage.getItem('fish');
     var inventory_carrot = localStorage.getItem('carrot');
@@ -300,11 +324,12 @@
 }
 checkInventory();
 
+
     // get move_x
     let move_x = rs.getPropertyValue('--move_x');
     let run_x = 0;
     move_x = move_x.replace("px", "");
-    let move_x_int = parseInt(move_x);
+    move_x_int = parseInt(move_x);
 
     // set map values
     size_map = 620;
@@ -324,7 +349,7 @@ checkInventory();
     let counter_arrow_right = 0;
 
     // Square-Counter (Wo ist die Figur)
-    let place_counter_x = 5
+    let place_counter_x = 1
     let place_counter_y = 1
 
     // delay for set time for movement animation
@@ -346,90 +371,60 @@ checkInventory();
         can_char_move = true;
     }
 
-    // move out of the cave
 
-    function move_out_of_cave() {
+
+    // move to adjacent zones
+
+    function move_to_house() {
+        if ((place_counter_x === 8) && (place_counter_y === 6)) {
+            console.log("ab ins Haus");
+            localStorage.setItem('player_origin', 1);
+            window.location.href = "map_002.html";
+        }
+    }
+
+    function move_to_south() {
         if ((place_counter_x === 5) && (place_counter_y === 10)) {
-            console.log("raus aus der Höhle");
-            window.location.href = "kreischcraft6.html";
-            localStorage.setItem('player_origin', 13);
+            console.log("ab in in den Süden");
+            localStorage.setItem('player_origin', 2);
+            window.location.href = "map_003.html";
         }
     }
 
-    //  vendor interface
-
-    let click_arrow = document.querySelector("#backArrow");
-
-    // pop up
-
-    let vendor_timeout = false;
-    let vendor_done = localStorage.getItem('vendor_status');
-    var popup = document.getElementById("popup_vendor");
-
-function vendor_interface() {
-        if ((place_counter_x === 1) && (place_counter_y === 3))  {
-            if (vendor_timeout === false && inventory_carrot == 2) {
-                console.log("popup einschalten");
-                popup.classList.toggle("fadeIn");
-                vendor_timeout = true;
-                click_arrow.addEventListener("click", cancelVendor);
-                r.style.setProperty('--notiz', 1);
-                localStorage.setItem('note', 1);
-            }
-            else{
-                show_bubble10();
-            }
-           
-        }
+    // place character depending on zone entry
+    var origin = localStorage.getItem('player_origin');
+    switch (origin) {
+        case "0":
+            console.log("Player origin is game start");
+            break;
+        case "1": // 1 = out of the house
+            console.log("Player origin is the house");
+            place_counter_x = 8;
+            move_x = 15 + (62 * (place_counter_x - 1));
+            r.style.setProperty('--move_x', move_x + "px");
+            place_counter_y = 6;
+            move_y = 10 + (62 * (place_counter_y - 1));
+            r.style.setProperty('--move_y', move_y + "px");
+            run_y = place_counter_y - 1;
+            run_x = place_counter_x - 1;
+            console.log("x:" + move_x + " y: " + move_y);
+            console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
+            document.getElementById("player_img").src = "src/images/cat_front_standing_black.png";
+            break;
+        case "2": // 2 = out of the south
+            place_counter_x = 5;
+            move_x = 15 + (62 * (place_counter_x - 1));
+            r.style.setProperty('--move_x', move_x + "px");
+            place_counter_y = 10;
+            move_y = 10 + (62 * (place_counter_y - 1));
+            r.style.setProperty('--move_y', move_y + "px");
+            run_y = place_counter_y - 1;
+            run_x = place_counter_x - 1;
+            console.log("x:" + move_x + " y: " + move_y);
+            console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
+            document.getElementById("player_img").src = "src/images/cat_back_standing_black.png";
+            break;
     }
-       
-async function resetVendor()
-    {
-        await delay(500);
-        popup.classList.toggle("fadeIn");
-        popup.classList.toggle("fadeOut");
-        console.log("reset");
-    }
-function cancelVendor()
-{
-    console.log("popup ausschalten");
-    popup.classList.toggle("fadeOut");
-    vendor_timeout = false;
-    resetVendor();
-    click_arrow.removeEventListener("click", cancelVendor);
-
-}
-
-    // show info
-
-    async function show_bubble10()
-    {
-        r.style.setProperty('--opacity_sprechblase10', 1);
-        await delay(2000);
-        r.style.setProperty('--opacity_sprechblase10', 0);
-    }
-
-
-   // place character depending on zone entry
-
-   var origin = localStorage.getItem('player_origin');
-   switch (origin) {
-       case "13": // from  page 7
-           console.log("Player origin is page 6");
-           place_counter_x = 5;
-           move_x = 15 + (62 * (place_counter_x - 1));
-           r.style.setProperty('--move_x', move_x + "px");
-           place_counter_y = 10;
-           move_y = 10 + (62 * (place_counter_y - 1));
-           r.style.setProperty('--move_y', move_y + "px");
-           run_y = place_counter_y - 1;
-           run_x = place_counter_x - 1;
-           document.getElementById("player_img").src = "src/images/cat_back_standing_black.png";
-           console.log("x:" + move_x + " y: " + move_y);
-           console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
-           break;
-   }
-
     // move up
     async function move_up() {
         if (counter_arrow_up === banned_squares_up.length) {
@@ -450,6 +445,7 @@ function cancelVendor()
     // move down
     async function move_down() {
         if (counter_arrow_down === banned_squares_down.length) {
+
             counter_arrow_down = 0;
             place_counter_y = place_counter_y + 1;
             run_y = run_y + 1;
@@ -464,9 +460,10 @@ function cancelVendor()
             r.style.setProperty('--move_y', move_y + "px");
         }
     }
-    // move right
+    //  move right
     async function move_right() {
         if (counter_arrow_right === banned_squares_right.length) {
+
             counter_arrow_right = 0;
             place_counter_x = place_counter_x + 1;
             run_x = run_x + 1;
@@ -479,8 +476,6 @@ function cancelVendor()
             await delay(delay_duration);
             document.getElementById("player_img").src = "src/images/cat_right_standing_black.png";
             r.style.setProperty('--move_x', move_x + "px");
-            console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
-            console.log("x:" + move_x + " y: " + move_y);
         }
     }
     // move left
@@ -501,18 +496,16 @@ function cancelVendor()
         }
     }
 
-
-
     // determine function for arrow keys
 
     document.onkeydown = checkKey;
     function checkKey(e) {
-
+        console.log("x: " + move_x + " y: " + move_y);
         e = e || window.event;
 
         if ((e.keyCode == '38') && (can_char_move === true)) { // up arrow
+            move_to_house();
             prevent_move();
-            vendor_interface();
             document.getElementById('player_img').src = "src/images/cat_back_standing_black.png";
             if ((place_counter_y > 1) && (place_counter_y <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_up.length; i++) {
@@ -533,8 +526,8 @@ function cancelVendor()
             }
         }
         else if ((e.keyCode == '40') && (can_char_move === true)) { // down arrow
+            move_to_south()
             prevent_move();
-            move_out_of_cave();
             document.getElementById('player_img').src = "src/images/cat_front_standing_black.png";
             if ((place_counter_y >= 1) && (place_counter_y < number_of_squares)) {
                 for (var i = 0; i < banned_squares_down.length; i++) {

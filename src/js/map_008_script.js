@@ -1,21 +1,18 @@
-   // local storage of player origin
+  // local storage of player origin
     myStorage = localStorage;
-
 
     // set banned squares
 
     let banned_squares_right = [
+        
         {
-            x: 5, y: 10
+            x: 8, y: 9
         },
         {
-            x: 6, y: 9
+            x: 8, y: 8
         },
         {
-            x: 6, y: 8
-        },
-        {
-            x: 10, y: 8
+            x: 7, y: 7
         },
         {
             x: 6, y: 6
@@ -24,134 +21,114 @@
             x: 6, y: 5
         },
         {
-            x: 9, y: 4
+            x: 7, y: 4
         },
         {
-            x: 9, y: 3
+            x: 5, y: 10
         },
         {
-            x: 9, y: 8
+            x: 6, y: 3
         }
     ];
-    let banned_squares_left = [{
-        x: 5, y: 10
-    },
-    {
-        x: 3, y: 9,
-    },
-    {
-        x: 3, y: 8
-    },
-    {
-        x: 3, y: 7
-    },
-    {
-        x: 3, y: 6
-    },
-    {
-        x: 3, y: 5
-    },
-    {
-        x: 5, y: 4
-    },
-    {
-        x: 5, y: 3
-    },
-    {
-        x: 9, y: 9
-    },
-    {
-        x: 9, y: 8
-    }
-
-    ];
-    let banned_squares_down = [
-        {
-            x: 6, y: 9
-        }
-        ,
-        {
-            x: 4, y: 9
-        },
+    let banned_squares_left = [
         {
             x: 3, y: 9
         },
         {
-            x: 7, y: 8
+            x: 1, y: 8
         },
         {
-            x: 8, y: 8
+            x: 4, y: 7
         },
         {
-            x: 9, y: 9
+            x: 6, y: 6
         },
         {
-            x: 10, y: 9
+            x: 6, y: 5
         },
         {
-            x: 10, y: 7
+            x: 5, y: 4
+        },
+        {
+            x: 6, y: 3
+        },
+        {
+            x: 5, y: 10
+        }
+    ];
+    let banned_squares_down = [
+        {
+            x: 5, y: 4
         },
         {
             x: 7, y: 4
         },
         {
-            x: 8, y: 4
+            x: 1, y: 8
         },
         {
-            x: 9, y: 4
+            x: 2, y: 8
+        },
+        {
+            x: 3, y: 9
+        },
+        {
+            x: 4, y: 9
+        },
+        {
+            x: 6, y: 9
+        },
+        {
+            x: 7, y: 9
+        },
+        {
+            x: 8, y: 9
+        }
+    ];
+    let banned_squares_up = [
+        {
+            x: 8, y: 8
         },
         {
             x: 7, y: 7
         },
         {
-            x: 8, y: 7
+            x: 5, y: 7
+        },
+        {
+            x: 4, y: 7
+        },
+        {
+            x: 3, y: 8
+        },
+        {
+            x: 2, y: 8
+        },
+        {
+            x: 1, y: 8
+        },
+        {
+            x: 5, y: 4
+        },
+        {
+            x: 7, y: 4
+        },
+        {
+            x: 6, y: 4
         }
     ];
-    let banned_squares_up = [{
-        x: 10, y: 7
-    },
-    {
-        x: 9, y: 7
-    },
-    {
-        x: 8, y: 7
-    },
-    {
-        x: 7, y: 7
-    },
-    {
-        x: 3, y: 5
-    }
-        ,
-    {
-        x: 4, y: 5
-    },
-    {
-        x: 5, y: 3
-    },
-    {
-        x: 10, y: 9
-    },
-    {
-        x: 6, y: 3
-    },
-    {
-        x: 7, y: 3
-    },
-    {
-        x: 8, y: 3
-    },
-    {
-        x: 9, y: 3
-    }
 
-    ];
 
     // get root
     var r = document.querySelector(':root');
     var rs = getComputedStyle(r);
 
     // inventory
+
+    function reset_player_origin() {
+        localStorage.clear();
+        location.reload();
+    }
 
     var inventory_fish = localStorage.getItem('fish');
     var inventory_carrot = localStorage.getItem('carrot');
@@ -251,161 +228,11 @@
 }
 checkInventory();
 
-// pop up
-
-let exchangeBottle_timeout = false;
-let exchangeBottle_done = localStorage.getItem('bottle_status');
-var popup_exchangeBottle = document.getElementById("popup_exchangeBottle");
-var popup_Ship = document.getElementById("popup_Ship");
-
-async function prevent_move_for_x() {
-    can_char_move = false;
-    await delay_movement(16200);
-    can_char_move = true;
-}
-
-// popup cat
-
-async function exchangeBottle__interface() {
-    if ((place_counter_x === 9) && (place_counter_y === 4))  {
-        if ((exchangeBottle_timeout === false) && (inventory_mouse == 1)) {
-
-            prevent_move_for_x();
-            console.log("popup einschalten");
-            popup_exchangeBottle.classList.toggle("fadeIn");
-            exchangeBottle_timeout = true;
-           
-
-            r.style.setProperty('--opacity_sprechblase22', 1);
-            await delay(3000);
-            r.style.setProperty('--opacity_sprechblase22', 0);
-            await delay(300);
-            r.style.setProperty('--opacity_sprechblase23', 1);
-            await delay(3000);
-            r.style.setProperty('--opacity_sprechblase23', 0);
-            await delay(300);
-            r.style.setProperty('--opacity_sprechblase24', 1);
-            await delay(3000);
-            r.style.setProperty('--opacity_sprechblase24', 0);
-            await delay(300);
-            r.style.setProperty('--opacity_sprechblase25', 1);
-            await delay(3000);
-            r.style.setProperty('--opacity_sprechblase25', 0);
-            await delay(300);
-
-            localStorage.setItem('grayscale_mouse', 1);
-            r.style.setProperty('--grayscale_mouse', 1);
-            localStorage.setItem('mouse', 2);
-            inventory_mouse = localStorage.getItem('mouse');          
-
-            await delay(300);
-            r.style.setProperty('--ticket', 1);
-            localStorage.setItem('ticket', 1);
-            inventory_ticket = localStorage.getItem('ticket');
-            checkInventory();
-
-            cancelExchangeBottle();
-            exchangeBottle_timeout = false;
-
-            await delay(100);
-            r.style.setProperty('--opacity_sprechblase18', 1);
-            await delay(1500);
-            r.style.setProperty('--opacity_sprechblase18', 0);
-
-           
-
-        }
-        else
-        {
-            exchangeBottle_timeout = true;
-            r.style.setProperty('--opacity_sprechblase21', 1);
-            await delay(2000);
-            r.style.setProperty('--opacity_sprechblase21', 0);
-            exchangeBottle_timeout = false;
-        }
-    }
-}
-
-function cancelExchangeBottle()
-{
-    console.log("popup ausschalten");
-    popup_exchangeBottle.classList.toggle("fadeOut");
-    meow_timeout = false;
-    resetBottleExchange();
-
-}
-
-async function resetBottleExchange()
-    {
-        await delay(500);
-        popup_exchangeBottle.classList.toggle("fadeIn");
-        popup_exchangeBottle.classList.toggle("fadeOut");
-        console.log("reset");
-    }
-
-// popup ship
-
-async function ShipInterface() {
-    checkInventory();
-    if ((place_counter_x === 3) && (place_counter_y === 5))  {
-        if ((exchangeBottle_timeout === false) && (inventory_ticket == 1)) {
-            r.style.setProperty('--opacity_sprechblase27', 1);
-            await delay(3000);
-            r.style.setProperty('--opacity_sprechblase27', 0);
-            await delay(1000);
-
-            prevent_move_for_x();
-            console.log("popup einschalten");
-            popup_Ship.classList.toggle("fadeIn");
-            exchangeBottle_timeout = true;
-
-            await delay(5000);
-            window.location.href = "index.html";
-
-        }
-        else
-        {
-            exchangeBottle_timeout = true;
-            r.style.setProperty('--opacity_sprechblase28', 1);
-            await delay(2000);
-            r.style.setProperty('--opacity_sprechblase28', 0);
-            exchangeBottle_timeout = false;
-        }
-    }
-}
-
-function cancelExchangeBottle()
-{
-    console.log("popup ausschalten");
-    popup_exchangeBottle.classList.toggle("fadeOut");
-    meow_timeout = false;
-    resetBottleExchange();
-
-
-}
-
-async function resetBottleExchange()
-    {
-        await delay(500);
-        popup_exchangeBottle.classList.toggle("fadeIn");
-        popup_exchangeBottle.classList.toggle("fadeOut");
-        console.log("reset");
-    }
-
-// show info
-
-async function show_bubble10()
-{
-    r.style.setProperty('--opacity_sprechblase20', 1);
-    await delay(2000);
-    r.style.setProperty('--opacity_sprechblase20', 0);
-}
-
     // get move_x
     let move_x = rs.getPropertyValue('--move_x');
     let run_x = 0;
     move_x = move_x.replace("px", "");
-    move_x_int = parseInt(move_x);
+    let move_x_int = parseInt(move_x);
 
     // set map values
     size_map = 620;
@@ -425,8 +252,8 @@ async function show_bubble10()
     let counter_arrow_right = 0;
 
     // Square-Counter (Wo ist die Figur)
-    let place_counter_x = 3
-    let place_counter_y = 8
+    let place_counter_x = 5
+    let place_counter_y = 1
 
     // delay for set time for movement animation
     let delay_duration = 50;
@@ -447,36 +274,138 @@ async function show_bubble10()
         can_char_move = true;
     }
 
-    // move out of the house
+    // move out of the cave
 
-    function move_out_of_house() {
+    function move_out_of_cave() {
         if ((place_counter_x === 5) && (place_counter_y === 10)) {
-            console.log("raus aus de ins Haus");
-            window.location.href = "kreischcraft3.html";
+            console.log("raus aus der Höhle");
+            window.location.href = "map_007.html";
+            localStorage.setItem('player_origin', 9);
         }
-
     }
 
-    var origin = localStorage.getItem('player_origin');
-    switch (origin) {
-        case "3": // out of the house
-            console.log("Player origin is the house at the sea");
-            place_counter_x = 5;
-            move_x = 15 + (62 * (place_counter_x - 1));
-            r.style.setProperty('--move_x', move_x + "px");
-            place_counter_y = 10;
-            move_y = 10 + (62 * (place_counter_y - 1));
-            r.style.setProperty('--move_y', move_y + "px");
-            run_y = place_counter_y - 1;
-            run_x = place_counter_x - 1;
-            document.getElementById("player_img").src = "src/images/cat_back_standing_black.png";
-            move_x_int = 15;
-            move_y_int = 10;
-            console.log("x:" + move_x + " y: " + move_y);
-            console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
-            break;
+    //  vendor interface
+
+    let click_arrow = document.querySelector("#backArrow");
+
+    // pop up
+
+    let vendor_timeout = false;
+    let vendor_done = localStorage.getItem('vendor_status');
+    var popup = document.getElementById("popup_vendor");
+
+function vendor_interface() {
+        if (((place_counter_x === 6) && (place_counter_y === 4)) && (vendor_done != 1)) {
+            if (vendor_timeout === false && inventory_coin == 1) {
+                console.log("popup einschalten");
+                popup.classList.toggle("fadeIn");
+                vendor_timeout = true;
+                click_arrow.addEventListener("click", cancelVendor);
+            }
+            else{
+                show_bubble10();
+            }
+           
+        }
+    }
+       
+async function resetVendor()
+    {
+        await delay(500);
+        popup.classList.toggle("fadeIn");
+        popup.classList.toggle("fadeOut");
+        console.log("reset");
+    }
+function cancelVendor()
+{
+    console.log("popup ausschalten");
+    popup.classList.toggle("fadeOut");
+    vendor_timeout = false;
+    resetVendor();
+    click_arrow.removeEventListener("click", cancelVendor);
+
+}
+
+    // buy items
+
+    async function buyFish()
+{
+    r.style.setProperty('--opacity_sprechblase6', 0);    
+    r.style.setProperty('--opacity_sprechblase7', 1);
+    r.style.setProperty('--fisch', 1);
+    localStorage.setItem('fish', 1);
+
+    localStorage.setItem('vendor_status', 1);
+    localStorage.setItem('grayscale_coin', 1);
+    r.style.setProperty('--grayscale_coin', 1);
+    localStorage.setItem('coin', 2);
+    vendor_done = localStorage.getItem('vendor_status');
+    checkInventory();
+    await delay(750);
+    show_bubble8();
+    cancelVendor();
+}
+
+async function buyCarrot()
+{
+    r.style.setProperty('--opacity_sprechblase6', 0);    
+    r.style.setProperty('--opacity_sprechblase7', 1);
+    r.style.setProperty('--karotte', 1);
+    localStorage.setItem('carrot', 1);
+
+    localStorage.setItem('vendor_status', 1);
+    localStorage.setItem('grayscale_coin', 1);
+    r.style.setProperty('--grayscale_coin', 1);
+    localStorage.setItem('coin', 2);
+    vendor_done = localStorage.getItem('vendor_status');
+    checkInventory();
+    await delay(750);
+    show_bubble9();
+    cancelVendor();
+}
+
+
+    async function show_bubble8()
+    {
+        r.style.setProperty('--opacity_sprechblase8', 1);
+        await delay(2000);
+        r.style.setProperty('--opacity_sprechblase8', 0);
     }
 
+    async function show_bubble9()
+    {
+        r.style.setProperty('--opacity_sprechblase9', 1);
+        await delay(2000);
+        r.style.setProperty('--opacity_sprechblase9', 0);
+    }
+
+    async function show_bubble10()
+    {
+        r.style.setProperty('--opacity_sprechblase10', 1);
+        await delay(2000);
+        r.style.setProperty('--opacity_sprechblase10', 0);
+    }
+
+
+   // place character depending on zone entry
+
+   var origin = localStorage.getItem('player_origin');
+   switch (origin) {
+       case "9": // from  page 7
+           console.log("Player origin is page 7");
+           place_counter_x = 5;
+           move_x = 15 + (62 * (place_counter_x - 1));
+           r.style.setProperty('--move_x', move_x + "px");
+           place_counter_y = 10;
+           move_y = 10 + (62 * (place_counter_y - 1));
+           r.style.setProperty('--move_y', move_y + "px");
+           run_y = place_counter_y - 1;
+           run_x = place_counter_x - 1;
+           document.getElementById("player_img").src = "src/images/cat_back_standing_black.png";
+           console.log("x:" + move_x + " y: " + move_y);
+           console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
+           break;
+   }
 
     // move up
     async function move_up() {
@@ -498,7 +427,6 @@ async function show_bubble10()
     // move down
     async function move_down() {
         if (counter_arrow_down === banned_squares_down.length) {
-
             counter_arrow_down = 0;
             place_counter_y = place_counter_y + 1;
             run_y = run_y + 1;
@@ -516,7 +444,6 @@ async function show_bubble10()
     // move right
     async function move_right() {
         if (counter_arrow_right === banned_squares_right.length) {
-
             counter_arrow_right = 0;
             place_counter_x = place_counter_x + 1;
             run_x = run_x + 1;
@@ -529,6 +456,8 @@ async function show_bubble10()
             await delay(delay_duration);
             document.getElementById("player_img").src = "src/images/cat_right_standing_black.png";
             r.style.setProperty('--move_x', move_x + "px");
+            console.log("position on x:" + place_counter_x + " position on x: " + place_counter_y);
+            console.log("x:" + move_x + " y: " + move_y);
         }
     }
     // move left
@@ -560,7 +489,7 @@ async function show_bubble10()
 
         if ((e.keyCode == '38') && (can_char_move === true)) { // up arrow
             prevent_move();
-            ShipInterface();
+            vendor_interface();
             document.getElementById('player_img').src = "src/images/cat_back_standing_black.png";
             if ((place_counter_y > 1) && (place_counter_y <= number_of_squares)) {
                 for (var i = 0; i < banned_squares_up.length; i++) {
@@ -581,9 +510,8 @@ async function show_bubble10()
             }
         }
         else if ((e.keyCode == '40') && (can_char_move === true)) { // down arrow
-
-            move_out_of_house();
             prevent_move();
+            move_out_of_cave();
             document.getElementById('player_img').src = "src/images/cat_front_standing_black.png";
             if ((place_counter_y >= 1) && (place_counter_y < number_of_squares)) {
                 for (var i = 0; i < banned_squares_down.length; i++) {
@@ -626,7 +554,6 @@ async function show_bubble10()
             }
         }
         else if ((e.keyCode == '39') && (can_char_move === true)) { // right arrow
-            exchangeBottle__interface();
             prevent_move();
             document.getElementById('player_img').src = "src/images/cat_right_standing_black.png";
             if ((place_counter_x >= 1) && (place_counter_x < number_of_squares)) {
